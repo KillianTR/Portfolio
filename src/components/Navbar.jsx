@@ -27,11 +27,40 @@ function Navbar() {
         </Link>
 
         <nav className="navbar-links">
-          <NavLink to="/">Inicio</NavLink>
-          <NavLink to="/newsletter">Newsletter</NavLink>
-          <NavLink to="/startup">Startup</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
-          <NavLink to="/recomendaciones">Recomendaciones</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Inicio
+          </NavLink>
+
+          <NavLink
+            to="/newsletter"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Newsletter
+          </NavLink>
+
+          <NavLink
+            to="/startup"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Startup
+          </NavLink>
+
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Blog
+          </NavLink>
+
+          <NavLink
+            to="/recomendaciones"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Recomendaciones
+          </NavLink>
         </nav>
       </div>
     </header>

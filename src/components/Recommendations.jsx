@@ -1,15 +1,20 @@
+import { FiMonitor, FiShoppingCart } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
 const workProducts = [
   {
     name: "PC Gaming",
-    description: "Ordeador sobremesa gaming montado a piezas. Principalmente para desarrollo web, edición y jugar a videojuegos.",
+    description: "Ordenador de sobremesa gaming montado por piezas. Principalmente para desarrollo web, edición y jugar a videojuegos.",
     image: "/recs/Ordenador gaming a piezas.jpg",
     url: "https://www.pccomponentes.com/ordenador-sobremesa-pccom-ready-amd-ryzen-7-5800x-32gb-1tb-ssd-rtx-5060-ti-16gb-windows-11-home-v3",
+    buttonText: "Ver en PcComponentes",
   },
   {
     name: "Monitor 27 pulgadas",
     description: "Monitor de alta resolución QHD con 1440p y 240Hz IPS.",
     image: "/recs/HP OMEN 27qs.jpg",
-    url: "https://www.amazon.es/dp/B0CKPH347G",
+    url: "https://www.amazon.es/dp/B0C4F3DZZN",
   },
   {
     name: "Soporte monitores",
@@ -33,7 +38,7 @@ const workProducts = [
     name: "Botonera Stream Deck",
     description: "Botonera que da acceso rápido a funciones y atajos para editar y crear contenido.",
     image: "/recs/Elgato Stream Deck MK2.jpg",
-    url: "https://www.amazon.es/dp/B0DMSWB42R",
+    url: "https://www.amazon.es/dp/B09738CV2G",
   },
   {
     name: "Silla gaming ergonómica",
@@ -53,26 +58,38 @@ const workProducts = [
     image: "/recs/Logitech G Blue Yeti Streaming Kit.jpg",
     url: "https://www.amazon.es/dp/B07W4DHL8V",
   },
+  {
+    name: "Auriculares",
+    description: "Auriculares in-ear cómodos tanto para escuchar música y vídeos como para jugar a videojuegos.",
+    image: "/recs/KZ ZSN Pro X.jpg",
+    url: "https://www.amazon.es/dp/B08TR39Y9H?",
+  },
 ];
 
 function Recommendations() {
   return (
     <section id="recomendaciones" className="page page-recommendations">
       <div className="page-back">
-        <a href="#inicio">← Volver al inicio</a>
+        <Link to="/" className="page-back-link" aria-label="Volver al inicio">
+          <span className="page-back-icon" aria-hidden="true">
+            <FiArrowLeft />
+          </span>
+          <span className="page-back-text">Volver al inicio</span>
+        </Link>
       </div>
 
-      <header className="page-header">
+      <header className="page-header page-header-centered">
         <h1>Recomendaciones</h1>
         <p>
-          Productos que uso para trabajar, crear contenido y aprender. Algunos
-          enlaces pueden ser de afiliado.
+          Productos que uso para trabajar, crear contenido y aprender.
         </p>
       </header>
 
       <div className="recommendations-block">
         <div className="recommendations-heading">
-          <span className="recommendations-icon">💻</span>
+          <span className="recommendations-icon" aria-hidden="true">
+            <FiMonitor />
+          </span>
           <h2>Qué uso para trabajar</h2>
         </div>
 
@@ -95,9 +112,11 @@ function Recommendations() {
                   rel="noreferrer"
                   className="btn-amazon"
                 >
-                  🛒 Ver en Amazon
+                  <FiShoppingCart className="btn-amazon-icon" />
+                  <span>{product.buttonText || "Ver en Amazon"}</span>
                 </a>
               </div>
+
             </article>
           ))}
         </div>

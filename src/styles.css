@@ -53,7 +53,7 @@ body {
   right: 0;
   z-index: 50;
   padding: 14px 32px;
-  background: rgba(2, 6, 23, 0.96);
+   background: rgba(2, 6, 23, 0.78);
   backdrop-filter: blur(10px);
 
   /* línea siempre visible, un poco clara */
@@ -70,9 +70,9 @@ body {
   justify-content: space-between;
 }
 
-/* Efecto extra cuando haces scroll (más oscuro + sombra) */
+/* Cuando haces scroll, un pelín menos transparente + sombra */
 .navbar-scrolled {
-  background: rgba(2, 6, 23, 0.98);
+  background: rgba(2, 6, 23, 0.88);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -93,15 +93,17 @@ body {
 .navbar-links {
   display: flex;
   gap: 18px;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .navbar-links a {
   text-decoration: none;
   color: var(--text-muted);
-  padding: 6px 10px;
+  padding: 4px 8px; /* un pelín menos padding */
   border-radius: 999px;
   transition: background 0.15s ease-out, color 0.15s ease-out;
+  position: relative;
 }
 
 .navbar-links a:hover {
@@ -123,9 +125,9 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-size: clamp(3.2rem, 5vw, 4.2rem);
   line-height: 1.05;
-  margin: 0 0 16px;
+  margin: 0 0 18px;
 }
 
 .hero-subtitle {
@@ -196,8 +198,8 @@ body {
 }
 
 .section-header h2 {
-  font-size: 1.4rem;
-  margin: 0 0 6px;
+  font-size: 1.7rem;
+  margin: 0 0 8px;
 }
 
 .section-header p {
@@ -380,7 +382,7 @@ body {
 
   .navbar-links {
     gap: 10px;
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
   .hero {
@@ -399,40 +401,102 @@ body {
 }
 
 .page-back {
-  margin-bottom: 10px;
-  font-size: 0.85rem;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
 }
 
-.page-back a {
+/* Link contenedor: pongo position:relative para que ::after funcione correctamente */
+.page-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.18s ease-out, gap 0.18s ease-out, transform 0.18s;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+/* Icono (flecha) */
+.page-back-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: transform 0.18s ease-out, color 0.18s ease-out;
+  font-size: 1.05rem;
+}
+
+/* Texto */
+.page-back-text {
+  line-height: 1;
+  font-weight: 500;
+  display: inline-block; /* para que transform funcione correctamente */
+  transition: transform 0.18s ease-out, color 0.18s ease-out;
+}
+
+/* Hover: solo cambio de color y pequeño movimiento, sin subrayado */
+.page-back-link:hover,
+.page-back-link:focus {
+  color: var(--text-main);
   text-decoration: none;
 }
 
-.page-back a:hover {
-  color: var(--accent);
+.page-back-link:hover .page-back-icon,
+.page-back-link:focus .page-back-icon {
+  transform: translateX(-4px);
+  color: var(--text-main);
+}
+
+.page-back-link:hover .page-back-text,
+.page-back-link:focus .page-back-text,
+.page-back-link:focus-visible .page-back-text {
+  transform: translateX(6px); /* ajusta el valor a tu gusto (px) */
+  color: var(--text-main);
+}
+
+/* 1) Anula el foco por defecto */
+.page-back-link:focus,
+.page-back-link:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Flecha */
+.page-back-arrow {
+  font-size: 0.9rem;
+  transform: translateX(0);
+  transition: transform 0.18s ease-out, opacity 0.18s ease-out;
+}
+
+.page-back-link:hover .page-back-arrow {
+  transform: translateX(-2px);
 }
 
 .page-header h1 {
-  font-size: clamp(2.6rem, 5vw, 3.4rem);
-  margin: 0 0 6px;
+  font-size: clamp(3rem, 5.2vw, 4rem);
+  margin: 0 0 8px;
 }
 
 .page-header p {
   margin: 0 0 20px;
   color: var(--text-muted);
   max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Bloque de recomendaciones */
 
 .recommendations-block {
-  margin-top: 12px;
+  margin-top: 40px;
 }
 
 .recommendations-heading {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
   margin-bottom: 14px;
 }
 
@@ -441,8 +505,19 @@ body {
   font-size: 1.2rem;
 }
 
+/* Icono del título (ordenador) */
 .recommendations-icon {
-  font-size: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  transform: translateY(2px);
+}
+
+.recommendations-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
 }
 
 /* Grid de productos */
@@ -461,8 +536,7 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.35);
   overflow: hidden;
   min-height: 260px;
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, /* Transiciones suaves en la tarjeta */
-  border-color 0.18s ease-out;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
 }
 
 .product-card-image {
@@ -504,10 +578,12 @@ body {
   border-top: 1px solid rgba(15, 23, 42, 0.9);
 }
 
+/* Botón tipo Amazon con icono */
 .btn-amazon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   width: 100%;
   padding: 9px 10px;
   border-radius: 8px;
@@ -519,6 +595,17 @@ body {
   border: 1px solid #b45309;
 }
 
+.btn-amazon-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-amazon-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
 .btn-amazon:hover {
   background: var(--amazon-bg-hover);
 }
@@ -526,6 +613,13 @@ body {
 .page-header-centered {
   text-align: center;
   max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+
+/* Fuerza el texto del párrafo a estar centrado */
+.page-header-centered p {
+  text-align: center;
   margin: 0 auto 20px;
 }
 
@@ -584,4 +678,21 @@ body {
 /* Zoom suave de la imagen al hacer hover en la tarjeta */
 .product-card:hover .product-card-image img {
   transform: scale(1.06);
+}
+
+/* color del texto del activo */
+.navbar-links a.active {
+  color: var(--text-main);
+}
+
+/* subrayado tipo VG */
+.navbar-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
 }
