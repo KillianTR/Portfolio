@@ -111,9 +111,12 @@ body {
   color: var(--text-main);
 }
 
-/* Hero */
 .hero {
-  padding: 40px 10px 32px;
+  padding: 60px 10px 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-kicker {
@@ -121,27 +124,32 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  margin-left: 0; 
 }
 
 .hero-title {
   font-size: clamp(3.2rem, 5vw, 4.2rem);
   line-height: 1.05;
-  margin: 0 0 18px;
+  margin: 0 0 24px;
+  text-align: left;
+  max-width: 900px;
 }
 
 .hero-subtitle {
-  max-width: 580px;
-  font-size: 0.98rem;
+  max-width: 600px;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 24px;
+  margin: 0 0 32px 0;
+  text-align: left;
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  justify-content: flex-start;
 }
 
 .btn-primary,
@@ -161,10 +169,12 @@ body {
   background: var(--accent);
   color: #0b1120;
   border-color: var(--accent);
+  transition: color 0.2s ease, filter 0.2s ease;
 }
 
 .btn-primary:hover {
   filter: brightness(1.05);
+  color: #ffffff !important;
 }
 
 .btn-secondary {
@@ -695,4 +705,249 @@ body {
   height: 2px;
   border-radius: 999px;
   background: var(--accent);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* =========================================
+   NUEVO ESTILO DE TARJETAS DE PROYECTOS (V2)
+   Adaptado de la referencia del Pomodoro
+   ========================================= */
+
+/* Grid contenedor específico */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* Un poco más de espacio */
+  padding: 10px;
+}
+
+/* Tarjeta principal v2 */
+.project-card-v2 {
+  background: #111111; /* Color de fondo muy oscuro para la tarjeta */
+  border-radius: 12px; /* Bordes redondeados más sutiles */
+  border: 1px solid #222222; /* Borde muy sutil */
+  overflow: hidden; /* Importante para que la imagen no se salga */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efecto hover ligero */
+.project-card-v2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-color: #333333;
+}
+
+/* Contenedor de la imagen */
+.project-card-image-container {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen */
+  overflow: hidden;
+  border-bottom: 1px solid #222222;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre todo el espacio sin deformarse */
+  object-position: center;
+}
+
+/* Cuerpo de la tarjeta con padding */
+.project-card-body-v2 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Hace que el cuerpo ocupe el espacio restante */
+  text-align: left; /* Alineación a la izquierda obligatoria */
+}
+
+.project-card-body-v2 h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.project-card-description-v2 {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  color: #aaaaaa; /* Texto muted */
+  line-height: 1.5;
+  flex-grow: 1; /* Empuja los tags hacia abajo */
+}
+
+/* Contenedor de etiquetas tecnológicas */
+.project-card-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Estilo exacto de los tags (redondeados y fondo oscuro) */
+.tech-tag {
+  background: #222222;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #333333;
+}
+
+/* Footer de la tarjeta con el botón Demo */
+.project-card-footer-v2 {
+  border-top: 1px solid #222222;
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+/* Botón Demo con icono */
+.demo-link-v2 {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.demo-link-v2:hover {
+  color: var(--accent);
+}
+
+.projects-header-left {
+  text-align: left;
+  margin-bottom: 32px;
+  padding-left: 10px;
+}
+
+.projects-title-v2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.projects-description-v2 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 600px;
 }

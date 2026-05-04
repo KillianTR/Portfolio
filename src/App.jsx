@@ -6,11 +6,12 @@ import NewsletterPage from "./pages/NewsletterPage";
 import StartupPage from "./pages/StartupPage";
 import BlogPage from "./pages/BlogPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
+import "./styles.css";
 
 function App() {
   return (
     <>
-      <Navbar /> {/* barra fija a todo el ancho */}
+      <Navbar />
       <div className="app">
         <main>
           <Routes>
