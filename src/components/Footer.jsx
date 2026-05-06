@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} Killian Torrell.</p>
+      <p>© {new Date().getFullYear()} Killian Torrell</p>
       <div className="footer-links">
         <a href="https://github.com/KillianTR" target="_blank" rel="noreferrer">
           GitHub
