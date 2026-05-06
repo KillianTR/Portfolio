@@ -2,8 +2,8 @@ const projects = [
   {
     title: "Pomodoro Timer App",
     description:
-      "Permite a los usuarios gestionar su tiempo de manera eficiente.",
-    image: "/pomodoro-timer-screenshot.png", 
+      "Temporizador de productividad con estética Vercel. Optimizado con React Hooks, persistencia de datos en localStorage y un diseño avanzado con transparencias CSS.",
+    image: "/pomodoro-timer-screenshot.png",
     tech: ["Next.js", "React", "TypeScript", "Framer Motion", "Tailwind CSS", "Shadcn UI"],
     demoUrl: "https://pomodoro-timer-killiantr.vercel.app",
   },
