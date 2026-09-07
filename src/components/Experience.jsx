@@ -85,19 +85,32 @@ const experienceData = {
       tech: ["WordPress", "JavaScript", "PHP", "HTML5/CSS3", "Francés B1"],
     },
     {
-      company: "Activa Mutua & Andrés Pintaluba S.A.",
+      company: "Activa Mutua",
       location: "Reus, Tarragona",
       role: "Técnico Informático / Soporte de Sistemas (Prácticas)",
-      period: "2016 – 2020",
-      badge: "Inicios y consolidación técnica",
+      period: "Noviembre 2019 – Abril 2020",
+      badge: "Prácticas de sistemas",
       description:
-        "Prácticas formativas de Grado Medio (SMX) y Grado Superior (ASIX) administrando redes locales y estaciones de trabajo.",
+        "Soporte técnico Helpdesk N1 y resolución de incidencias para usuarios internos de la entidad.",
       highlights: [
-        "Soporte técnico N1 y resolución de incidencias para usuarios internos.",
-        "Mantenimiento de equipos, redes locales y consultas sobre bases de datos Oracle SQL.",
-        "Clonado masivo, configuración y puesta a punto de puestos de trabajo corporativos.",
+        "Soporte técnico N1 y gestión de incidencias para usuarios internos de la mutua.",
+        "Mantenimiento de equipos, redes locales y consultas sobre bases de datos corporativas con Oracle SQL.",
       ],
-      tech: ["Oracle SQL", "Clonación de Sistemas", "Redes Locales", "Soporte N1"],
+      tech: ["Oracle SQL", "Redes Locales", "Soporte N1", "Active Directory"],
+    },
+    {
+      company: "Andrés Pintaluba S.A.",
+      location: "Reus, Tarragona",
+      role: "Técnico de Soporte Informático (Prácticas)",
+      period: "Mayo 2016 – Noviembre 2016",
+      badge: "Prácticas SMX",
+      description:
+        "Prácticas formativas de Grado Medio (SMX) enfocadas a microinformática, hardware y puesta a punto de equipos corporativos.",
+      highlights: [
+        "Reparación, clonado masivo y puesta a punto de puestos de trabajo corporativos.",
+        "Mantenimiento preventivo de hardware y diagnóstico técnico de puestos informáticos.",
+      ],
+      tech: ["Clonación de Sistemas", "Hardware", "Mantenimiento PC", "SMX"],
     },
   ],
   ca: [
@@ -182,19 +195,32 @@ const experienceData = {
       tech: ["WordPress", "JavaScript", "PHP", "HTML5/CSS3", "Francès B1"],
     },
     {
-      company: "Activa Mútua & Andrés Pintaluba S.A.",
+      company: "Activa Mútua",
       location: "Reus, Tarragona",
       role: "Tècnic Informàtic / Suport de Sistemes (Pràctiques)",
-      period: "2016 – 2020",
-      badge: "Inicis i consolidació tècnica",
+      period: "Novembre 2019 – Abril 2020",
+      badge: "Pràctiques de sistemes",
       description:
-        "Pràctiques formatives de Grau Mitjà (SMX) i Grau Superior (ASIX) administrant xarxes locals i equips.",
+        "Suport tècnic Helpdesk N1 i resolució d'incidències per a usuaris interns de l'entitat.",
       highlights: [
-        "Suport tècnic N1 i gestió d'incidències per a usuaris interns.",
-        "Manteniment d'equips, xarxes locals i gestió de bases de dades corporatives amb Oracle SQL.",
-        "Reparació, clonatge i posada a punt d'estacions de treball corporatives.",
+        "Suport tècnic N1 i gestió d'incidències per a usuaris interns de la mútua.",
+        "Manteniment d'equips, xarxes locals i consultes sobre bases de dades corporatives amb Oracle SQL.",
       ],
-      tech: ["Oracle SQL", "Clonatge de Sistemes", "Xarxes Locals", "Suport N1"],
+      tech: ["Oracle SQL", "Xarxes Locals", "Suport N1", "Active Directory"],
+    },
+    {
+      company: "Andrés Pintaluba S.A.",
+      location: "Reus, Tarragona",
+      role: "Tècnic de Suport Informàtic (Pràctiques)",
+      period: "Maig 2016 – Novembre 2016",
+      badge: "Pràctiques SMX",
+      description:
+        "Pràctiques formatives de Grau Mitjà (SMX) enfocades a microinformàtica, maquinari i posada a punt d'equips.",
+      highlights: [
+        "Reparació, clonatge massiu i posada a punt d'estacions de treball corporatives.",
+        "Manteniment preventiu de maquinari i diagnòstic tècnic de llocs informàtics.",
+      ],
+      tech: ["Clonatge de Sistemes", "Hardware", "Manteniment PC", "SMX"],
     },
   ],
 };
@@ -240,7 +266,7 @@ function Experience({ onOpenCvModal }) {
 
             <div className="timeline-content">
               <div className="timeline-header">
-                <div>
+                <div className="timeline-title-group">
                   <h3 className="timeline-role">{job.role}</h3>
                   <h4 className="timeline-company">{job.company}</h4>
                 </div>
