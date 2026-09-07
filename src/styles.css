@@ -86,12 +86,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 100;
   padding: 14px 32px;
-  background: var(--navbar-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--navbar-border);
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -108,8 +108,11 @@ body {
 
 /* Cuando haces scroll, un pelín menos transparente + sombra */
 .navbar-scrolled {
-  background: var(--navbar-bg-scrolled);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(2, 6, 23, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* Logo */
@@ -911,12 +914,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -1042,27 +1042,36 @@ button:focus-visible {
   color: var(--accent);
 }
 
-.projects-header-left {
-  text-align: left;
-  margin-bottom: 32px;
-  padding-left: 10px;
+.projects-header-left,
+.section-header-left,
+.section-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 760px;
 }
 
 .projects-title-v2 {
   font-size: 2.2rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 12px;
+  margin: 0 auto 12px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
 }
 
 .projects-description-v2 {
   font-size: 1rem;
   color: var(--text-muted);
-  margin: 0;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 620px;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* --- ESTILO BASE PARA EL BOTÓN SECUNDARIO (NEWSLETTER) --- */
@@ -1358,29 +1367,52 @@ button:focus-visible {
 .section-kicker {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin: 0 auto 10px;
 }
 
 .section-header-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 760px;
   gap: 16px;
+}
+
+.section-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
 }
 
 .section-subtitle {
   font-size: 1rem;
   color: var(--text-muted);
-  margin: 0;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 620px;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* --- EXPERIENCIA LABORAL TIMELINE --- */
@@ -1391,6 +1423,7 @@ button:focus-visible {
 .experience-controls {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -1563,10 +1596,10 @@ button:focus-visible {
 /* --- FILTROS DE PROYECTOS Y BADGES --- */
 .projects-filter-bar {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 28px;
-  padding-left: 10px;
 }
 
 .filter-chip {
@@ -2241,10 +2274,10 @@ button:focus-visible {
   background: rgba(15, 23, 42, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 14px;
-  padding: 14px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -2255,21 +2288,41 @@ button:focus-visible {
 }
 
 .social-card-icon {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  width: 28px;
+  min-width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
 }
 
 .social-card-info strong {
   display: block;
   font-size: 0.88rem;
   color: #ffffff;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
 }
 
 .social-card-info span {
-  font-size: 0.75rem;
+  display: block;
+  font-size: 0.76rem;
   color: #9ca3af;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
 }
 
 .static-info-card {
@@ -2280,30 +2333,40 @@ button:focus-visible {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(15, 23, 42, 0.6));
   border: 1px solid rgba(56, 189, 248, 0.3);
   border-radius: 18px;
-  padding: 20px;
+  padding: 24px 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 14px;
+}
+
+.contact-cv-box > div {
+  text-align: center;
 }
 
 .contact-cv-box strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: #ffffff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  text-align: center;
 }
 
 .contact-cv-box p {
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   color: #94a3b8;
   margin: 0;
+  text-align: center;
 }
 
 .btn-download-cv-full {
   white-space: nowrap;
   font-weight: 600;
+  margin: 6px auto 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- MODAL DE CV --- */
@@ -2563,25 +2626,42 @@ button:focus-visible {
 .nav-text-btn,
 .nav-link-route {
   background: transparent !important;
-  border: none;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   font-family: inherit;
-  font-size: 0.93rem;
+  font-size: 0.94rem;
   font-weight: 500;
-  color: var(--text-muted);
-  padding: 6px 2px;
+  color: #94a3b8;
+  padding: 6px 0;
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  transition: color 0.18s ease;
+  transition: color 0.2s ease;
   display: inline-flex;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-text-btn::after,
-.nav-link-route::after {
+.nav-text-btn:focus,
+.nav-text-btn:focus-visible,
+.nav-link-route:focus,
+.nav-link-route:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.nav-btn-text {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.nav-btn-text::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
@@ -2591,19 +2671,18 @@ button:focus-visible {
 }
 
 .nav-text-btn:hover,
-.nav-link-route:hover {
-  color: var(--text-main);
+.nav-link-route:hover,
+.nav-text-btn.active,
+.nav-link-route.active {
+  color: #ffffff;
   background: transparent !important;
 }
 
-.nav-text-btn:hover::after,
-.nav-link-route:hover::after,
-.nav-link-route.active::after {
+.nav-text-btn:hover .nav-btn-text::after,
+.nav-link-route:hover .nav-btn-text::after,
+.nav-text-btn.active .nav-btn-text::after,
+.nav-link-route.active .nav-btn-text::after {
   width: 100%;
-}
-
-.nav-link-route.active {
-  color: var(--text-main);
 }
 
 .nav-contact-header-btn {
@@ -3146,6 +3225,34 @@ body.light-mode {
 [data-theme="light"] .modal-contact-link:hover {
   color: #0284c7;
 }
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom-color: rgba(226, 232, 240, 0.85);
+}
+
+[data-theme="light"] .navbar-scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .nav-text-btn,
+[data-theme="light"] .nav-link-route {
+  color: #64748b;
+}
+
+[data-theme="light"] .nav-text-btn:hover,
+[data-theme="light"] .nav-link-route:hover,
+[data-theme="light"] .nav-text-btn.active,
+[data-theme="light"] .nav-link-route.active {
+  color: #0284c7;
+}
+
+[data-theme="light"] .nav-btn-text::after {
+  background: #0284c7;
+}
+
 
 
 

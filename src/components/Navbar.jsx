@@ -7,6 +7,7 @@ import { translations } from "../translations/translations";
 function Navbar({ onOpenCvModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -14,16 +15,38 @@ function Navbar({ onOpenCvModal }) {
   const t = translations[lang] || translations.es;
 
   useEffect(() => {
+    if (location.pathname === "/recomendaciones") {
+      setActiveSection("recomendaciones");
+      return;
+    }
+
+    const sectionIds = ["inicio", "experiencia", "proyectos", "formacion", "sobre-mi", "contacto"];
+
     function handleScroll() {
       setIsScrolled(window.scrollY > 15);
+
+      if (location.pathname !== "/") return;
+
+      const scrollPosition = window.scrollY + 180;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
     }
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const handleNavClick = (hash) => {
     setMobileMenuOpen(false);
+    const targetId = hash.replace("#", "");
+    setActiveSection(targetId);
     if (location.pathname !== "/") {
       navigate("/" + hash);
     } else {
@@ -45,36 +68,54 @@ function Navbar({ onOpenCvModal }) {
           />
         </Link>
 
-        {/* Enlaces de escritorio */}
+        {/* Enlaces de escritorio con detección de sección activa */}
         <nav className="navbar-links">
-          <button onClick={() => handleNavClick("#inicio")} className="nav-text-btn">
-            {t.nav.home}
+          <button
+            onClick={() => handleNavClick("#inicio")}
+            className={`nav-text-btn ${activeSection === "inicio" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.home}</span>
           </button>
-          <button onClick={() => handleNavClick("#experiencia")} className="nav-text-btn">
-            {t.nav.experience}
+          <button
+            onClick={() => handleNavClick("#experiencia")}
+            className={`nav-text-btn ${activeSection === "experiencia" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.experience}</span>
           </button>
-          <button onClick={() => handleNavClick("#proyectos")} className="nav-text-btn">
-            {t.nav.projects}
+          <button
+            onClick={() => handleNavClick("#proyectos")}
+            className={`nav-text-btn ${activeSection === "proyectos" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.projects}</span>
           </button>
-          <button onClick={() => handleNavClick("#formacion")} className="nav-text-btn">
-            {t.nav.education}
+          <button
+            onClick={() => handleNavClick("#formacion")}
+            className={`nav-text-btn ${activeSection === "formacion" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.education}</span>
           </button>
-          <button onClick={() => handleNavClick("#sobre-mi")} className="nav-text-btn">
-            {t.nav.about}
+          <button
+            onClick={() => handleNavClick("#sobre-mi")}
+            className={`nav-text-btn ${activeSection === "sobre-mi" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.about}</span>
           </button>
           <Link
             to="/recomendaciones"
             className={`nav-link-route ${location.pathname === "/recomendaciones" ? "active" : ""}`}
             onClick={() => setMobileMenuOpen(false)}
           >
-            {t.nav.recommendations}
+            <span className="nav-btn-text">{t.nav.recommendations}</span>
           </Link>
         </nav>
 
         {/* Acciones derecha: Contacto, Selector de Idioma (Mundo), Modo Oscuro/Claro y Descargar CV */}
         <div className="navbar-actions">
-          <button onClick={() => handleNavClick("#contacto")} className="nav-text-btn nav-contact-header-btn">
-            {t.nav.contact}
+          <button
+            onClick={() => handleNavClick("#contacto")}
+            className={`nav-text-btn nav-contact-header-btn ${activeSection === "contacto" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.contact}</span>
           </button>
 
           {/* Selector de idioma con icono del mundo */}
