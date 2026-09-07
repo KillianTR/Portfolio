@@ -6,12 +6,16 @@ import "./styles.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+import { AppProvider } from "./context/AppContext.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
-      <Analytics />
-      <SpeedInsights />
+      <AppProvider>
+        <App />
+        <Analytics />
+        <SpeedInsights />
+      </AppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

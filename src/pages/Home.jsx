@@ -1,26 +1,23 @@
 import Hero from "../components/Hero";
+import TechTicker from "../components/TechTicker";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import Process from "../components/Process";
+import Education from "../components/Education";
+import AboutMe from "../components/AboutMe";
 import Newsletter from "../components/Newsletter";
+import Contact from "../components/Contact";
 
-function Home() {
+function Home({ onOpenCvModal }) {
   return (
     <>
-      <section id="inicio">
-        <Hero />
-      </section>
-
-      <section id="proyectos">
-        <Projects />
-      </section>
-
-      <section id="proceso">
-        <Process />
-      </section>
-
-      <section id="newsletter">
-        <Newsletter />
-      </section>
+      <Hero onOpenCvModal={onOpenCvModal} />
+      <TechTicker />
+      <Experience onOpenCvModal={onOpenCvModal} />
+      <Projects />
+      <Education />
+      <AboutMe />
+      <Newsletter />
+      <Contact onOpenCvModal={onOpenCvModal} />
     </>
   );
 }
