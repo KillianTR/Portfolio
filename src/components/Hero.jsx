@@ -26,14 +26,11 @@ function Hero({ onOpenCvModal }) {
 
   return (
     <section className="hero" id="inicio">
-      {/* Badge de Disponibilidad y Ubicación */}
+      {/* Badge de Disponibilidad */}
       <div className="hero-top-badges">
         <span className="status-badge-pulse">
           <span className="pulse-dot"></span>
           {t.hero.status}
-        </span>
-        <span className="location-badge">
-          <FiMapPin style={{ marginRight: 5 }} /> {t.hero.location}
         </span>
       </div>
 
@@ -42,8 +39,8 @@ function Hero({ onOpenCvModal }) {
           <p className="hero-kicker">{t.hero.kicker}</p>
 
           <h1 className="hero-title">
-            Killian Torrell
-            <span className="hero-title-highlight"> Fernández</span>
+            <span className="hero-name-bold">Killian</span>{" "}
+            <span className="hero-name-light">Torrell Fernández</span>
           </h1>
 
           <p className="hero-subtitle">{t.hero.subtitle}</p>
@@ -102,26 +99,8 @@ function Hero({ onOpenCvModal }) {
               title="Software en Patreon"
             >
               <SiPatreon style={{ color: "#ff424d", marginRight: 6 }} />
-              Patreon (+300€)
+              Patreon
             </a>
-
-            <button
-              onClick={handleCopyEmail}
-              className="hero-social-pill hero-email-pill"
-              title="Copiar correo electrónico"
-            >
-              {copied ? (
-                <>
-                  <FiCheck style={{ color: "#10b981", marginRight: 6 }} />
-                  {lang === "es" ? "¡Copiado!" : "Copiat!"}
-                </>
-              ) : (
-                <>
-                  <FiMail style={{ color: "#38bdf8", marginRight: 6 }} />
-                  killiantorrell@gmail.com
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>

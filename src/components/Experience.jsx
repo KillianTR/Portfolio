@@ -5,7 +5,7 @@ import { useApp } from "../context/AppContext";
 const experienceData = {
   es: [
     {
-      company: "Aena (Aeropuerto de Reus)",
+      company: "AENA (Aeropuerto de Reus)",
       location: "Reus, Tarragona",
       role: "Técnico de Microinformática / Soporte TI Corporativo",
       period: "Agosto 2026",
@@ -102,7 +102,7 @@ const experienceData = {
   ],
   ca: [
     {
-      company: "Aena (Aeroport de Reus)",
+      company: "AENA (Aeroport de Reus)",
       location: "Reus, Tarragona",
       role: "Tècnic de Microinformàtica / Suport TI Corporatiu",
       period: "Agost 2026",
@@ -200,7 +200,7 @@ const experienceData = {
 };
 
 function Experience({ onOpenCvModal }) {
-  const { lang, setLang } = useApp();
+  const { lang } = useApp();
   const jobs = experienceData[lang] || experienceData.es;
 
   return (
@@ -221,30 +221,13 @@ function Experience({ onOpenCvModal }) {
           </p>
         </div>
 
-        <div className="experience-controls">
-          <div className="lang-toggle-pills">
-            <button
-              className={`lang-pill ${lang === "es" ? "active" : ""}`}
-              onClick={() => setLang("es")}
-              aria-label="Ver en castellano"
-            >
-              Castellano
-            </button>
-            <button
-              className={`lang-pill ${lang === "ca" ? "active" : ""}`}
-              onClick={() => setLang("ca")}
-              aria-label="Veure en català"
-            >
-              Català
-            </button>
-          </div>
-
-          {onOpenCvModal && (
+        {onOpenCvModal && (
+          <div className="experience-controls">
             <button onClick={onOpenCvModal} className="btn-secondary btn-sm">
               📄 {lang === "es" ? "Descargar CV Completo" : "Descarregar CV Complet"}
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <div className="timeline-container">

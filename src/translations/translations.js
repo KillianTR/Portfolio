@@ -13,9 +13,9 @@ export const translations = {
     hero: {
       status: "Disponible para trabajar • Presencial, Híbrido o Remoto",
       location: "Reus, Tarragona (España)",
-      kicker: "Técnico Informático (ASIX/SMX) • Desarrollador Web Full Stack",
+      kicker: "Técnico Informático • Desarrollador Web Full Stack",
       subtitle:
-        "Especialista en administración de sistemas y soporte IT corporativo con experiencia en entornos de alta exigencia (Aena, AEQT, MediaMarkt). Apasionado por el desarrollo de aplicaciones web (React, Java Spring Boot), la automatización con Python y la creación de productos digitales reales.",
+        "Especialista en administración de sistemas y soporte IT corporativo con experiencia en entornos de alta exigencia (AENA, AEQT, MediaMarkt). Apasionado por el desarrollo de aplicaciones web (React, Java Spring Boot), la automatización con Python y la creación de productos digitales reales.",
       ctaCv: "Descargar CV (PDF)",
       ctaContact: "Contactar",
       ctaExp: "Ver experiencia",
@@ -32,7 +32,7 @@ export const translations = {
         all: "Todos los proyectos",
         web: "Desarrollo Web & Apps",
         automation: "Automatización & Python",
-        patreon: "Software & Patreon (+300€)",
+        patreon: "Software & Patreon",
         systems: "Sistemas & Herramientas Internas",
       },
       codeBtn: "Código / Repo",
@@ -51,8 +51,8 @@ export const translations = {
       title: "Sobre Mí",
       subtitle:
         "Quién soy, qué me motiva en el sector tecnológico y qué busco aportar a un equipo.",
-      p1: "Soy Técnico en Sistemas (ASIX & SMX) y desarrollador web junior. Cuento con una base técnica muy práctica adquirida en puestos de soporte IT corporativo de alta responsabilidad (como en Aena, AEQT y MediaMarkt), gestionando desde infraestructuras de red y Active Directory hasta resolución ágil de incidencias.",
-      p2: "En paralelo, mi gran pasión y foco de proyección es el desarrollo web y la automatización. Me formé a través de un bootcamp intensivo en Java Full Stack y dedico mi tiempo libre a crear proyectos reales (desde overlays monetizados en Patreon hasta aplicaciones en React/Next.js y scripts en Python).",
+      p1: "Soy Técnico en Sistemas (ASIX & SMX) y desarrollador web junior. Cuento con una base técnica muy práctica adquirida en puestos de soporte IT corporativo de alta responsabilidad (como en AENA, AEQT y MediaMarkt), gestionando desde infraestructuras de red y Active Directory hasta resolución ágil de incidencias.",
+      p2: "En paralelo, mi gran pasión y foco de proyección es el desarrollo web y la automatización. Me formé a través de un bootcamp intensivo en Java Full Stack y dedico mi tiempo libre a crear proyectos reales (desde software para simracing en Patreon hasta aplicaciones en React/Next.js y scripts en Python).",
       p3: "Me defino como una persona curiosa, resolutiva y con una mentalidad orientada al '1% mejor cada día': si hay algo que no sé, investigo, aprendo rápido y lo pongo en práctica.",
       interests: {
         hardware: "Hardware, Setup y Productividad",
@@ -105,7 +105,7 @@ export const translations = {
       catalaTag: "Català",
       catalaTitle: "Currículum en Català",
       catalaDesc:
-        "Versió completa amb experiència laboral a Aena, AEQT, MediaMarkt, formació ASIX/SMX i desenvolupament web.",
+        "Versió completa amb experiència laboral a AENA, AEQT, MediaMarkt, formació oficial i desenvolupament web.",
       castellanoTag: "Castellano",
       castellanoTitle: "Currículum en Castellano",
       castellanoDesc:
@@ -113,7 +113,7 @@ export const translations = {
       downloadPdf: "Descargar PDF",
       previewPdf: "Ver",
       note: "¿Necesitas concertar una entrevista o un formato específico?",
-      copyEmail: "Copiar killiantorrell@gmail.com",
+      copyEmail: "Contactar directamente",
     },
   },
   ca: {
@@ -130,9 +130,9 @@ export const translations = {
     hero: {
       status: "Disponible per treballar • Presencial, Híbrid o Remot",
       location: "Reus, Tarragona (Espanya)",
-      kicker: "Tècnic Informàtic (ASIX/SMX) • Desenvolupador Web Full Stack",
+      kicker: "Tècnic Informàtic • Desenvolupador Web Full Stack",
       subtitle:
-        "Especialista en administració de sistemes i suport TI corporatiu amb experiència en entorns d'alta exigència (Aena, AEQT, MediaMarkt). Apassionat pel desenvolupament d'aplicacions web (React, Java Spring Boot), l'automatització amb Python i la creació de productes digitals reals.",
+        "Especialista en administració de sistemes i suport TI corporatiu amb experiència en entorns d'alta exigència (AENA, AEQT, MediaMarkt). Apassionat pel desenvolupament d'aplicacions web (React, Java Spring Boot), l'automatització amb Python i la creació de productes digitals reals.",
       ctaCv: "Descarregar CV (PDF)",
       ctaContact: "Contactar",
       ctaExp: "Veure experiència",
@@ -149,7 +149,7 @@ export const translations = {
         all: "Tots els projectes",
         web: "Desenvolupament Web & Apps",
         automation: "Automatització & Python",
-        patreon: "Programari & Patreon (+300€)",
+        patreon: "Programari & Patreon",
         systems: "Sistemes & Eines Internes",
       },
       codeBtn: "Codi / Repo",
@@ -168,8 +168,8 @@ export const translations = {
       title: "Sobre Mi",
       subtitle:
         "Qui soc, què em motiva en el sector tecnològic i què busco aportar a un equip.",
-      p1: "Soc Tècnic en Sistemes (ASIX & SMX) i desenvolupador web junior. Compto amb una base tècnica molt pràctica adquirida en llocs de suport TI corporatiu d'alta responsabilitat (com a Aena, AEQT i MediaMarkt), gestionant des d'infraestructures de xarxa i Active Directory fins a resolució àgil d'incidències.",
-      p2: "En paral·lel, la meva gran passió i focus de projecció és el desenvolupament web i l'automatització. Em vaig formar mitjançant un bootcamp intensiu en Java Full Stack i dedico el meu temps lliure a crear projectes reals (des d'overlays monetitzats a Patreon fins a aplicacions en React/Next.js i scripts en Python).",
+      p1: "Soc Tècnic en Sistemes (ASIX & SMX) i desenvolupador web junior. Compto amb una base tècnica molt pràctica adquirida en llocs de suport TI corporatiu d'alta responsabilitat (com a AENA, AEQT i MediaMarkt), gestionant des d'infraestructures de xarxa i Active Directory fins a resolució àgil d'incidències.",
+      p2: "En paral·lel, la meva gran passió i focus de projecció és el desenvolupament web i l'automatització. Em vaig formar mitjançant un bootcamp intensiu en Java Full Stack i dedico el meu temps lliure a crear projectes reals (des de programari per a simracing a Patreon fins a aplicacions en React/Next.js i scripts en Python).",
       p3: "Em defineixo com una persona curiosa, resolutiva i amb una mentalitat orientada a 'millorar un 1% cada dia': si hi ha alguna cosa que no sé, investigo, aprenc ràpid i ho poso en pràctica.",
       interests: {
         hardware: "Maquinari, Setup i Productivitat",
@@ -222,7 +222,7 @@ export const translations = {
       catalaTag: "Català",
       catalaTitle: "Currículum en Català",
       catalaDesc:
-        "Versió completa amb experiència laboral a Aena, AEQT, MediaMarkt, formació ASIX/SMX i desenvolupament web.",
+        "Versió completa amb experiència laboral a AENA, AEQT, MediaMarkt, formació oficial i desenvolupament web.",
       castellanoTag: "Castellà",
       castellanoTitle: "Currículum en Castellà",
       castellanoDesc:
@@ -230,7 +230,7 @@ export const translations = {
       downloadPdf: "Descarregar PDF",
       previewPdf: "Veure",
       note: "Necessites concertar una entrevista o un format específic?",
-      copyEmail: "Copiar killiantorrell@gmail.com",
+      copyEmail: "Contactar directament",
     },
   },
 };

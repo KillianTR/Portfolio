@@ -14,28 +14,50 @@ import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
 function Contact({ onOpenCvModal }) {
-  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
   const { lang } = useApp();
   const t = translations[lang] || translations.es;
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("killiantorrell@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const subject = encodeURIComponent(`Contacto Portfolio - ${name}`);
-    const body = encodeURIComponent(
-      `Hola Killian,\n\nSoy ${name} (${email}).\n\n${message}`
-    );
-    window.open(`mailto:killiantorrell@gmail.com?subject=${subject}&body=${body}`, "_blank");
-    setSent(true);
+    setSending(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/killiantorrell@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          Nombre: formData.name,
+          Email: formData.email,
+          Mensaje: formData.message,
+          _subject: `Nuevo mensaje de ${formData.name} desde Portfolio`,
+          _captcha: "false",
+        }),
+      });
+      if (res.ok) {
+        setSent(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        window.open(
+          `mailto:killiantorrell@gmail.com?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
+          "_blank"
+        );
+        setSent(true);
+      }
+    } catch (err) {
+      window.open(
+        `mailto:killiantorrell@gmail.com?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
+        "_blank"
+      );
+      setSent(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -50,7 +72,7 @@ function Contact({ onOpenCvModal }) {
       </div>
 
       <div className="contact-grid">
-        {/* Cuadro / Formulario */}
+        {/* Formulario de contacto directo */}
         <div className="contact-form-card">
           <h3>{t.contact.formTitle}</h3>
           <p className="form-subtitle">{t.contact.formSubtitle}</p>
@@ -92,44 +114,32 @@ function Contact({ onOpenCvModal }) {
               ></textarea>
             </div>
 
-            <button type="submit" className="btn-primary btn-submit-contact">
+            <button
+              type="submit"
+              className="btn-primary btn-submit-contact"
+              disabled={sending}
+            >
               <FiSend style={{ marginRight: 8 }} />
-              {sent ? t.contact.sentBtn : t.contact.sendBtn}
+              {sending
+                ? (lang === "es" ? "Enviando mensaje..." : "Enviant missatge...")
+                : sent
+                ? (lang === "es" ? "¡Mensaje enviado con éxito!" : "Missatge enviat amb èxit!")
+                : t.contact.sendBtn}
             </button>
+
+            {sent && (
+              <p className="form-success-note">
+                <FiCheck style={{ marginRight: 6, color: "#10b981" }} />
+                {lang === "es"
+                  ? "Gracias por escribir. Te responderé directamente a tu correo."
+                  : "Gràcies per escriure. Et respondré directament al teu correu."}
+              </p>
+            )}
           </form>
         </div>
 
         {/* Canales Directos y Accesos Rápidos */}
         <div className="contact-channels-column">
-          {/* Tarjeta de Correo con botón copiar */}
-          <div className="contact-direct-card">
-            <div className="contact-direct-top">
-              <div className="contact-icon-bubble">
-                <FiMail />
-              </div>
-              <div>
-                <span className="contact-card-label">
-                  {lang === "es" ? "Correo Electrónico" : "Correu Electrònic"}
-                </span>
-                <a href="mailto:killiantorrell@gmail.com" className="contact-card-value">
-                  killiantorrell@gmail.com
-                </a>
-              </div>
-            </div>
-            <button onClick={handleCopyEmail} className="btn-copy-email">
-              {copied ? (
-                <>
-                  <FiCheck style={{ color: "#10b981", marginRight: 6 }} /> {t.contact.copiedEmailBtn}
-                </>
-              ) : (
-                <>
-                  <FiCopy style={{ marginRight: 6 }} /> {t.contact.copyEmailBtn}
-                </>
-              )}
-            </button>
-          </div>
-
-          {/* Tarjetas estilo accesos directos */}
           <div className="contact-social-grid">
             <a
               href="https://www.linkedin.com/in/killiantorrell/"
@@ -161,26 +171,13 @@ function Contact({ onOpenCvModal }) {
               </div>
             </a>
 
-            <a
-              href="tel:+34689892169"
-              className="social-direct-card"
-            >
-              <div className="social-card-icon" style={{ color: "#10b981" }}>
-                <FiPhone />
-              </div>
-              <div className="social-card-info">
-                <strong>{lang === "es" ? "Teléfono / WhatsApp" : "Telèfon / WhatsApp"}</strong>
-                <span>+34 689 892 169</span>
-              </div>
-            </a>
-
             <div className="social-direct-card static-info-card">
               <div className="social-card-icon" style={{ color: "#38bdf8" }}>
                 <FiMapPin />
               </div>
               <div className="social-card-info">
-                <strong>{lang === "es" ? "Ubicación & Disponibilidad" : "Ubicació & Disponibilitat"}</strong>
-                <span>Reus (Tarragona) • Remoto / Híbrido / Presencial</span>
+                <strong>{lang === "es" ? "Disponibilidad Laboral" : "Disponibilitat Laboral"}</strong>
+                <span>Presencial / Híbrido / Remoto</span>
               </div>
             </div>
           </div>

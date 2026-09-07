@@ -1,19 +1,37 @@
 import { useState } from "react";
-import { FiDownload, FiExternalLink, FiX, FiFileText, FiCheck } from "react-icons/fi";
+import { FiDownload, FiExternalLink, FiX, FiFileText, FiCheck, FiUserCheck } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
 function CvModal({ isOpen, onClose }) {
-  const [copied, setCopied] = useState(false);
+  const [recruiterInfo, setRecruiterInfo] = useState("");
+  const [downloadTracked, setDownloadTracked] = useState(false);
   const { lang } = useApp();
   const t = translations[lang] || translations.es;
 
   if (!isOpen) return null;
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("killiantorrell@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+  const trackDownload = (version) => {
+    try {
+      fetch("https://formsubmit.co/ajax/killiantorrell@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          Evento: "Descarga de CV",
+          Version: version,
+          Identificacion_Reclutador: recruiterInfo.trim() || "Visita anónima / Reclutador web",
+          Fecha: new Date().toLocaleString(),
+          _subject: `📥 Descarga de CV (${version}) - ${recruiterInfo.trim() || "Reclutador Web"}`,
+          _captcha: "false",
+        }),
+      }).catch(() => {});
+    } catch (_) {}
+
+    setDownloadTracked(true);
+    setTimeout(() => setDownloadTracked(false), 4000);
   };
 
   return (
@@ -31,11 +49,32 @@ function CvModal({ isOpen, onClose }) {
           <p>{t.cvModal.subtitle}</p>
         </div>
 
+        {/* Campo opcional de identificación para saber quién descarga el CV */}
+        <div className="cv-tracker-input-box">
+          <label htmlFor="recruiter-input" className="cv-tracker-label">
+            <FiUserCheck style={{ marginRight: 6, color: "var(--accent)" }} />
+            {lang === "es"
+              ? "Identifícate como empresa / reclutador (opcional):"
+              : "Identifica't com a empresa / reclutador (opcional):"}
+          </label>
+          <input
+            id="recruiter-input"
+            type="text"
+            className="cv-tracker-input"
+            placeholder={
+              lang === "es"
+                ? "Ej: Empresa, Consultora o Nombre de contacto..."
+                : "Ex: Empresa, Consultora o Nom de contacte..."
+            }
+            value={recruiterInfo}
+            onChange={(e) => setRecruiterInfo(e.target.value)}
+          />
+        </div>
+
         <div className="cv-options-grid">
           {/* Opción Català */}
           <div className="cv-option-card">
-            <div className="cv-option-tag">{t.cvModal.catalaTag}</div>
-            <h3>{t.cvModal.catalaTitle}</h3>
+            <h3 className="cv-card-clean-title">{t.cvModal.catalaTitle}</h3>
             <p>{t.cvModal.catalaDesc}</p>
             <div className="cv-option-actions">
               <a
@@ -44,6 +83,7 @@ function CvModal({ isOpen, onClose }) {
                 className="btn-cv-download"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackDownload("Català")}
               >
                 <FiDownload /> {lang === "es" ? "Descargar PDF" : "Descarregar PDF"}
               </a>
@@ -52,6 +92,7 @@ function CvModal({ isOpen, onClose }) {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-cv-preview"
+                onClick={() => trackDownload("Previsualización Català")}
               >
                 <FiExternalLink /> {lang === "es" ? "Ver" : "Veure"}
               </a>
@@ -60,8 +101,7 @@ function CvModal({ isOpen, onClose }) {
 
           {/* Opción Castellano */}
           <div className="cv-option-card">
-            <div className="cv-option-tag cv-option-tag-es">{t.cvModal.castellanoTag}</div>
-            <h3>{t.cvModal.castellanoTitle}</h3>
+            <h3 className="cv-card-clean-title">{t.cvModal.castellanoTitle}</h3>
             <p>{t.cvModal.castellanoDesc}</p>
             <div className="cv-option-actions">
               <a
@@ -70,6 +110,7 @@ function CvModal({ isOpen, onClose }) {
                 className="btn-cv-download"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackDownload("Castellano")}
               >
                 <FiDownload /> {lang === "es" ? "Descargar PDF" : "Descarregar PDF"}
               </a>
@@ -78,6 +119,7 @@ function CvModal({ isOpen, onClose }) {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-cv-preview"
+                onClick={() => trackDownload("Previsualización Castellano")}
               >
                 <FiExternalLink /> {lang === "es" ? "Ver" : "Veure"}
               </a>
@@ -85,18 +127,26 @@ function CvModal({ isOpen, onClose }) {
           </div>
         </div>
 
+        {downloadTracked && (
+          <div className="cv-download-alert">
+            <FiCheck style={{ marginRight: 6, color: "#10b981" }} />
+            <span>
+              {lang === "es"
+                ? "¡Descarga iniciada! Gracias por tu interés profesional."
+                : "Descàrrega iniciada! Gràcies pel teu interès professional."}
+            </span>
+          </div>
+        )}
+
         <div className="modal-footer-note">
           <span>{t.cvModal.note}</span>
-          <button onClick={handleCopyEmail} className="modal-email-btn">
-            {copied ? (
-              <>
-                <FiCheck style={{ color: "#10b981" }} />{" "}
-                {lang === "es" ? "¡Copiado: killiantorrell@gmail.com!" : "Copiat: killiantorrell@gmail.com!"}
-              </>
-            ) : (
-              t.cvModal.copyEmail
-            )}
-          </button>
+          <a
+            href="#contacto"
+            onClick={onClose}
+            className="modal-contact-link"
+          >
+            {lang === "es" ? "Ir al formulario de contacto" : "Anar al formulari de contacte"}
+          </a>
         </div>
       </div>
     </div>

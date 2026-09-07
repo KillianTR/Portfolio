@@ -97,12 +97,13 @@ body {
 
 /* Contenedor interno centrado */
 .navbar-inner {
-  max-width: 1040px;
+  max-width: 1360px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 /* Cuando haces scroll, un pelín menos transparente + sombra */
@@ -111,39 +112,32 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo + enlaces como ya tenías */
+/* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .navbar-logo-img {
-  height: 22px;
+  height: 26px;
   width: auto;
   object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo-img:hover {
+  transform: scale(1.05);
 }
 
 .navbar-links {
   display: flex;
-  gap: 18px;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: var(--text-muted);
-  padding: 4px 8px; /* un pelín menos padding */
-  border-radius: 999px;
-  transition: background 0.15s ease-out, color 0.15s ease-out;
-  position: relative;
-}
-
-.navbar-links a:hover {
-  background: var(--accent-soft);
-  color: var(--text-main);
+  align-items: center;
+  gap: 24px;
+  margin-left: 28px;
+  margin-right: auto;
 }
 
 .hero {
@@ -169,6 +163,16 @@ body {
   margin: 0 0 24px;
   text-align: left;
   max-width: 900px;
+}
+
+.hero-name-bold {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero-name-light {
+  font-weight: 400;
+  color: #94a3b8;
 }
 
 .hero-subtitle {
@@ -1297,6 +1301,8 @@ button:focus-visible {
   overflow: hidden;
   position: relative;
   width: 100%;
+  padding: 10px 0 12px;
+  margin: -6px 0;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -1305,6 +1311,7 @@ button:focus-visible {
   display: flex;
   width: max-content;
   gap: 14px;
+  padding: 4px 0;
   animation: tickerScroll 32s linear infinite;
 }
 
@@ -2408,28 +2415,61 @@ button:focus-visible {
   border-color: var(--accent);
 }
 
-.cv-option-tag {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: #facc15;
-  background: rgba(250, 204, 21, 0.12);
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-
-.cv-option-tag-es {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-}
-
-.cv-option-card h3 {
+.cv-card-clean-title {
   font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 8px;
+  text-align: left;
+}
+
+.cv-tracker-input-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.cv-tracker-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.cv-tracker-input {
+  width: 100%;
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.cv-tracker-input:focus {
+  border-color: var(--accent);
+}
+
+.cv-download-alert {
+  margin-top: 14px;
+  padding: 8px 14px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #34d399;
+  font-size: 0.84rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cv-option-card p {
@@ -2499,17 +2539,16 @@ button:focus-visible {
   gap: 10px;
 }
 
-.modal-email-btn {
-  background: transparent;
-  border: none;
+.modal-contact-link {
   color: var(--accent);
+  text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
-  text-decoration: underline;
-  font-family: inherit;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  font-size: 0.84rem;
+}
+
+.modal-contact-link:hover {
+  color: #ffffff;
 }
 
 /* --- NAVBAR EXTENDIDO --- */
@@ -2521,44 +2560,61 @@ button:focus-visible {
   letter-spacing: -0.02em;
 }
 
-.nav-text-btn {
-  background: transparent;
+.nav-text-btn,
+.nav-link-route {
+  background: transparent !important;
   border: none;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 4px 10px;
-  border-radius: 999px;
+  padding: 6px 2px;
   cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.nav-text-btn:hover {
-  background: var(--accent-soft);
-  color: var(--text-main);
-}
-
-.nav-link-route {
+  position: relative;
   text-decoration: none;
-  color: var(--text-muted);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  font-weight: 500;
-  transition: all 0.15s ease;
+  transition: color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-.nav-link-route:hover,
-.nav-link-route.active {
-  background: var(--accent-soft);
+.nav-text-btn::after,
+.nav-link-route::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.22s ease-out;
+}
+
+.nav-text-btn:hover,
+.nav-link-route:hover {
   color: var(--text-main);
+  background: transparent !important;
+}
+
+.nav-text-btn:hover::after,
+.nav-link-route:hover::after,
+.nav-link-route.active::after {
+  width: 100%;
+}
+
+.nav-link-route.active {
+  color: var(--text-main);
+}
+
+.nav-contact-header-btn {
+  margin-right: 6px;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin-left: auto;
 }
 
 .btn-header-control {
@@ -3063,5 +3119,33 @@ body.light-mode {
   color: #0f172a;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
+[data-theme="light"] .hero-name-bold {
+  color: #0f172a;
+}
+
+[data-theme="light"] .hero-name-light {
+  color: #64748b;
+}
+
+[data-theme="light"] .cv-card-clean-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .cv-tracker-input-box {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .cv-tracker-input {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+[data-theme="light"] .modal-contact-link:hover {
+  color: #0284c7;
+}
+
 
 

@@ -57,8 +57,8 @@ function Footer({ onOpenCvModal }) {
             >
               <SiPatreon style={{ color: "#ff424d", marginRight: 6 }} /> Patreon
             </a>
-            <a href="mailto:killiantorrell@gmail.com">
-              <FiMail style={{ color: "#38bdf8", marginRight: 6 }} /> killiantorrell@gmail.com
+            <a href="#contacto">
+              <FiMail style={{ color: "#38bdf8", marginRight: 6 }} /> {lang === "es" ? "Formulario de Contacto" : "Formulari de Contacte"}
             </a>
           </div>
 

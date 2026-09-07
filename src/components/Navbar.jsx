@@ -43,7 +43,6 @@ function Navbar({ onOpenCvModal }) {
             alt="Logo Killian Torrell"
             className="navbar-logo-img"
           />
-          <span className="navbar-brand-text">Killian Torrell</span>
         </Link>
 
         {/* Enlaces de escritorio */}
@@ -70,13 +69,14 @@ function Navbar({ onOpenCvModal }) {
           >
             {t.nav.recommendations}
           </Link>
-          <button onClick={() => handleNavClick("#contacto")} className="nav-text-btn">
-            {t.nav.contact}
-          </button>
         </nav>
 
-        {/* Acciones: Selector de Idioma (Mundo), Interruptor Modo Oscuro/Claro y Descargar CV */}
+        {/* Acciones derecha: Contacto, Selector de Idioma (Mundo), Modo Oscuro/Claro y Descargar CV */}
         <div className="navbar-actions">
+          <button onClick={() => handleNavClick("#contacto")} className="nav-text-btn nav-contact-header-btn">
+            {t.nav.contact}
+          </button>
+
           {/* Selector de idioma con icono del mundo */}
           <button
             onClick={toggleLang}
