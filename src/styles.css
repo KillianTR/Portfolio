@@ -1768,35 +1768,49 @@ button:focus-visible {
 .cert-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 12px;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 14px;
   background: rgba(2, 6, 23, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.cert-item:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
 }
 
 .cert-icon-wrap {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
+  width: 36px;
+  min-width: 36px;
+  flex-shrink: 0;
 }
 
 .cert-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
 }
 
 .cert-name {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #e5e7eb;
+  text-align: center;
 }
 
 .cert-meta {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: #9ca3af;
+  text-align: center;
+  margin-top: 2px;
 }
 
 .languages-grid {
@@ -3251,6 +3265,15 @@ body.light-mode {
 
 [data-theme="light"] .nav-btn-text::after {
   background: #0284c7;
+}
+
+[data-theme="light"] .cert-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .cert-name {
+  color: #0f172a;
 }
 
 

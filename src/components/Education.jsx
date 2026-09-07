@@ -77,6 +77,18 @@ const certifications = [
     icon: <VscAzure style={{ color: "#0078d4" }} />,
   },
   {
+    name: "Microsoft Certified: Azure AI Fundamentals",
+    code: "AI-900",
+    issuer: "Microsoft",
+    icon: <VscAzure style={{ color: "#0078d4" }} />,
+  },
+  {
+    name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+    code: "SC-900",
+    issuer: "Microsoft",
+    icon: <VscAzure style={{ color: "#0078d4" }} />,
+  },
+  {
     name: "CISCO Networking Academy",
     code: "CCNA Module",
     issuer: "Cisco",
@@ -92,7 +104,7 @@ const certifications = [
 
 const languagesData = {
   es: [
-    { name: "Català", level: "Nativo", badge: "Idioma principal" },
+    { name: "Catalán", level: "Nativo", badge: "Idioma principal" },
     { name: "Castellano", level: "Nativo", badge: "Bilingüe" },
     { name: "Inglés", level: "B2 Professional", badge: "Técnico y fluido" },
     { name: "Francés", level: "B1 Intermedio", badge: "Experiencia en Francia" },
