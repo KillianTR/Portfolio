@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FiDownload, FiExternalLink, FiX, FiFileText, FiCheck, FiUserCheck } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
+import { getFormSubmitUrl } from "../config/contactConfig";
 
 function CvModal({ isOpen, onClose }) {
   const [recruiterInfo, setRecruiterInfo] = useState("");
@@ -13,7 +14,7 @@ function CvModal({ isOpen, onClose }) {
 
   const trackDownload = (version) => {
     try {
-      fetch("https://formsubmit.co/ajax/killiantorrell@gmail.com", {
+      fetch(getFormSubmitUrl(), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
