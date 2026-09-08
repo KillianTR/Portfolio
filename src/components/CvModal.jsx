@@ -140,13 +140,23 @@ function CvModal({ isOpen, onClose }) {
 
         <div className="modal-footer-note">
           <span>{t.cvModal.note}</span>
-          <a
-            href="#contacto"
-            onClick={onClose}
-            className="modal-contact-link"
-          >
-            {lang === "es" ? "Ir al formulario de contacto" : "Anar al formulari de contacte"}
-          </a>
+          <div className="modal-footer-actions">
+            <a
+              href="#contacto"
+              onClick={onClose}
+              className="modal-contact-link"
+            >
+              {lang === "es" ? "Ir al formulario de contacto" : "Anar al formulari de contacte"}
+            </a>
+            <button
+              onClick={onClose}
+              className="btn-modal-close-bottom"
+              type="button"
+            >
+              <FiX style={{ marginRight: 4 }} />
+              {lang === "es" ? "Cerrar" : "Tancar"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

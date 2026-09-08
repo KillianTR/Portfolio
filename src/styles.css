@@ -974,9 +974,13 @@ button:focus-visible {
 
 /* Footer de la tarjeta con el botón Demo */
 .project-card-footer-v2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 15px;
   margin-top: auto;
+  flex-wrap: wrap;
 }
 
 /* Botón Demo con icono */
@@ -2368,8 +2372,10 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
   padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-content {
@@ -2382,6 +2388,9 @@ button:focus-visible {
   position: relative;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
   animation: modalFadeIn 0.25s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
 }
 
 @keyframes modalFadeIn {
@@ -2600,6 +2609,33 @@ button:focus-visible {
 }
 
 .modal-contact-link:hover {
+  color: #ffffff;
+}
+
+.modal-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-modal-close-bottom {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-close-bottom:hover {
+  background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
 }
 
@@ -3001,6 +3037,35 @@ button:focus-visible {
     justify-content: flex-start;
     text-align: left;
   }
+
+  .modal-overlay {
+    padding: 16px 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    padding: 24px 16px 20px;
+    margin-top: 20px;
+    margin-bottom: 32px;
+    max-height: none;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    z-index: 10;
+  }
 }
 
 /* ==========================================================
@@ -3311,6 +3376,274 @@ body.light-mode {
 
 [data-theme="light"] .footer-bottom {
   border-top-color: #e2e8f0 !important;
+}
+
+/* Idiomas en Modo Claro */
+[data-theme="light"] .languages-box {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .lang-card {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .lang-name {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .lang-level {
+  color: #059669 !important;
+}
+
+[data-theme="light"] .lang-tag {
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+/* Tarjetas de contacto y redes en Modo Claro */
+[data-theme="light"] .contact-direct-card,
+[data-theme="light"] .social-direct-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .social-card-info strong {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .social-card-info span {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .contact-card-label {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .contact-card-value {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .contact-icon-bubble {
+  background: rgba(2, 132, 199, 0.12) !important;
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .contact-cv-box {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), #ffffff) !important;
+  border: 1px solid rgba(2, 132, 199, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .contact-cv-box h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .contact-cv-box p {
+  color: #475569 !important;
+}
+
+/* Newsletter en Modo Claro */
+[data-theme="light"] .newsletter-card-container {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .newsletter-preview-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .newsletter-preview-body {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .newsletter-preview-body p {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .email-meta-sender strong {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .email-badge-issue {
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+}
+
+[data-theme="light"] .newsletter-fade-overlay {
+  background: rgba(2, 132, 199, 0.06) !important;
+  border: 1px dashed rgba(2, 132, 199, 0.25) !important;
+}
+
+[data-theme="light"] .fade-hint {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .newsletter-tabs {
+  border-right-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .newsletter-tab-btn {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .newsletter-tab-btn:hover {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .newsletter-tab-btn.active {
+  background: rgba(2, 132, 199, 0.08) !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
+}
+
+[data-theme="light"] .newsletter-tab-btn.active .newsletter-tab-title {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .newsletter-tab-title {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .subscribe-input {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .subscribe-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .subscribe-input:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+[data-theme="light"] .newsletter-email-header {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* Proyectos en Modo Claro */
+[data-theme="light"] .project-card-v2 {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .project-card-body-v2 h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .project-card-description-v2 {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .project-card-footer-v2 {
+  border-top-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .demo-link-v2 {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .demo-link-v2:hover {
+  color: #0369a1 !important;
+}
+
+[data-theme="light"] .code-link-v2 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .code-link-v2:hover {
+  color: #0f172a !important;
+}
+
+/* Modal de CV en Modo Claro */
+[data-theme="light"] .modal-content {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] .modal-header h2 {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .modal-header p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .modal-close-btn {
+  color: #64748b !important;
+  background: #f1f5f9;
+}
+
+[data-theme="light"] .modal-close-btn:hover {
+  color: #0f172a !important;
+  background: #e2e8f0;
+}
+
+[data-theme="light"] .cv-option-card {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .cv-card-clean-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .cv-option-card p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .cv-tracker-input-box {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .cv-tracker-label {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .cv-tracker-input {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .modal-footer-note {
+  border-top-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+[data-theme="light"] .btn-modal-close-bottom {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .btn-modal-close-bottom:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Hero Social Pill en Modo Claro */
+[data-theme="light"] .hero-social-pill {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .hero-social-pill:hover {
+  background: rgba(2, 132, 199, 0.08) !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
 }
 
 /* Media query para móviles en recomendaciones y prevención de desborde */

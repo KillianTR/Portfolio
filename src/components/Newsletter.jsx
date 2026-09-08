@@ -110,7 +110,6 @@ function Newsletter() {
               <div className="email-avatar-small">KT</div>
               <div>
                 <strong>Killian Torrell</strong>
-                <span className="email-from-tag">&lt;killiantorrell@gmail.com&gt;</span>
               </div>
             </div>
             <span className="email-badge-issue">{current.date}</span>
