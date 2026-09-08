@@ -15,9 +15,9 @@ export const translations = {
     hero: {
       status: "Disponible para trabajar • Presencial, Híbrido o Remoto",
       location: "Reus, Tarragona (España)",
-      kicker: "Técnico Informático • Desarrollador Web Full Stack",
+      kicker: "Desarrollador Web Full Stack • Técnico Informático",
       subtitle:
-        "Especialista en administración de sistemas y soporte IT corporativo con experiencia en entornos de alta exigencia (AENA, AEQT, MediaMarkt). Apasionado por el desarrollo de aplicaciones web (React, Java Spring Boot), la automatización con Python y la creación de productos digitales reales.",
+        "Desarrollador web y de software enfocado en crear aplicaciones modernas (React, TypeScript, Java Spring Boot), utilidades y automatización con Python. Cuenta con una sólida base técnica en administración de sistemas y soporte TI corporativo en entornos de alta exigencia (AENA, AEQT, MediaMarkt).",
       ctaCv: "Descargar CV (PDF)",
       ctaContact: "Contactar",
       ctaExp: "Ver experiencia",
@@ -53,7 +53,7 @@ export const translations = {
       title: "Sobre Mí",
       subtitle:
         "Quién soy, qué me motiva en el sector tecnológico y qué busco aportar a un equipo.",
-      p1: "Soy Técnico en Sistemas (ASIX & SMX) y desarrollador web junior. Cuento con una base técnica muy práctica adquirida en puestos de soporte IT corporativo de alta responsabilidad (como en AENA, AEQT y MediaMarkt), gestionando desde infraestructuras de red y Active Directory hasta resolución ágil de incidencias.",
+      p1: "Soy desarrollador web full stack y técnico en sistemas (ASIX & SMX). Mi foco principal y vocación actual es la programación y la creación de aplicaciones y herramientas de software (React, JavaScript, Java, Python), respaldado por una base técnica muy práctica adquirida en puestos de soporte IT corporativo de alta responsabilidad (como en AENA, AEQT y MediaMarkt), gestionando desde infraestructuras de red y Active Directory hasta resolución ágil de incidencias.",
       p2: "En paralelo, mi gran pasión y foco de proyección es el desarrollo web y la automatización. Me formé a través de un bootcamp intensivo en Java Full Stack y dedico mi tiempo libre a crear proyectos reales (desde software para simracing en Patreon hasta aplicaciones en React/Next.js y scripts en Python).",
       p3: "Me defino como una persona curiosa, resolutiva y con una mentalidad orientada al '1% mejor cada día': si hay algo que no sé, investigo, aprendo rápido y lo pongo en práctica.",
       interests: {
@@ -136,9 +136,9 @@ export const translations = {
     hero: {
       status: "Disponible per treballar • Presencial, Híbrid o Remot",
       location: "Reus, Tarragona (Espanya)",
-      kicker: "Tècnic Informàtic • Desenvolupador Web Full Stack",
+      kicker: "Desenvolupador Web Full Stack • Tècnic Informàtic",
       subtitle:
-        "Especialista en administració de sistemes i suport TI corporatiu amb experiència en entorns d'alta exigència (AENA, AEQT, MediaMarkt). Apassionat pel desenvolupament d'aplicacions web (React, Java Spring Boot), l'automatització amb Python i la creació de productes digitals reals.",
+        "Desenvolupador web i de programari enfocat en crear aplicacions modernes (React, TypeScript, Java Spring Boot), utilitats i automatització amb Python. Compta amb una sòlida base tècnica en administració de sistemes i suport TI corporatiu en entorns d'alta exigència (AENA, AEQT, MediaMarkt).",
       ctaCv: "Descarregar CV (PDF)",
       ctaContact: "Contactar",
       ctaExp: "Veure experiència",
@@ -174,7 +174,7 @@ export const translations = {
       title: "Sobre Mi",
       subtitle:
         "Qui soc, què em motiva en el sector tecnològic i què busco aportar a un equip.",
-      p1: "Soc Tècnic en Sistemes (ASIX & SMX) i desenvolupador web junior. Compto amb una base tècnica molt pràctica adquirida en llocs de suport TI corporatiu d'alta responsabilitat (com a AENA, AEQT i MediaMarkt), gestionant des d'infraestructures de xarxa i Active Directory fins a resolució àgil d'incidències.",
+      p1: "Soc desenvolupador web full stack i tècnic en sistemes (ASIX & SMX). El meu focus principal i vocació actual és la programació i la creació d'aplicacions i eines de programari (React, JavaScript, Java, Python), recolzat per una base tècnica molt pràctica adquirida en llocs de suport TI corporatiu d'alta responsabilitat (com a AENA, AEQT i MediaMarkt), gestionant des d'infraestructures de xarxa i Active Directory fins a resolució àgil d'incidències.",
       p2: "En paral·lel, la meva gran passió i focus de projecció és el desenvolupament web i l'automatització. Em vaig formar mitjançant un bootcamp intensiu en Java Full Stack i dedico el meu temps lliure a crear projectes reals (des de programari per a simracing a Patreon fins a aplicacions en React/Next.js i scripts en Python).",
       p3: "Em defineixo com una persona curiosa, resolutiva i amb una mentalitat orientada a 'millorar un 1% cada dia': si hi ha alguna cosa que no sé, investigo, aprenc ràpid i ho poso en pràctica.",
       interests: {
