@@ -2186,6 +2186,35 @@ button:focus-visible {
   font-weight: 700;
 }
 
+.form-privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  margin-top: 8px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.form-privacy-note svg {
+  color: var(--accent);
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .form-privacy-note,
+body.light-mode .form-privacy-note {
+  color: #64748b;
+}
+
+[data-theme="light"] .form-privacy-note svg,
+body.light-mode .form-privacy-note svg {
+  color: #0284c7;
+}
+
 .contact-channels-column {
   display: flex;
   flex-direction: column;

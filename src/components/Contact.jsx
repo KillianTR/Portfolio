@@ -9,12 +9,14 @@ import {
   FiLinkedin,
   FiGithub,
   FiDownload,
+  FiLock,
 } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
+import { getFormSubmitUrl, getContactEmail } from "../config/contactConfig";
 
 function Contact({ onOpenCvModal }) {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", honeypot: "" });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -24,8 +26,18 @@ function Contact({ onOpenCvModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+
+    // Si el campo trampa (honeypot) fue rellenado por un bot, simular envío sin disparar nada
+    if (formData.honeypot && formData.honeypot.trim() !== "") {
+      setTimeout(() => {
+        setSent(true);
+        setSending(false);
+      }, 600);
+      return;
+    }
+
     try {
-      const res = await fetch("https://formsubmit.co/ajax/killiantorrell@gmail.com", {
+      const res = await fetch(getFormSubmitUrl(), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,21 +49,24 @@ function Contact({ onOpenCvModal }) {
           Mensaje: formData.message,
           _subject: `Nuevo mensaje de ${formData.name} desde Portfolio`,
           _captcha: "false",
+          _honey: formData.honeypot || "",
         }),
       });
       if (res.ok) {
         setSent(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", honeypot: "" });
       } else {
+        const contactEmail = getContactEmail();
         window.open(
-          `mailto:killiantorrell@gmail.com?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
+          `mailto:${contactEmail}?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
           "_blank"
         );
         setSent(true);
       }
     } catch (err) {
+      const contactEmail = getContactEmail();
       window.open(
-        `mailto:killiantorrell@gmail.com?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
+        `mailto:${contactEmail}?subject=Contacto Portfolio - ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`,
         "_blank"
       );
       setSent(true);
@@ -114,6 +129,18 @@ function Contact({ onOpenCvModal }) {
               ></textarea>
             </div>
 
+            {/* Campo trampa antispam (Honeypot invisible para humanos, bloquea bots) */}
+            <input
+              type="text"
+              name="_honey"
+              value={formData.honeypot}
+              onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
             <button
               type="submit"
               className="btn-primary btn-submit-contact"
@@ -126,6 +153,12 @@ function Contact({ onOpenCvModal }) {
                 ? (lang === "es" ? "¡Mensaje enviado con éxito!" : "Missatge enviat amb èxit!")
                 : t.contact.sendBtn}
             </button>
+
+            {/* Aviso de Privacidad y Datos Sensibles */}
+            <p className="form-privacy-note">
+              <FiLock style={{ marginRight: 6, flexShrink: 0 }} />
+              <span>{t.contact.privacyNotice}</span>
+            </p>
 
             {sent && (
               <p className="form-success-note">
