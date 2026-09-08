@@ -3659,6 +3659,121 @@ body {
   }
 }
 
+/* ==========================================================================
+   Barra superior de progreso de lectura (Scroll Progress Indicator)
+   ========================================================================== */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 50%, #2563eb 100%);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.75), 0 0 20px rgba(14, 165, 233, 0.4);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  pointer-events: none;
+  transform-origin: left;
+}
 
+[data-theme="light"] .reading-progress-bar,
+body.light-mode .reading-progress-bar {
+  background: linear-gradient(90deg, #0284c7 0%, #0ea5e9 50%, #0369a1 100%);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.45);
+}
 
+/* ==========================================================================
+   Botón flotante "Volver arriba" (Scroll to Top Button)
+   ========================================================================== */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 95;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.85);
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.28s ease, border-color 0.22s ease, color 0.22s ease,
+    box-shadow 0.22s ease, background-color 0.22s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:hover {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.5), 0 8px 25px rgba(0, 0, 0, 0.55);
+  transform: translateY(-3px) scale(1.06);
+}
+
+.back-to-top-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.back-to-top-btn .back-to-top-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.3;
+  transition: transform 0.22s ease;
+}
+
+.back-to-top-btn:hover .back-to-top-icon {
+  transform: translateY(-1.5px);
+}
+
+/* Modo claro */
+[data-theme="light"] .back-to-top-btn,
+body.light-mode .back-to-top-btn {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(203, 213, 225, 0.95);
+  color: #334155;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .back-to-top-btn:hover,
+body.light-mode .back-to-top-btn:hover {
+  background: #ffffff;
+  border-color: #0284c7;
+  color: #0284c7;
+  box-shadow: 0 0 16px rgba(2, 132, 199, 0.38), 0 8px 22px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* Responsividad en móviles */
+@media (max-width: 640px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .back-to-top-btn .back-to-top-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

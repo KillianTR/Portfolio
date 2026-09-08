@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import NewsletterPage from "./pages/NewsletterPage";
 import CvModal from "./components/CvModal";
+import ScrollFeatures from "./components/ScrollFeatures";
 import "./styles.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <ScrollFeatures />
       <Navbar onOpenCvModal={openCvModal} />
       <div className="app">
         <main>
