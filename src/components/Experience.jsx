@@ -57,18 +57,20 @@ const experienceData = {
     {
       company: "Princess Hotels & Resorts",
       location: "Reus, Tarragona",
-      role: "Técnico Informático / IT Helpdesk (Prácticas)",
+      role: "Técnico Informático / IT Helpdesk (Jornada Completa)",
       period: "Septiembre 2022 – Diciembre 2022",
-      badge: "Prácticas de sistemas",
+      badge: "Jornada Completa (3 meses)",
       description:
-        "Soporte a oficinas centrales, red de hoteles, sistemas de bases de datos y desarrollo de herramienta interna de tickets.",
+        "Soporte IT Helpdesk corporativo, administración global de identidades en Active Directory, auditoría automatizada de facturas y gestión de redes e infraestructura.",
       highlights: [
-        "Soporte técnico Helpdesk N1/N2 en oficinas centrales y usuarios tanto de forma presencial como en remoto.",
-        "Mantenimiento de equipamiento, configuración de terminales de punto de venta (TPV) y redes telefónicas.",
-        "Configuración y segmentación de VLANs y consultas/mantenimiento de bases de datos relacionales sobre Oracle SQL.",
-        "Creación de un programa de uso interno para la gestión y seguimiento de incidencias técnicas.",
+        "Administración y control de accesos en Active Directory (usuarios, permisos y grupos) para hoteles de la cadena a nivel internacional.",
+        "Soporte Helpdesk presencial y remoto a oficinas centrales: resolución ágil de incidencias en pantallas, software, ofimática y red.",
+        "Auditoría y comprobación de facturación IT mediante software automatizado de lectura y verificación de PDFs.",
+        "Mantenimiento preventivo, soporte a TPVs, telefonía IP, segmentación de VLANs y consultas en Oracle SQL.",
+        "Creación de una herramienta de software interno para agilizar el registro y seguimiento de tickets técnicos.",
+        "Coordinación y traslado de material y equipamiento informático durante la mudanza a las nuevas oficinas centrales.",
       ],
-      tech: ["Helpdesk N1/N2", "VLANs", "TPVs", "Oracle SQL", "Herramienta Interna"],
+      tech: ["Active Directory", "IT Helpdesk", "Auditoría Facturación", "Oracle SQL", "VLANs", "TPVs"],
     },
     {
       company: "Plateforme des Aidants",
@@ -77,12 +79,15 @@ const experienceData = {
       period: "Abril 2022 – Julio 2022",
       badge: "Experiencia Internacional",
       description:
-        "Estancia laboral internacional en Francia centrada en desarrollo frontend y dinamización web en entorno multicultural.",
+        "Estancia laboral internacional en Francia: desarrollo web WordPress, rebranding institucional, diseño de cartelería y creación multimedia.",
       highlights: [
-        "Desarrollo, estructuración y mantenimiento frontend de dos páginas web corporativas en WordPress.",
-        "Programación de elementos interactivos con HTML5, CSS3, JavaScript y PHP.",
+        "Desarrollo y mantenimiento frontend de dos sitios web corporativos en CMS WordPress, PHP y JavaScript.",
+        "Participación activa en el rebranding integral de la asociación y de entidad colaboradora, renovando su identidad visual.",
+        "Diseño de cartelería, folletos y material promocional con Canva junto a compañera de equipo para campañas informativas.",
+        "Edición y montaje de vídeo y creatividades para redes sociales (LinkedIn e Instagram), potenciando el alcance institucional.",
+        "Asistencia técnica y representación en actos, charlas y eventos públicos organizados por la entidad.",
       ],
-      tech: ["WordPress", "JavaScript", "PHP", "HTML5/CSS3", "Francés B1"],
+      tech: ["WordPress", "Rebranding", "Canva", "Edición Vídeo", "Redes Sociales", "Francés B1"],
     },
     {
       company: "Activa Mutua",
@@ -91,12 +96,14 @@ const experienceData = {
       period: "Noviembre 2019 – Abril 2020",
       badge: "Prácticas de sistemas",
       description:
-        "Soporte técnico Helpdesk N1 y resolución de incidencias para usuarios internos de la entidad.",
+        "Soporte técnico Helpdesk N1, cableado y parcheo de red, y control integral de inventario de almacén IT.",
       highlights: [
-        "Soporte técnico N1 y gestión de incidencias para usuarios internos de la mutua.",
-        "Mantenimiento de equipos, redes locales y consultas sobre bases de datos corporativas con Oracle SQL.",
+        "Soporte técnico Helpdesk N1 y atención directa a usuarios de la mutua para resolución de problemas ofimáticos, software corporativo y periféricos.",
+        "Gestión y parcheo de red: verificación y corrección de puertos ethernet en regletas/patch panels y adecuación de conexiones en armarios rack.",
+        "Organización y control de inventario de almacén IT: catalogación exhaustiva y registro en base de datos/Excel de sobremesas, All-in-One, portátiles, pantallas y accesorios.",
+        "Mantenimiento preventivo de estaciones de trabajo, gestión de cuentas en Active Directory y consultas a bases de datos con Oracle SQL.",
       ],
-      tech: ["Oracle SQL", "Redes Locales", "Soporte N1", "Active Directory"],
+      tech: ["Helpdesk N1", "Cableado de Red & Racks", "Inventario IT", "Oracle SQL", "Active Directory"],
     },
     {
       company: "Andrés Pintaluba S.A.",
@@ -105,12 +112,13 @@ const experienceData = {
       period: "Mayo 2016 – Noviembre 2016",
       badge: "Prácticas SMX",
       description:
-        "Prácticas formativas de Grado Medio (SMX) enfocadas a microinformática, hardware y puesta a punto de equipos corporativos.",
+        "Prácticas formativas de Grado Medio (SMX) enfocadas a microinformática, hardware, helpdesk de oficina y puesta a punto de equipos.",
       highlights: [
-        "Reparación, clonado masivo y puesta a punto de puestos de trabajo corporativos.",
-        "Mantenimiento preventivo de hardware y diagnóstico técnico de puestos informáticos.",
+        "Soporte técnico Helpdesk de microinformática por toda la sede central: resolución ágil de incidencias de pantallas, ofimática, acceso a archivos y software corporativo.",
+        "Clonado masivo de discos duros, configuración de sistemas operativos y puesta a punto de puestos informáticos para personal.",
+        "Mantenimiento preventivo, diagnóstico y sustitución de componentes de hardware y periféricos.",
       ],
-      tech: ["Clonación de Sistemas", "Hardware", "Mantenimiento PC", "SMX"],
+      tech: ["Helpdesk Ofimático", "Hardware & Pantallas", "Clonación Discos", "Puesta a Punto PC", "SMX"],
     },
   ],
   ca: [
@@ -167,18 +175,20 @@ const experienceData = {
     {
       company: "Princess Hotels & Resorts",
       location: "Reus, Tarragona",
-      role: "Tècnic Informàtic / IT Helpdesk (Pràctiques)",
+      role: "Tècnic Informàtic / IT Helpdesk (Jornada Completa)",
       period: "Setembre 2022 – Desembre 2022",
-      badge: "Pràctiques de sistemes",
+      badge: "Jornada Completa (3 mesos)",
       description:
-        "Suport a oficines centrals i usuaris, xarxes de dades i telefonia, i creació d'eina interna d'incidències.",
+        "Suport IT Helpdesk corporatiu, administració global d'identitats a Active Directory, auditoria automatitzada de factures i gestió de xarxes i infraestructura.",
       highlights: [
-        "Suport tècnic Helpdesk N1/N2 a oficines centrals i usuaris de manera presencial i en remot.",
-        "Manteniment i reparació d'equips informàtics, configuració de terminals de punt de venda (TPV) i xarxes telefòniques.",
-        "Configuració de VLANs i gestió de consultes i manteniment de dades sobre Oracle SQL.",
-        "Creació d'un programa d'ús intern per a la gestió i seguiment d'incidències tècniques.",
+        "Administració i control d'accessos a Active Directory (usuaris, permisos i grups) per a hotels de la cadena a nivell internacional.",
+        "Suport Helpdesk presencial i remot a oficines centrals: resolució àgil d'incidències en pantalles, programari, ofimàtica i xarxa.",
+        "Auditoria i comprovació de facturació IT mitjançant programari automatitzat de lectura i verificació de PDFs.",
+        "Manteniment preventiu, suport a TPVs, telefonia IP, segmentació de VLANs i consultes a Oracle SQL.",
+        "Creació d'una eina de programari intern per agilitzar el registre i seguiment de tiquets tècnics.",
+        "Coordinació i trasllat de material i equipament informàtic durant la mudança a les noves oficines centrals.",
       ],
-      tech: ["Helpdesk N1/N2", "VLANs", "TPVs", "Oracle SQL", "Eina Interna"],
+      tech: ["Active Directory", "IT Helpdesk", "Auditoria Facturació", "Oracle SQL", "VLANs", "TPVs"],
     },
     {
       company: "Plateforme des Aidants",
@@ -187,12 +197,15 @@ const experienceData = {
       period: "Abril 2022 – Juliol 2022",
       badge: "Experiència Internacional",
       description:
-        "Estada laboral internacional a França centrada en el desenvolupament frontend de plataformes web.",
+        "Estada laboral internacional a França: desenvolupament web WordPress, rebranding institucional, disseny de cartelleria i creació multimèdia.",
       highlights: [
-        "Desenvolupament, estructuració i manteniment frontend de dues pàgines web en WordPress.",
-        "Programació d'elements interactius amb HTML, CSS, JavaScript i PHP.",
+        "Desenvolupament i manteniment frontend de dos llocs web corporatius en CMS WordPress, PHP i JavaScript.",
+        "Participació activa en el rebranding integral de l'associació i d'entitat col·laboradora, renovant la seva identitat visual.",
+        "Disseny de cartelleria, fulletons i material promocional amb Canva juntament amb companya d'equip per a campanyes informatives.",
+        "Edició i muntatge de vídeo i creativitats per a xarxes socials (LinkedIn i Instagram), potenciant l'abast institucional.",
+        "Assistència tècnica i representació en actes, xerrades i esdeveniments públics organitzats per l'entitat.",
       ],
-      tech: ["WordPress", "JavaScript", "PHP", "HTML5/CSS3", "Francès B1"],
+      tech: ["WordPress", "Rebranding", "Canva", "Edició Vídeo", "Xarxes Socials", "Francès B1"],
     },
     {
       company: "Activa Mútua",
@@ -201,12 +214,14 @@ const experienceData = {
       period: "Novembre 2019 – Abril 2020",
       badge: "Pràctiques de sistemes",
       description:
-        "Suport tècnic Helpdesk N1 i resolució d'incidències per a usuaris interns de l'entitat.",
+        "Suport tècnic Helpdesk N1, cablejat i patxeig de xarxa, i control integral d'inventari de magatzem IT.",
       highlights: [
-        "Suport tècnic N1 i gestió d'incidències per a usuaris interns de la mútua.",
-        "Manteniment d'equips, xarxes locals i consultes sobre bases de dades corporatives amb Oracle SQL.",
+        "Suport tècnic Helpdesk N1 i atenció directa a usuaris de la mútua per a resolució de problemes ofimàtics, programari corporatiu i perifèrics.",
+        "Gestió i patxeig de xarxa: verificació i correcció de ports ethernet en regletes/patch panels i adequació de connexions en armaris rack.",
+        "Organització i control d'inventari de magatzem IT: catalogació exhaustiva i registre en base de dades/Excel de sobretaules, All-in-One, portàtils, pantalles i accessoris.",
+        "Manteniment preventiu d'estacions de treball, gestió de comptes a Active Directory i consultes a bases de dades amb Oracle SQL.",
       ],
-      tech: ["Oracle SQL", "Xarxes Locals", "Suport N1", "Active Directory"],
+      tech: ["Helpdesk N1", "Cablejat de Xarxa & Racks", "Inventari IT", "Oracle SQL", "Active Directory"],
     },
     {
       company: "Andrés Pintaluba S.A.",
@@ -215,12 +230,13 @@ const experienceData = {
       period: "Maig 2016 – Novembre 2016",
       badge: "Pràctiques SMX",
       description:
-        "Pràctiques formatives de Grau Mitjà (SMX) enfocades a microinformàtica, maquinari i posada a punt d'equips.",
+        "Pràctiques formatives de Grau Mitjà (SMX) enfocades a microinformàtica, maquinari, helpdesk d'oficina i posada a punt d'equips.",
       highlights: [
-        "Reparació, clonatge massiu i posada a punt d'estacions de treball corporatives.",
-        "Manteniment preventiu de maquinari i diagnòstic tècnic de llocs informàtics.",
+        "Suport tècnic Helpdesk de microinformàtica per tota la seu central: resolució àgil d'incidències de pantalles, ofimàtica, accés a fitxers i programari corporatiu.",
+        "Clonatge massiu de discs durs, configuració de sistemes operatius i posada a punt de llocs informàtics per al personal.",
+        "Manteniment preventiu, diagnòstic i substitució de components de maquinari i perifèrics.",
       ],
-      tech: ["Clonatge de Sistemes", "Hardware", "Manteniment PC", "SMX"],
+      tech: ["Helpdesk Ofimàtic", "Hardware & Pantalles", "Clonatge Discs", "Posada a Punt PC", "SMX"],
     },
   ],
 };
