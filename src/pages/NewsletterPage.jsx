@@ -498,8 +498,8 @@ function NewsletterPage() {
                     <strong>Killian Torrell</strong>
                     <span className="author-role-sub">
                       {lang === "es"
-                        ? "Técnico en Sistemas & Desarrollador Web"
-                        : "Tècnic en Sistemes & Desenvolupador Web"}
+                        ? "Desarrollador Web Full Stack & Técnico en Sistemas"
+                        : "Desenvolupador Web Full Stack & Tècnic en Sistemes"}
                     </span>
                   </div>
                 </div>

@@ -18,8 +18,8 @@ function Footer({ onOpenCvModal }) {
           </div>
           <p className="footer-tagline">
             {lang === "es"
-              ? "Técnico Informático & Desarrollador Web Full Stack • Reus, Tarragona."
-              : "Tècnic Informàtic & Desenvolupador Web Full Stack • Reus, Tarragona."}
+              ? "Desarrollador Web Full Stack & Técnico Informático • Reus, Tarragona."
+              : "Desenvolupador Web Full Stack & Tècnic Informàtic • Reus, Tarragona."}
           </p>
         </div>
 
