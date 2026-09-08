@@ -1648,6 +1648,76 @@ button:focus-visible {
   color: #ffffff;
 }
 
+.confidential-code-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.confidential-code-pill .confidential-pill-icon,
+.confidential-code-pill svg {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.project-confidential-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border-left: 2.5px solid #f59e0b;
+  border-radius: 4px 8px 8px 4px;
+}
+
+.project-confidential-note svg {
+  color: #f59e0b;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Light mode overrides for confidential project elements */
+[data-theme="light"] .confidential-code-pill,
+body.light-mode .confidential-code-pill {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+[data-theme="light"] .confidential-code-pill .confidential-pill-icon,
+[data-theme="light"] .confidential-code-pill svg,
+body.light-mode .confidential-code-pill .confidential-pill-icon,
+body.light-mode .confidential-code-pill svg {
+  color: #d97706;
+}
+
+[data-theme="light"] .project-confidential-note,
+body.light-mode .project-confidential-note {
+  background: #f8fafc;
+  color: #475569;
+  border-left-color: #d97706;
+}
+
+[data-theme="light"] .project-confidential-note svg,
+body.light-mode .project-confidential-note svg {
+  color: #d97706;
+}
+
 /* --- FORMACIÓN Y CERTIFICACIONES --- */
 .education-grid {
   display: grid;

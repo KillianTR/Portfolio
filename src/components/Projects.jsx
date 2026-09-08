@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiExternalLink, FiGithub, FiDollarSign, FiLayers } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiDollarSign, FiLayers, FiLock } from "react-icons/fi";
 import { SiPatreon } from "react-icons/si";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
@@ -80,9 +80,13 @@ const projectsData = [
       es: "Plugin corporativo a medida desarrollado en WordPress y PHP para la Asociación de Empresas Químicas de Tarragona (AEQT). Automatiza la gestión, publicación y filtrado de ofertas y demandas de empleo sincronizadas mediante estructuras XML.",
       ca: "Plugin corporatiu a mida desenvolupat en WordPress i PHP per a l'Associació d'Empreses Químiques de Tarragona (AEQT). Automatitza la gestió, publicació i filtratge d'ofertes i demandes de feina sincronitzades mitjançant estructures XML.",
     },
-    image: "https://placehold.co/600x380/020617/38bdf8?text=AEQT+Plataforma+XML",
+    image: "/aeqt-xml-preview.svg",
     tech: ["WordPress", "PHP", "XML", "MySQL", "JavaScript", "Gestión Empleo"],
-    githubUrl: "https://github.com/KillianTR",
+    isConfidential: true,
+    confidentialNotice: {
+      es: "Código corporativo confidencial (propiedad de AEQT). No publicado en GitHub por contener convenios y estructuras reservadas.",
+      ca: "Codi corporatiu confidencial (propietat d'AEQT). No publicat a GitHub per contenir convenis i estructures reservades.",
+    },
   },
   {
     title: "Dashboard de Convenios en Python",
@@ -93,9 +97,13 @@ const projectsData = [
       es: "Script avanzado en Python para la verificación y automatización del control de fechas de vencimiento en convenios institucionales. Procesa hojas de cálculo Excel complejas y genera avisos automatizados que ahorran horas de supervisión manual.",
       ca: "Script avançat en Python per a la verificació i automatització del control de dates de venciment en convenis institucionals. Processa fulls de càlcul Excel complexos i genera avisos automatitzats que estalvien hores de supervisió manual.",
     },
-    image: "https://placehold.co/600x380/020617/38bdf8?text=Python+Dashboard+Excel",
+    image: "/python-convenios-preview.svg",
     tech: ["Python", "Pandas / Openpyxl", "Excel Automation", "PowerShell", "Reporting"],
-    githubUrl: "https://github.com/KillianTR",
+    isConfidential: true,
+    confidentialNotice: {
+      es: "Script interno para auditoría. Código reservado bajo confidencialidad por procesar convenios institucionales y datos protegidos.",
+      ca: "Script intern per a auditoria. Codi reservat sota confidencialitat per processar convenis institucionals i dades protegides.",
+    },
   },
   {
     title: "Software de Control de Stock e Incidencias",
@@ -106,9 +114,13 @@ const projectsData = [
       es: "Programas desarrollados ad-hoc durante etapas en MediaMarkt y Princess Hotels para optimizar procesos internos: control de inventario de repuestos en taller técnico y sistema de gestión/seguimiento de tickets de soporte con Oracle SQL.",
       ca: "Programes desenvolupats ad-hoc durant etapes a MediaMarkt i Princess Hotels per optimitzar processos interns: control d'inventari de recanvis al taller tècnic i sistema de gestió/seguiment d'incidències de suport amb Oracle SQL.",
     },
-    image: "https://placehold.co/600x380/020617/38bdf8?text=Herramientas+Internas+SQL",
+    image: "/stock-incidencias-preview.svg",
     tech: ["Oracle SQL", "Gestión de Stock", "Helpdesk N1/N2", "VLANs"],
-    githubUrl: "https://github.com/KillianTR",
+    isConfidential: true,
+    confidentialNotice: {
+      es: "Herramientas internas desarrolladas para taller y soporte IT (MediaMarkt / Princess). Código no público por ser propiedad de las empresas.",
+      ca: "Eines internes desenvolupades per a taller i suport TI (MediaMarkt / Princess). Codi no públic per ser propietat de les empreses.",
+    },
   },
 ];
 
@@ -172,6 +184,13 @@ function Projects() {
                 {project.description[lang] || project.description.es}
               </p>
 
+              {project.confidentialNotice && (
+                <p className="project-confidential-note">
+                  <FiLock style={{ marginRight: 6, flexShrink: 0 }} />
+                  <span>{project.confidentialNotice[lang] || project.confidentialNotice.es}</span>
+                </p>
+              )}
+
               <div className="project-card-tech-tags">
                 {project.tech.map((tech) => (
                   <span key={tech} className="tech-tag">
@@ -209,6 +228,18 @@ function Projects() {
                     <FiGithub style={{ marginRight: "6px" }} />
                     {t.projects.codeBtn}
                   </a>
+                )}
+
+                {project.isConfidential && (
+                  <div
+                    className="confidential-code-pill"
+                    title={project.confidentialNotice?.[lang] || project.confidentialNotice?.es}
+                  >
+                    <FiLock className="confidential-pill-icon" />
+                    <span>
+                      {lang === "es" ? "Código Privado / Corporativo" : "Codi Privat / Corporatiu"}
+                    </span>
+                  </div>
                 )}
               </div>
             </div>

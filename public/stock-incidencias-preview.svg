@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="toolsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="url(#toolsBg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60"/>
+    <line x1="0" y1="130" x2="600" y2="130"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="0" y1="270" x2="600" y2="270"/>
+    <line x1="100" y1="0" x2="100" y2="380"/>
+    <line x1="220" y1="0" x2="220" y2="380"/>
+    <line x1="340" y1="0" x2="340" y2="380"/>
+    <line x1="460" y1="0" x2="460" y2="380"/>
+  </g>
+
+  <!-- Window Container -->
+  <rect x="40" y="35" width="520" height="310" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="40" y="35" width="520" height="42" rx="14" fill="#1e293b"/>
+  <rect x="40" y="65" width="520" height="12" fill="#1e293b"/>
+  <line x1="40" y1="77" x2="560" y2="77" stroke="#334155" stroke-width="1"/>
+
+  <!-- Window Controls -->
+  <circle cx="65" cy="56" r="6" fill="#ef4444" opacity="0.85"/>
+  <circle cx="85" cy="56" r="6" fill="#f59e0b" opacity="0.85"/>
+  <circle cx="105" cy="56" r="6" fill="#10b981" opacity="0.85"/>
+
+  <!-- Title -->
+  <text x="300" y="60" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">gestión_it :: Control de Stock &amp; Tickets [Oracle SQL]</text>
+
+  <!-- Content Dashboard -->
+  <!-- SQL Query Bar -->
+  <rect x="65" y="98" width="470" height="36" rx="6" fill="#020617" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="121" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="12">SELECT <tspan fill="#e2e8f0">id, item_repuesto, stock, ubicacion</tspan> FROM <tspan fill="#a78bfa">taller_inventario</tspan>;</text>
+
+  <!-- Metric Cards Row -->
+  <!-- Card 1 -->
+  <rect x="65" y="150" width="145" height="74" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="174" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Repuestos Taller</text>
+  <text x="80" y="206" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="22" font-weight="700">100% OK</text>
+
+  <!-- Card 2 -->
+  <rect x="225" y="150" width="150" height="74" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="240" y="174" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Tickets Resueltos</text>
+  <text x="240" y="206" fill="#10b981" font-family="system-ui, sans-serif" font-size="22" font-weight="700">98.6%</text>
+
+  <!-- Card 3 -->
+  <rect x="390" y="150" width="145" height="74" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="405" y="174" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Tiempo Respuesta</text>
+  <text x="405" y="206" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="22" font-weight="700">&lt; 15 min</text>
+
+  <!-- Audit Table Row Mockup -->
+  <rect x="65" y="240" width="470" height="70" rx="8" fill="#020617" stroke="#1e293b" stroke-width="1"/>
+  <text x="85" y="265" fill="#cbd5e1" font-family="ui-monospace, monospace" font-size="11.5">[MediaMarkt / Princess] • Seguimiento de inventario y partes</text>
+  <text x="85" y="290" fill="#64748b" font-family="ui-monospace, monospace" font-size="11">&gt; Base de datos interna optimizada con Oracle SQL para agilizar el taller</text>
+</svg>

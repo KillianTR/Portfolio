@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pythonBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="60%" stop-color="#0c1829"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="pyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="url(#pythonBg)"/>
+
+  <!-- Tech Grid -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="70" x2="600" y2="70"/>
+    <line x1="0" y1="140" x2="600" y2="140"/>
+    <line x1="0" y1="210" x2="600" y2="210"/>
+    <line x1="0" y1="280" x2="600" y2="280"/>
+    <line x1="80" y1="0" x2="80" y2="380"/>
+    <line x1="200" y1="0" x2="200" y2="380"/>
+    <line x1="320" y1="0" x2="320" y2="380"/>
+    <line x1="440" y1="0" x2="440" y2="380"/>
+    <line x1="540" y1="0" x2="540" y2="380"/>
+  </g>
+
+  <!-- Terminal Window Container -->
+  <rect x="40" y="35" width="520" height="310" rx="14" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="40" y="35" width="520" height="42" rx="14" fill="#162038"/>
+  <rect x="40" y="65" width="520" height="12" fill="#162038"/>
+  <line x1="40" y1="77" x2="560" y2="77" stroke="#334155" stroke-width="1"/>
+
+  <!-- Window Controls -->
+  <circle cx="65" cy="56" r="6" fill="#ef4444" opacity="0.85"/>
+  <circle cx="85" cy="56" r="6" fill="#f59e0b" opacity="0.85"/>
+  <circle cx="105" cy="56" r="6" fill="#10b981" opacity="0.85"/>
+
+  <!-- Title -->
+  <text x="300" y="60" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">terminal :: audit_convenios.py [Python 3.11]</text>
+
+  <!-- Terminal Content -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12">
+    <!-- Command -->
+    <text x="65" y="112" fill="#38bdf8">&gt; <tspan fill="#e2e8f0">python -m convenios_audit --source=internal_db.xlsx --export=alerts</tspan></text>
+    
+    <text x="65" y="140" fill="#94a3b8">[+] Cargando librerías Pandas y OpenPyXL... <tspan fill="#10b981">OK</tspan></text>
+    <text x="65" y="164" fill="#94a3b8">[+] Leyendo 184 registros de convenios institucionales...</text>
+    
+    <!-- Progress bar -->
+    <rect x="65" y="180" width="380" height="8" rx="4" fill="#1e293b"/>
+    <rect x="65" y="180" width="380" height="8" rx="4" fill="url(#pyGrad)"/>
+    <text x="460" y="188" fill="#38bdf8" font-size="11">100%</text>
+
+    <!-- Results Box -->
+    <rect x="65" y="206" width="470" height="92" rx="8" fill="#020617" stroke="#1e293b" stroke-width="1"/>
+    
+    <text x="85" y="232" fill="#cbd5e1" font-weight="600">INFORME DE VERIFICACIÓN DE VENCIMIENTOS:</text>
+    <text x="85" y="254" fill="#10b981">✔ Convenios activos al día: 172</text>
+    <text x="85" y="274" fill="#f59e0b">⚠ Alertas de renovación generadas: 12 (Notificaciones enviadas)</text>
+  </g>
+
+  <!-- Tag -->
+  <rect x="365" y="306" width="170" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <circle cx="380" cy="319" r="4" fill="#10b981"/>
+  <text x="392" y="323" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">Automatización &amp; Scripts</text>
+</svg>
