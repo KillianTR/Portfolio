@@ -106,18 +106,18 @@ function Navbar({ onOpenCvModal }) {
             <span className="nav-btn-text">{t.nav.about}</span>
           </button>
           <Link
-            to="/recomendaciones"
-            className={`nav-link-route ${location.pathname === "/recomendaciones" ? "active" : ""}`}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <span className="nav-btn-text">{t.nav.recommendations}</span>
-          </Link>
-          <Link
             to="/newsletter"
             className={`nav-link-route ${location.pathname === "/newsletter" ? "active" : ""}`}
             onClick={() => setMobileMenuOpen(false)}
           >
             <span className="nav-btn-text">{t.nav.newsletter}</span>
+          </Link>
+          <Link
+            to="/recomendaciones"
+            className={`nav-link-route ${location.pathname === "/recomendaciones" ? "active" : ""}`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span className="nav-btn-text">{t.nav.recommendations}</span>
           </Link>
         </nav>
 
@@ -217,18 +217,18 @@ function Navbar({ onOpenCvModal }) {
             {t.nav.about}
           </button>
           <Link
-            to="/recomendaciones"
-            className="mobile-nav-link"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {t.nav.recommendations}
-          </Link>
-          <Link
             to="/newsletter"
             className="mobile-nav-link"
             onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.newsletter}
+          </Link>
+          <Link
+            to="/recomendaciones"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {t.nav.recommendations}
           </Link>
           <button onClick={() => handleNavClick("#contacto")} className="mobile-nav-link">
             {t.nav.contact}

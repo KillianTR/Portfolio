@@ -30,8 +30,8 @@ function Footer({ onOpenCvModal }) {
           <a href="#proyectos">{t.nav.projects}</a>
           <a href="#formacion">{t.nav.education}</a>
           <a href="#sobre-mi">{t.nav.about}</a>
-          <Link to="/recomendaciones">{t.nav.recommendations}</Link>
           <Link to="/newsletter">{t.nav.newsletter}</Link>
+          <Link to="/recomendaciones">{t.nav.recommendations}</Link>
         </div>
 
         <div className="footer-social-col">
