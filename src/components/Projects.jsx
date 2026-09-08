@@ -57,6 +57,21 @@ const projectsData = [
     githubUrl: "https://github.com/KillianTR",
   },
   {
+    title: "Taskbar Music Widget",
+    category: "systems",
+    badge: { es: "Proyecto Windows", ca: "Projecte Windows" },
+    badgeType: "default",
+    description: {
+      es: "Widget nativo para la barra de tareas de Windows 10/11 que muestra en tiempo real la música en reproducción (Spotify, YouTube, navegadores) con controles multimedia, ajuste de volumen mediante rueda del ratón, flyout flotante con carátula y consumo mínimo (<0.1% CPU).",
+      ca: "Widget natiu per a la barra de tasques de Windows 10/11 que mostra en temps real la música en reproducció (Spotify, YouTube, navegadors) amb controls multimèdia, ajust de volum mitjançant roda del ratolí, flyout flotant amb caràtula i consum mínim (<0.1% CPU).",
+    },
+    image: "/taskbar-widget-demo.gif",
+    tech: ["C#", ".NET 8", "WPF", "Win32 API", "WinRT", "Spotify API"],
+    demoUrl: "https://github.com/KillianTR/TaskbarMusicWidget",
+    demoText: { es: "Ver Proyecto", ca: "Veure Projecte" },
+    githubUrl: "https://github.com/KillianTR/TaskbarMusicWidget",
+  },
+  {
     title: "Plataforma XML AEQT",
     category: "web",
     badge: { es: "Sector Químico Tarragona", ca: "Sector Químic Tarragona" },
@@ -80,19 +95,6 @@ const projectsData = [
     },
     image: "https://placehold.co/600x380/020617/38bdf8?text=Python+Dashboard+Excel",
     tech: ["Python", "Pandas / Openpyxl", "Excel Automation", "PowerShell", "Reporting"],
-    githubUrl: "https://github.com/KillianTR",
-  },
-  {
-    title: "TaskbarWidget para Windows",
-    category: "systems",
-    badge: { es: "Utilidad de Escritorio", ca: "Utilitat d'Escriptori" },
-    badgeType: "default",
-    description: {
-      es: "Widget y utilidad de personalización para la barra de tareas de Windows. Proporciona métricas rápidas de productividad, accesos directos y un diseño integrado sin consumo excesivo de recursos de sistema.",
-      ca: "Widget i utilitat de personalització per a la barra de tasques de Windows. Proporciona mètriques ràpides de productivitat, dreceres i un disseny integrat sense consum excessiu de recursos del sistema.",
-    },
-    image: "https://placehold.co/600x380/020617/38bdf8?text=TaskbarWidget+Windows",
-    tech: ["Windows API", "Desktop UI", "Productividad", "C# / Scripting"],
     githubUrl: "https://github.com/KillianTR",
   },
   {
