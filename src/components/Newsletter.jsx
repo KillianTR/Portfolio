@@ -1,59 +1,60 @@
 import { useState } from "react";
-import { FiMail, FiSend, FiCheck, FiBookOpen } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { FiMail, FiSend, FiCheck, FiBookOpen, FiArrowRight } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
 const sampleIssuesData = {
   es: [
     {
-      id: "auto",
-      title: "Cómo estoy automatizando mi trabajo con Python y scripts",
-      date: "Edición reciente",
+      id: "auto-excel-python",
+      title: "Cómo pasé de perder horas en Excel a automatizar procesos con Python",
+      date: "Edición #01 • Lunes",
       preview:
-        "Cuando empecé a trabajar en soporte y gestión técnica, me di cuenta de la cantidad de tiempo que se pierde copiando datos de un Excel a otro o revisando fechas de vencimiento a mano. Decidí que cada tarea repetitiva debía tener su propio script. El resultado no solo fue ahorrar horas semanales, sino...",
-      fullHint: "Suscríbete gratis para leer cómo estructuré los scripts y qué librerías me ahorraron más tiempo.",
+        "En entornos corporativos y soporte técnico vi a compañeros contrastar cientos de fechas de convenios a mano. Decidí que ninguna tarea repetitiva debía hacerse dos veces si un script podía resolverla en 3 segundos. El resultado no solo fue ahorrar horas semanales, sino cambiar la percepción del departamento de TI...",
+      fullHint: "Lee la edición completa con el código y la arquitectura del script en la sección Newsletter.",
     },
     {
-      id: "tech-path",
-      title: "De técnico de sistemas a programador: lo que aprendí",
-      date: "Reflexión",
+      id: "sysadmin-to-developer",
+      title: "De soporte informático y sistemas a desarrollador: La ventaja oculta",
+      date: "Edición #02 • Lunes",
       preview:
-        "Venir de la administración de sistemas (ASIX/SMX) te da una visión que muchos desarrolladores tardan años en adquirir: entiendes de verdad cómo viajan los paquetes en la red, cómo funciona un proxy, por qué falla un certificado SSL o cómo responde un servidor. Al dar el salto al desarrollo web con React y Java...",
-      fullHint: "Suscríbete gratis para leer la comparativa entre la mentalidad de soporte y la de creación de software.",
+        "Muchos juniors se lanzan a picar JavaScript sin entender qué ocurre tras la pantalla. Haber pasado por racks, Active Directory y cables de red me dio la brújula que hoy me hace resolver bugs en minutos. Entender qué ocurre en el metal y la red elimina el síndrome de la 'caja negra'...",
+      fullHint: "Lee la edición completa con ejemplos reales en MediaMarkt, Princess y AENA.",
     },
     {
-      id: "one-percent",
-      title: "Mejorar un 1% cada día en el mundo tecnológico",
-      date: "Productividad",
+      id: "one-percent-rule",
+      title: "La regla del 1%: Construir proyectos reales compaginando trabajo, estudio y vida",
+      date: "Edición #03 • Lunes",
       preview:
-        "El sector tecnológico puede abrumar con la cantidad de frameworks y novedades que salen cada mes. La clave que me ha funcionado no es intentar aprenderlo todo de golpe, sino dedicar 45 minutos al día a construir proyectos reales (como mi Pomodoro Timer o mi HUD para simracing)...",
-      fullHint: "Suscríbete gratis para recibir hábitos y recursos recomendados que comparto periódicamente.",
+        "Cuando compaginaba prácticas por la mañana, clases por la tarde y fines de semana trabajando en Port Aventura, aprendí que la constancia de 45 minutos al día vence a los sprints de agotamiento. De esa inercia silenciosa nacieron mi Pomodoro Timer y mi HUD para Assetto Corsa en Patreon...",
+      fullHint: "Lee la edición completa sobre el poder del interés compuesto y la técnica de bloques.",
     },
   ],
   ca: [
     {
-      id: "auto",
-      title: "Com estic automatitzant la meva feina amb Python i scripts",
-      date: "Edició recent",
+      id: "auto-excel-python",
+      title: "Com vaig passar de perdre hores a Excel a automatitzar processos amb Python",
+      date: "Edició #01 • Dilluns",
       preview:
-        "Quan vaig començar a treballar en suport i gestió tècnica, em vaig adonar de la quantitat de temps que es perd copiant dades d'un Excel a un altre o revisant dates de venciment a mà. Vaig decidir que cada tasca repetitiva havia de tenir el seu propi script. El resultat no només va ser estalviar hores setmanals, sinó...",
-      fullHint: "Subscriu-te de franc per llegir com vaig estructurar els scripts i quines llibreries em van estalviar més temps.",
+        "En entorns corporatius i suport tècnic vaig veure companys contrastar centenars de dates de convenis a mà. Vaig decidir que cap tasca repetitiva s'havia de fer dues vegades si un script podia resoldre-la en 3 segons. El resultat no només va ser estalviar hores setmanals, sinó canviar la percepció del departament de TI...",
+      fullHint: "Llegeix l'edició completa amb el codi i l'arquitectura de l'script a la secció Newsletter.",
     },
     {
-      id: "tech-path",
-      title: "De tècnic de sistemes a programador: el que vaig aprendre",
-      date: "Reflexió",
+      id: "sysadmin-to-developer",
+      title: "De suport informàtic i sistemes a desenvolupador: L'avantatge ocult",
+      date: "Edició #02 • Dilluns",
       preview:
-        "Venir de l'administració de sistemes (ASIX/SMX) et dona una visió que molts desenvolupadors triguen anys a adquirir: entens de debò com viatgen els paquets a la xarxa, com funciona un proxy, per què falla un certificat SSL o com respon un servidor. En fer el salt al desenvolupament web amb React i Java...",
-      fullHint: "Subscriu-te de franc per llegir la comparativa entre la mentalitat de suport i la de creació de programari.",
+        "Molts juniors es llancen a picar JavaScript sense entendre què passa rere la pantalla. Haver passat per racks, Active Directory i cables de xarxa em va donar la brúixola que avui em fa resoldre bugs en minuts. Entendre què passa al metall i la xarxa elimina la síndrome de la 'caixa negra'...",
+      fullHint: "Llegeix l'edició completa amb exemples reals a MediaMarkt, Princess i AENA.",
     },
     {
-      id: "one-percent",
-      title: "Millorar un 1% cada dia en el món tecnològic",
-      date: "Productivitat",
+      id: "one-percent-rule",
+      title: "La regla de l'1%: Construir projectes reals compaginant feina, estudi i vida",
+      date: "Edició #03 • Dilluns",
       preview:
-        "El sector tecnològic pot aclaparrar amb la quantitat de frameworks i novetats que surten cada mes. La clau que m'ha funcionat no és intentar aprendre-ho tot de cop, sinó dedicar 45 minuts al dia a construir projectes reals (com el meu Pomodoro Timer o el meu HUD per a simracing)...",
-      fullHint: "Subscriu-te de franc per rebre hàbits i recursos recomanats que comparteixo periòdicament.",
+        "Quan compaginava pràctiques al matí, classes a la tarda i caps de setmana treballant a Port Aventura, vaig aprendre que la constància de 45 minuts al dia venç els esprints d'esgotament. D'aquesta inèrcia silenciosa van néixer el meu Pomodoro Timer i el meu HUD per a Assetto Corsa a Patreon...",
+      fullHint: "Llegeix l'edició completa sobre el poder de l'interès compost i la tècnica de blocs.",
     },
   ],
 };
@@ -120,10 +121,22 @@ function Newsletter() {
           <div className="newsletter-preview-body">
             <p>{current.preview}</p>
             <div className="newsletter-fade-overlay">
-              <span className="fade-hint">
+              <Link to="/newsletter" className="fade-hint-link">
                 <FiBookOpen style={{ marginRight: 6 }} /> {current.fullHint}
-              </span>
+              </Link>
             </div>
+          </div>
+
+          {/* Botón directo a página completa de la newsletter */}
+          <div className="newsletter-view-all-cta">
+            <Link to="/newsletter" className="btn-go-newsletter-page">
+              <span>
+                {lang === "es"
+                  ? "Ver todas las reflexiones y ediciones completas"
+                  : "Veure totes les reflexions i edicions completes"}
+              </span>
+              <FiArrowRight style={{ marginLeft: 8 }} />
+            </Link>
           </div>
 
           {/* Formulario de suscripción */}

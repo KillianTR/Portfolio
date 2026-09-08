@@ -9,7 +9,7 @@ const experienceData = {
       location: "Reus, Tarragona",
       role: "Técnico de Microinformática / Soporte TI Corporativo",
       period: "Agosto 2026",
-      badge: "Sustitución de verano",
+      badge: "Soporte Aeroportuario",
       description:
         "Soporte técnico y administración de puestos de trabajo e infraestructura en entorno aeroportuario crítico de alta seguridad.",
       highlights: [
@@ -57,9 +57,9 @@ const experienceData = {
     {
       company: "Princess Hotels & Resorts",
       location: "Reus, Tarragona",
-      role: "Técnico Informático / IT Helpdesk (Jornada Completa)",
+      role: "Técnico Informático / IT Helpdesk",
       period: "Septiembre 2022 – Diciembre 2022",
-      badge: "Jornada Completa (3 meses)",
+      badge: "3 meses",
       description:
         "Soporte IT Helpdesk corporativo, administración global de identidades en Active Directory, auditoría automatizada de facturas y gestión de redes e infraestructura.",
       highlights: [
@@ -75,7 +75,7 @@ const experienceData = {
     {
       company: "Plateforme des Aidants",
       location: "Angulema (Francia)",
-      role: "Desarrollador Web & Gestor Multimedia (Temporal)",
+      role: "Desarrollador Web & Gestor Multimedia",
       period: "Abril 2022 – Julio 2022",
       badge: "Experiencia Internacional",
       description:
@@ -127,7 +127,7 @@ const experienceData = {
       location: "Reus, Tarragona",
       role: "Tècnic de Microinformàtica / Suport TI Corporatiu",
       period: "Agost 2026",
-      badge: "Substitució d'estiu",
+      badge: "Suport Aeroportuari",
       description:
         "Suport tècnic i administració d'estacions de treball i infraestructura en entorn aeroportuari crític d'alta seguretat.",
       highlights: [
@@ -175,9 +175,9 @@ const experienceData = {
     {
       company: "Princess Hotels & Resorts",
       location: "Reus, Tarragona",
-      role: "Tècnic Informàtic / IT Helpdesk (Jornada Completa)",
+      role: "Tècnic Informàtic / IT Helpdesk",
       period: "Setembre 2022 – Desembre 2022",
-      badge: "Jornada Completa (3 mesos)",
+      badge: "3 mesos",
       description:
         "Suport IT Helpdesk corporatiu, administració global d'identitats a Active Directory, auditoria automatitzada de factures i gestió de xarxes i infraestructura.",
       highlights: [
@@ -193,7 +193,7 @@ const experienceData = {
     {
       company: "Plateforme des Aidants",
       location: "Angulema (França)",
-      role: "Desenvolupador Web & Gestor Multimèdia (Temporal)",
+      role: "Desenvolupador Web & Gestor Multimèdia",
       period: "Abril 2022 – Juliol 2022",
       badge: "Experiència Internacional",
       description:
