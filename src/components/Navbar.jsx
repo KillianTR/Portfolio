@@ -20,6 +20,11 @@ function Navbar({ onOpenCvModal }) {
       return;
     }
 
+    if (location.pathname === "/newsletter") {
+      setActiveSection("newsletter");
+      return;
+    }
+
     const sectionIds = ["inicio", "experiencia", "proyectos", "formacion", "sobre-mi", "contacto"];
 
     function handleScroll() {
@@ -106,6 +111,13 @@ function Navbar({ onOpenCvModal }) {
             onClick={() => setMobileMenuOpen(false)}
           >
             <span className="nav-btn-text">{t.nav.recommendations}</span>
+          </Link>
+          <Link
+            to="/newsletter"
+            className={`nav-link-route ${location.pathname === "/newsletter" ? "active" : ""}`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span className="nav-btn-text">{t.nav.newsletter}</span>
           </Link>
         </nav>
 
@@ -210,6 +222,13 @@ function Navbar({ onOpenCvModal }) {
             onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.recommendations}
+          </Link>
+          <Link
+            to="/newsletter"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {t.nav.newsletter}
           </Link>
           <button onClick={() => handleNavClick("#contacto")} className="mobile-nav-link">
             {t.nav.contact}
