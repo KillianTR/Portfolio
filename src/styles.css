@@ -918,6 +918,7 @@ button:focus-visible {
   height: 200px; /* Altura fija para la imagen */
   overflow: hidden;
   border-bottom: 1px solid #222222;
+  position: relative;
 }
 
 .project-card-image {
@@ -925,6 +926,12 @@ button:focus-visible {
   height: 100%;
   object-fit: cover; /* La imagen cubre todo el espacio sin deformarse */
   object-position: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.project-card-v2:hover .project-card-image {
+  transform: scale(1.04);
 }
 
 /* Cuerpo de la tarjeta con padding */

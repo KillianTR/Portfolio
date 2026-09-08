@@ -12,7 +12,8 @@
 //    en tu archivo .env local y en el panel de Vercel (Environment Variables).
 // ==============================================================================
 
-const FORMSUBMIT_TOKEN = import.meta.env.VITE_FORMSUBMIT_TOKEN || "";
+const FORMSUBMIT_TOKEN =
+  import.meta.env.VITE_FORMSUBMIT_TOKEN || "6bc595ba0b07c66320af55c8b70bbc1f";
 
 /**
  * Devuelve la URL del endpoint de FormSubmit.
@@ -37,3 +38,4 @@ export const getContactEmail = () => {
   const d = "gmail.com";
   return `${u}@${d}`;
 };
+

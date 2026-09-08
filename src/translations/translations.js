@@ -98,6 +98,8 @@ export const translations = {
       cvBoxDesc:
         "Descarga la versión completa en Català o Castellano con un solo clic.",
       cvBoxBtn: "Descargar CV en PDF",
+      privacyNotice:
+        "Tus datos se transmiten de forma cifrada (HTTPS) únicamente para responder a tu mensaje. No se recopilan datos bancarios ni sensibles.",
     },
     cvModal: {
       title: "Descargar Currículum Vitae",
@@ -216,6 +218,8 @@ export const translations = {
       cvBoxDesc:
         "Descarrega la versió completa en Català o Castellà amb un sol clic.",
       cvBoxBtn: "Descarregar CV en PDF",
+      privacyNotice:
+        "Les teves dades es transmeten de forma xifrada (HTTPS) únicament per respondre al teu missatge. No es recopilen dades bancàries ni sensibles.",
     },
     cvModal: {
       title: "Descarregar Currículum Vitae",
