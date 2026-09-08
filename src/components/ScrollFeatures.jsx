@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { FiArrowUp } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
@@ -52,9 +51,22 @@ export default function ScrollFeatures() {
         aria-label={t.nav?.backToTop || "Volver arriba"}
         title={t.nav?.backToTop || "Volver arriba"}
       >
-        <FiArrowUp className="back-to-top-icon" />
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="back-to-top-icon"
+          aria-hidden="true"
+        >
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
       </button>
     </>
   );
 }
-
