@@ -9,6 +9,7 @@ export const translations = {
       recommendations: "Recomendaciones",
       contact: "Contacto",
       cvBtn: "Descargar CV",
+      backToTop: "Volver arriba",
     },
     hero: {
       status: "Disponible para trabajar • Presencial, Híbrido o Remoto",
@@ -126,6 +127,7 @@ export const translations = {
       recommendations: "Recomanacions",
       contact: "Contacte",
       cvBtn: "Descarregar CV",
+      backToTop: "Tornar a dalt",
     },
     hero: {
       status: "Disponible per treballar • Presencial, Híbrid o Remot",
