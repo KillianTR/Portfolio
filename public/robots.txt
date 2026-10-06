@@ -1,0 +1,12 @@
+# robots.txt para portfolio de Killian Torrell
+# Bloqueo estricto del rastreo e indexación de archivos PDF y rutas privadas
+
+User-agent: *
+Disallow: /*.pdf$
+Disallow: /cv/
+Disallow: /private/
+Disallow: /api/
+Allow: /
+
+# Sitemap
+Sitemap: https://killiantr.vercel.app/sitemap.xml
