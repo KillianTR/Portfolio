@@ -53,7 +53,7 @@ const projectsData = [
     image: "/pomodoro-timer-screenshot.png",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
     demoUrl: "https://pomodoro-timer-killiantr.vercel.app",
-    demoText: { es: "Ver Demo", ca: "Veure Demo" },
+    demoText: { es: "Ver Web", ca: "Veure Web" },
     githubUrl: "https://github.com/KillianTR",
   },
   {
@@ -68,7 +68,7 @@ const projectsData = [
     image: "/grand-line-vault-preview.jpg",
     tech: ["React 19", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Vite", "Web Audio API", "CardTrader"],
     demoUrl: "https://grand-line-vault-tcg.vercel.app",
-    demoText: { es: "Ver Demo", ca: "Veure Demo" },
+    demoText: { es: "Ver Web", ca: "Veure Web" },
     githubUrl: "https://github.com/KillianTR/one-piece-tcg",
   },
   {
@@ -104,7 +104,10 @@ const projectsData = [
     },
   },
   {
-    title: "Dashboard de Convenios en Python",
+    title: {
+      es: "Dashboard de Convenios en Python",
+      ca: "Dashboard de Convenis amb Python",
+    },
     category: "automation",
     badge: { es: "Automatización & Scripting", ca: "Automatització & Scripting" },
     badgeType: "default",
@@ -121,7 +124,10 @@ const projectsData = [
     },
   },
   {
-    title: "Software de Control de Stock e Incidencias",
+    title: {
+      es: "Software de Control de Stock e Incidencias",
+      ca: "Software de Control de Stock i Incidències",
+    },
     category: "systems",
     badge: { es: "Herramienta Interna", ca: "Eina Interna" },
     badgeType: "default",
@@ -176,28 +182,34 @@ function Projects() {
 
       {/* Grid de tarjetas */}
       <div className="projects-grid">
-        {filteredProjects.map((project, index) => (
-          <article key={index} className="project-card-v2">
-            <div className="project-card-image-container">
-              <img
-                src={project.image}
-                alt={`Captura de ${project.title}`}
-                className="project-card-image"
-                loading="lazy"
-              />
-              {project.badge && (
-                <span className={`project-status-badge ${project.badgeType}`}>
-                  {project.isPatreon && <FiDollarSign style={{ marginRight: 4 }} />}
-                  {project.badge[lang] || project.badge.es}
-                </span>
-              )}
-            </div>
+        {filteredProjects.map((project, index) => {
+          const projectTitle =
+            typeof project.title === "object"
+              ? project.title[lang] || project.title.es
+              : project.title;
 
-            <div className="project-card-body-v2">
-              <h3>{project.title}</h3>
-              <p className="project-card-description-v2">
-                {project.description[lang] || project.description.es}
-              </p>
+          return (
+            <article key={index} className="project-card-v2">
+              <div className="project-card-image-container">
+                <img
+                  src={project.image}
+                  alt={`Captura de ${projectTitle}`}
+                  className="project-card-image"
+                  loading="lazy"
+                />
+                {project.badge && (
+                  <span className={`project-status-badge ${project.badgeType}`}>
+                    {project.isPatreon && <FiDollarSign style={{ marginRight: 4 }} />}
+                    {project.badge[lang] || project.badge.es}
+                  </span>
+                )}
+              </div>
+
+              <div className="project-card-body-v2">
+                <h3>{projectTitle}</h3>
+                <p className="project-card-description-v2">
+                  {project.description[lang] || project.description.es}
+                </p>
 
               {project.confidentialNotice && (
                 <p className="project-confidential-note">
@@ -259,7 +271,8 @@ function Projects() {
               </div>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
