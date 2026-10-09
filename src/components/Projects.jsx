@@ -57,6 +57,21 @@ const projectsData = [
     githubUrl: "https://github.com/KillianTR",
   },
   {
+    title: "Grand Line Vault — One Piece TCG Tracker",
+    category: "web",
+    badge: { es: "Proyecto Full-Stack", ca: "Projecte Full-Stack" },
+    badgeType: "default",
+    description: {
+      es: "Organizador y archivador virtual interactivo estilo Vault X para coleccionistas de One Piece TCG. Diseñado con carpetas personalizadas Drag & Drop, páginas de 9 y 12 bolsillos con efectos Web Audio, catálogo completo con filtros avanzados, valoración económica en tiempo real con CardTrader, y sincronización en la nube mediante Supabase (PostgreSQL, autenticación y RLS).",
+      ca: "Organitzador i arxivador digital interactiu estil Vault X per a col·leccionistes d'One Piece TCG. Dissenyat amb carpetes personalitzades Drag & Drop, pàgines de 9 i 12 butxaques amb efectes Web Audio, catàleg oficial amb filtres avançats, valoració econòmica en temps real amb CardTrader, i sincronització al núvol mitjançant Supabase (PostgreSQL, autenticació i RLS).",
+    },
+    image: "/grand-line-vault-preview.jpg",
+    tech: ["React 19", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Vite", "Web Audio API", "CardTrader"],
+    demoUrl: "https://grand-line-vault-tcg.vercel.app",
+    demoText: { es: "Ver Demo", ca: "Veure Demo" },
+    githubUrl: "https://github.com/KillianTR/one-piece-tcg",
+  },
+  {
     title: "Taskbar Music Widget",
     category: "systems",
     badge: { es: "Proyecto Windows", ca: "Projecte Windows" },
