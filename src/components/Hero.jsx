@@ -132,7 +132,7 @@ function Hero({ onOpenCvModal }) {
               className="victor-social-btn highlight-pitwindow"
             >
               <img
-                src="/pitwindow-logo.webp"
+                src="/pitwindow-logo.png"
                 alt="PitWindow"
                 className="victor-social-img"
               />
