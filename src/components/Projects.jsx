@@ -154,13 +154,13 @@ const softwareProducts = [
     isFeatured: false,
     accentColor: "#f59e0b",
     statusBadge: {
-      es: "EN PAUSA",
-      ca: "EN PAUSA",
+      es: "FULL-STACK",
+      ca: "FULL-STACK",
     },
     platformBadge: "Supabase · PostgreSQL",
     description: {
-      es: "Archivador digital interactivo estilo Vault X para One Piece TCG con Drag & Drop y precios de CardTrader (en pausa / standby).",
-      ca: "Arxivador digital interactiu estil Vault X per a One Piece TCG amb Drag & Drop i preus de CardTrader (en pausa / standby).",
+      es: "Archivador digital interactivo estilo Vault X para One Piece TCG con Drag & Drop y precios de CardTrader (Proyecto en pausa / standby).",
+      ca: "Arxivador digital interactiu estil Vault X per a One Piece TCG amb Drag & Drop i preus de CardTrader (Projecte en pausa / standby).",
     },
     logo: "/grand-line-vault-logo.svg",
     demoUrl: "https://grand-line-vault-tcg.vercel.app",
