@@ -1,5 +1,5 @@
 import { FiGithub, FiLinkedin, FiMail, FiDownload, FiHeart } from "react-icons/fi";
-import { SiPatreon } from "react-icons/si";
+import { SiPatreon, SiDiscord } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
@@ -50,6 +50,13 @@ function Footer({ onOpenCvModal }) {
               rel="noreferrer"
             >
               <FiGithub style={{ color: "var(--text-main)", marginRight: 6 }} /> GitHub
+            </a>
+            <a
+              href="https://discord.gg/MJmPrC2sNZ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SiDiscord style={{ color: "#9d8df1", marginRight: 6 }} /> Discord
             </a>
             <a
               href="https://www.patreon.com"

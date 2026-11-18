@@ -10,7 +10,7 @@ import {
   FiArrowDown,
   FiCopy,
 } from "react-icons/fi";
-import { SiPatreon } from "react-icons/si";
+import { SiPatreon, SiDiscord } from "react-icons/si";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
@@ -127,6 +127,17 @@ function Hero({ onOpenCvModal }) {
             >
               <span className="pill-dot orange"></span>
               <span>StradiFans</span>
+              <FiArrowUpRight className="pill-arrow" />
+            </a>
+
+            <a
+              href="https://discord.gg/MJmPrC2sNZ"
+              target="_blank"
+              rel="noreferrer"
+              className="victor-pill-btn highlight-discord"
+            >
+              <SiDiscord className="pill-icon" style={{ color: "#9d8df1" }} />
+              <span>Discord</span>
               <FiArrowUpRight className="pill-arrow" />
             </a>
 

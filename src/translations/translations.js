@@ -150,6 +150,12 @@ export const translations = {
       title: "¿Hablamos?",
       subtitle:
         "¿Tienes una idea, un proyecto o buscas un desarrollador para tu equipo? Escríbeme y me pondré en contacto contigo.",
+      talkTitle: "Let's talk",
+      talkText:
+        "¿Estás creando una app o proyecto? Únete a Discord y cuéntanos en qué estás trabajando. Para cualquier otra cosa, escríbeme.",
+      joinDiscord: "Unirse a Discord",
+      discordUrl: "https://discord.gg/MJmPrC2sNZ",
+      emailAddress: "killiantorrell@gmail.com",
       formTitle: "Envíame un mensaje",
       formSubtitle:
         "Rellena este breve formulario y me pondré en contacto contigo lo antes posible:",
@@ -338,6 +344,12 @@ export const translations = {
       title: "Parlem?",
       subtitle:
         "Tens una idea, un projecte o busques un desenvolupador per al teu equip? Escriu-me i em posaré en contacte amb tu.",
+      talkTitle: "Let's talk",
+      talkText:
+        "Estàs creant una app o projecte? Uneix-te a Discord i explica'ns en què estàs treballant. Per a qualsevol altra cosa, escriu-me.",
+      joinDiscord: "Unir-se a Discord",
+      discordUrl: "https://discord.gg/MJmPrC2sNZ",
+      emailAddress: "killiantorrell@gmail.com",
       formTitle: "Envia'm un missatge",
       formSubtitle:
         "Omple aquest breu formulari i em posaré en contacte amb tu al més aviat possible:",

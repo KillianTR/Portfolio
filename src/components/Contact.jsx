@@ -10,7 +10,9 @@ import {
   FiGithub,
   FiDownload,
   FiLock,
+  FiArrowUpRight,
 } from "react-icons/fi";
+import { SiDiscord } from "react-icons/si";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 import { getFormSubmitUrl, getContactEmail } from "../config/contactConfig";
@@ -19,9 +21,17 @@ function Contact({ onOpenCvModal }) {
   const [formData, setFormData] = useState({ name: "", email: "", message: "", honeypot: "" });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const { lang } = useApp();
   const t = translations[lang] || translations.es;
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("killiantorrell@gmail.com");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2200);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,6 +94,37 @@ function Contact({ onOpenCvModal }) {
         </div>
         <h2 className="projects-title-v2">{t.contact.title}</h2>
         <p className="projects-description-v2">{t.contact.subtitle}</p>
+      </div>
+
+      {/* Tarjeta destacada estilo Victor in Public (Let's talk con Discord y Email) */}
+      <div className="victor-talk-card">
+        <p className="victor-talk-text">{t.contact.talkText}</p>
+        <div className="victor-talk-buttons">
+          <a
+            href={t.contact.discordUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-victor-discord"
+          >
+            <SiDiscord className="btn-discord-icon" />
+            <span>{t.contact.joinDiscord}</span>
+          </a>
+
+          <button
+            onClick={handleCopyEmail}
+            className="btn-victor-email"
+            title="Copiar email o escribir a killiantorrell@gmail.com"
+          >
+            {emailCopied ? (
+              <>
+                <FiCheck style={{ color: "#10b981", marginRight: 8 }} />
+                <span>{lang === "es" ? "¡Copiado!" : "Copiat!"}</span>
+              </>
+            ) : (
+              <span>killiantorrell@gmail.com</span>
+            )}
+          </button>
+        </div>
       </div>
 
       <div className="contact-grid">

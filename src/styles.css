@@ -1,26 +1,33 @@
 :root {
-  --bg-main: #020617;
-  --bg-elevated: #020818;
-  --bg-soft: #050a1f;
-  --bg-card: rgba(15, 23, 42, 0.55);
-  --bg-card-hover: rgba(15, 23, 42, 0.8);
-  --bg-card-inner: rgba(2, 6, 23, 0.5);
-  --bg-input: rgba(2, 6, 23, 0.75);
-  --text-main: #e5e7eb;
-  --text-muted: #9ca3af;
-  --text-subtle: #cbd5e1;
-  --accent: #38bdf8;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --border-subtle: rgba(148, 163, 184, 0.25);
-  --border-card: rgba(255, 255, 255, 0.08);
+  --bg-main: #121014;
+  --bg-elevated: #16141a;
+  --bg-soft: #1c1920;
+  --bg-card: #1c1920;
+  --bg-card-hover: #24202a;
+  --bg-card-inner: #151318;
+  --bg-input: #151318;
+  --text-main: #f3efe7;
+  --text-muted: #9e97a6;
+  --text-subtle: #d4cfde;
+  --accent: #a78bfa;
+  --accent-soft: rgba(167, 139, 250, 0.14);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: #2e2a33;
+  --dot-color: #2e2a33;
+  --dot-size: 22px;
   --radius-lg: 18px;
   --radius-full: 999px;
   --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.7);
-  --navbar-bg: rgba(2, 6, 23, 0.78);
-  --navbar-bg-scrolled: rgba(2, 6, 23, 0.9);
-  --navbar-border: rgba(148, 163, 184, 0.25);
-  --body-bg: radial-gradient(circle at top, #020617 0, #020617 40%, #02040f 100%);
-  --modal-bg: #0b1226;
+  --navbar-bg: rgba(18, 16, 20, 0.82);
+  --navbar-bg-scrolled: rgba(18, 16, 20, 0.94);
+  --navbar-border: #2e2a33;
+  --body-bg: #121014;
+  --modal-bg: #16141a;
+
+  /* Discord Purple & Buttons (Image 1 Style) */
+  --discord-purple: #9d8df1;
+  --discord-purple-shadow: #6e5cb8;
+  --discord-text: #12091f;
 
   /* Amazon */
   --amazon-bg: #f59e0b;
@@ -30,32 +37,44 @@
 
 [data-theme="light"],
 body.light-mode {
-  --bg-main: #f8fafc;
+  --bg-main: #ffffff;
   --bg-elevated: #ffffff;
-  --bg-soft: #f1f5f9;
+  --bg-soft: #f7f6f3;
   --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --bg-card-inner: #f8fafc;
+  --bg-card-hover: #faf9f6;
+  --bg-card-inner: #f7f5f0;
   --bg-input: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-subtle: #334155;
-  --accent: #0284c7;
-  --accent-soft: rgba(2, 132, 199, 0.12);
-  --border-subtle: rgba(203, 213, 225, 0.9);
-  --border-card: rgba(226, 232, 240, 1);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.07);
-  --navbar-bg: rgba(255, 255, 255, 0.85);
-  --navbar-bg-scrolled: rgba(255, 255, 255, 0.95);
-  --navbar-border: rgba(226, 232, 240, 0.95);
-  --body-bg: radial-gradient(circle at top, #ffffff 0%, #f8fafc 45%, #f1f5f9 100%);
+  --text-main: #16131a;
+  --text-muted: #6e6778;
+  --text-subtle: #4a4552;
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-card: #e6dfd3;
+  --dot-color: #e6dfd3;
+  --dot-size: 22px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --navbar-bg: rgba(255, 255, 255, 0.88);
+  --navbar-bg-scrolled: rgba(255, 255, 255, 0.96);
+  --navbar-border: #e6dfd3;
+  --body-bg: #ffffff;
   --modal-bg: #ffffff;
+
+  /* Discord Purple in Light Mode */
+  --discord-purple: #8b5cf6;
+  --discord-purple-shadow: #6d28d9;
+  --discord-text: #ffffff;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-main);
+  min-height: 100%;
 }
 
 html,
@@ -69,9 +88,15 @@ body,
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Inter", sans-serif;
-  background: var(--body-bg);
+  background-color: var(--bg-main) !important;
+  background-image: radial-gradient(var(--dot-color) 1.2px, transparent 1.2px) !important;
+  background-size: var(--dot-size) var(--dot-size) !important;
+  background-attachment: fixed !important;
+  background-position: 0 0 !important;
   color: var(--text-main);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* Contenedor general de la página (contenido, NO el navbar) */
@@ -5956,4 +5981,145 @@ body.light-mode .victor-product-card:hover {
   color: var(--text-muted);
   opacity: 0.8;
   font-style: italic;
+}
+
+
+/* ==========================================================================
+   VICTOR "LET'S TALK" SIGNATURE CARD (Image 1 Style)
+   ========================================================================== */
+.victor-talk-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 640px) {
+  .victor-talk-card {
+    padding: 22px 20px;
+    border-radius: 16px;
+  }
+}
+
+.victor-talk-card:hover {
+  border-color: rgba(157, 141, 241, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .victor-talk-card,
+body.light-mode .victor-talk-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .victor-talk-card:hover,
+body.light-mode .victor-talk-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.victor-talk-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-main);
+  margin: 0 0 24px 0;
+  font-weight: 450;
+}
+
+@media (max-width: 640px) {
+  .victor-talk-text {
+    font-size: 0.98rem;
+    margin-bottom: 20px;
+  }
+}
+
+.victor-talk-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Botón Join the Discord estilo Imagen 1 */
+.btn-victor-discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--discord-purple);
+  color: var(--discord-text) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 13px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--discord-purple-shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-victor-discord:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--discord-purple-shadow);
+  filter: brightness(1.06);
+}
+
+.btn-victor-discord:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--discord-purple-shadow);
+}
+
+.btn-discord-icon {
+  font-size: 1.15rem;
+}
+
+/* Botón Email estilo Imagen 1 */
+.btn-victor-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 13px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 0 var(--border-card);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.2s ease, background-color 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-victor-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--border-card);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: var(--bg-card-hover);
+}
+
+[data-theme="light"] .btn-victor-email:hover,
+body.light-mode .btn-victor-email:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-victor-email:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--border-card);
+}
+
+/* Discord Hero Pill */
+.victor-pill-btn.highlight-discord {
+  border-color: rgba(157, 141, 241, 0.4);
+}
+
+.victor-pill-btn.highlight-discord:hover {
+  border-color: #9d8df1;
+  box-shadow: 0 0 14px rgba(157, 141, 241, 0.35);
 }
