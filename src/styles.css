@@ -5142,18 +5142,9 @@ body.light-mode .back-to-top-btn:hover .back-to-top-icon {
 }
 
 .victor-hero-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 36px;
-  margin-bottom: 36px;
-}
-
-@media (max-width: 768px) {
-  .victor-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
 }
 
 .victor-hero-content {

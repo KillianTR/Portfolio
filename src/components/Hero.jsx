@@ -147,18 +147,6 @@ function Hero({ onOpenCvModal }) {
             </button>
           </nav>
         </div>
-
-        {/* Avatar Profile */}
-        <div className="victor-hero-avatar-wrap">
-          <div className="victor-avatar-card">
-            <img
-              src="/KTR-logo.png"
-              alt="Killian Torrell"
-              className="victor-avatar-img"
-            />
-            <div className="victor-avatar-halo" aria-hidden="true"></div>
-          </div>
-        </div>
       </div>
 
       {/* Snapshot Scroller / Marquee Showcase */}
