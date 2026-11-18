@@ -40,18 +40,6 @@ function Hero({ onOpenCvModal }) {
       link: "https://stradifans.vercel.app",
     },
     {
-      title: "Grand Line Vault (One Piece TCG)",
-      category: "Full-Stack",
-      image: "/grand-line-vault-preview.jpg",
-      link: "https://grand-line-vault-tcg.vercel.app",
-    },
-    {
-      title: "Pomodoro Timer (Vercel Style)",
-      category: "Productivity",
-      image: "/pomodoro-timer-screenshot.png",
-      link: "https://pomodoro-timer-killiantr.vercel.app",
-    },
-    {
       title: "DTM HUD PRO (Assetto Corsa)",
       category: "Telemetry",
       image: "/dtm-hud-preview.png",
@@ -62,6 +50,18 @@ function Hero({ onOpenCvModal }) {
       category: "C# .NET 8",
       image: "/taskbar-widget-demo.gif",
       link: "https://github.com/KillianTR/TaskbarMusicWidget",
+    },
+    {
+      title: "Pomodoro Timer (Vercel Style)",
+      category: "Productivity",
+      image: "/pomodoro-timer-screenshot.png",
+      link: "https://pomodoro-timer-killiantr.vercel.app",
+    },
+    {
+      title: "Grand Line Vault (One Piece TCG)",
+      category: "Full-Stack",
+      image: "/grand-line-vault-preview.jpg",
+      link: "https://grand-line-vault-tcg.vercel.app",
     },
   ];
 
