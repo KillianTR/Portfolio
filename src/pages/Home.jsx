@@ -18,7 +18,7 @@ function Home({ onOpenCvModal }) {
       <Experience onOpenCvModal={onOpenCvModal} />
       <Education />
       <AboutMe />
-      <Newsletter />
+      {/* <Newsletter /> (En standby) */}
       <Contact onOpenCvModal={onOpenCvModal} />
     </>
   );

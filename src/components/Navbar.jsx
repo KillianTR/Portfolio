@@ -111,13 +111,13 @@ function Navbar({ onOpenCvModal }) {
           >
             <span className="nav-btn-text">{t.nav.about}</span>
           </button>
-          <Link
+          {/* <Link
             to="/newsletter"
             className={`nav-link-route ${location.pathname === "/newsletter" ? "active" : ""}`}
             onClick={() => setMobileMenuOpen(false)}
           >
             <span className="nav-btn-text">{t.nav.newsletter}</span>
-          </Link>
+          </Link> */}
           <Link
             to="/recomendaciones"
             className={`nav-link-route ${location.pathname === "/recomendaciones" ? "active" : ""}`}
@@ -225,13 +225,13 @@ function Navbar({ onOpenCvModal }) {
           <button onClick={() => handleNavClick("#sobre-mi")} className="mobile-nav-link">
             {t.nav.about}
           </button>
-          <Link
+          {/* <Link
             to="/newsletter"
             className="mobile-nav-link"
             onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.newsletter}
-          </Link>
+          </Link> */}
           <Link
             to="/recomendaciones"
             className="mobile-nav-link"
