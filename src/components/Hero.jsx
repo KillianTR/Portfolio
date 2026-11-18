@@ -33,7 +33,7 @@ function Hero({ onOpenCvModal }) {
     {
       title: "Karting Calafat (Circuito 3D)",
       category: "Blender 3D",
-      image: "/karting-calafat-preview.svg",
+      image: "/karting-calafat-preview.jpg",
       link: "https://www.overtake.gg/downloads/karting-calafat.88434/",
     },
     {
