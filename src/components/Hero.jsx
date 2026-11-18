@@ -2,7 +2,6 @@ import {
   FiDownload,
   FiLinkedin,
   FiGithub,
-  FiArrowUpRight,
 } from "react-icons/fi";
 import { SiPatreon, SiDiscord } from "react-icons/si";
 import { useApp } from "../context/AppContext";
@@ -72,78 +71,89 @@ function Hero({ onOpenCvModal }) {
           <p className="victor-hero-tagline">{t.hero.tagline}</p>
           <p className="victor-hero-bio">{t.hero.subtitle}</p>
 
-          {/* Socials & Quick Actions Bar */}
-          <nav aria-label="Enlaces rápidos" className="victor-social-strip">
+          {/* Socials & Quick Actions Bar (1:1 con victorinpublic.com) */}
+          <nav aria-label="Socials" className="victor-social-strip">
+            <a
+              href="https://discord.gg/MJmPrC2sNZ"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Community Discord"
+              title="Discord"
+              className="victor-social-btn highlight-discord"
+            >
+              <SiDiscord className="victor-social-icon" style={{ color: "#5865F2" }} />
+            </a>
+
             <a
               href="https://github.com/KillianTR"
               target="_blank"
               rel="noreferrer"
-              className="victor-pill-btn"
+              aria-label="GitHub @KillianTR"
+              title="GitHub"
+              className="victor-social-btn"
             >
-              <FiGithub className="pill-icon" />
-              <span>GitHub</span>
+              <FiGithub className="victor-social-icon" />
             </a>
 
             <a
               href="https://www.linkedin.com/in/killiantorrell/"
               target="_blank"
               rel="noreferrer"
-              className="victor-pill-btn"
+              aria-label="LinkedIn @killiantorrell"
+              title="LinkedIn"
+              className="victor-social-btn"
             >
-              <FiLinkedin className="pill-icon" style={{ color: "#0a66c2" }} />
-              <span>LinkedIn</span>
-            </a>
-
-            <a
-              href="https://pitwindow.app"
-              target="_blank"
-              rel="noreferrer"
-              className="victor-pill-btn highlight-pitwindow"
-            >
-              <span className="pill-star">★</span>
-              <span>PitWindow</span>
-              <FiArrowUpRight className="pill-arrow" />
-            </a>
-
-            <a
-              href="https://stradifans.vercel.app"
-              target="_blank"
-              rel="noreferrer"
-              className="victor-pill-btn"
-            >
-              <span className="pill-dot orange"></span>
-              <span>StradiFans</span>
-              <FiArrowUpRight className="pill-arrow" />
-            </a>
-
-            <a
-              href="https://discord.gg/MJmPrC2sNZ"
-              target="_blank"
-              rel="noreferrer"
-              className="victor-pill-btn highlight-discord"
-            >
-              <SiDiscord className="pill-icon" style={{ color: "#9d8df1" }} />
-              <span>Discord</span>
-              <FiArrowUpRight className="pill-arrow" />
+              <FiLinkedin className="victor-social-icon" style={{ color: "#0a66c2" }} />
             </a>
 
             <a
               href="https://www.patreon.com"
               target="_blank"
               rel="noreferrer"
-              className="victor-pill-btn"
+              aria-label="Patreon"
+              title="Patreon"
+              className="victor-social-btn"
             >
-              <SiPatreon className="pill-icon" style={{ color: "#ff424d" }} />
-              <span>Patreon</span>
+              <SiPatreon className="victor-social-icon" style={{ color: "#ff424d" }} />
+            </a>
+
+            <a
+              href="https://pitwindow.app"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="PitWindow (Microsoft Store)"
+              title="PitWindow (pitwindow.app)"
+              className="victor-social-btn highlight-pitwindow"
+            >
+              <img
+                src="/pitwindow-logo.webp"
+                alt="PitWindow"
+                className="victor-social-img"
+              />
+            </a>
+
+            <a
+              href="https://stradifans.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="StradiFans"
+              title="StradiFans (stradifans.vercel.app)"
+              className="victor-social-btn"
+            >
+              <img
+                src="/stradifans-favicon.png"
+                alt="StradiFans"
+                className="victor-social-img"
+              />
             </a>
 
             <button
               onClick={onOpenCvModal}
-              className="victor-pill-btn cv-pill"
-              title="Descargar CV en PDF"
+              className="victor-social-btn cv-btn"
+              aria-label="Descargar CV en PDF"
+              title="Descargar CV (PDF)"
             >
-              <FiDownload style={{ marginRight: 6 }} />
-              <span>CV (PDF)</span>
+              <FiDownload className="victor-social-icon" />
             </button>
           </nav>
         </div>

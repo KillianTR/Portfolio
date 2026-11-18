@@ -5199,6 +5199,75 @@ body.light-mode .back-to-top-btn:hover .back-to-top-icon {
   gap: 10px;
 }
 
+/* Victor Social Strip & Buttons (1:1 con victorinpublic.com) */
+.victor-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.victor-social-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.victor-social-btn:active {
+  transform: translateY(0);
+}
+
+.victor-social-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.victor-social-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.victor-social-btn.highlight-pitwindow:hover {
+  border-color: #e10600;
+  box-shadow: 0 0 16px rgba(225, 6, 0, 0.35);
+}
+
+.victor-social-btn.cv-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+[data-theme="light"] .victor-social-btn,
+body.light-mode .victor-social-btn {
+  background: #ffffff;
+  border: 1px solid #e6dfd3;
+  box-shadow: 0 1px 0 rgba(22, 19, 26, 0.04), 0 8px 24px -10px rgba(22, 19, 26, 0.15);
+}
+
+[data-theme="light"] .victor-social-btn:hover,
+body.light-mode .victor-social-btn:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 28px -10px rgba(22, 19, 26, 0.22);
+}
+
 .victor-pill-btn {
   display: inline-flex;
   align-items: center;
