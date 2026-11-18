@@ -57,6 +57,26 @@ function CvModal({ isOpen, onClose }) {
     }
   }, [isOpen]);
 
+  // Bloquear el scroll del body y habilitar cierre con tecla Escape
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+
+      const handleKeyDown = (e) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      };
+
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   // Manejo de envío del formulario de reclutador
@@ -185,14 +205,21 @@ function CvModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-content modal-content-secure" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-btn" onClick={onClose} aria-label="Cerrar ventana">
+        {/* Botón de cierre siempre visible en la esquina superior */}
+        <button
+          className="modal-close-btn"
+          onClick={onClose}
+          aria-label={lang === "es" ? "Cerrar ventana" : "Tancar finestra"}
+          type="button"
+        >
           <FiX />
         </button>
 
-        {/* Encabezado con estado de seguridad */}
-        <div className="modal-header">
+        <div className="modal-scrollable-inner">
+          {/* Encabezado con estado de seguridad */}
+          <div className="modal-header">
           <div className={`modal-icon-badge ${isAuthorized ? "authorized" : "protected"}`}>
             {isAuthorized ? <FiUnlock /> : <FiLock />}
           </div>
@@ -502,13 +529,14 @@ function CvModal({ isOpen, onClose }) {
               {lang === "es" ? "Ir al formulario de contacto" : "Anar al formulari de contacte"}
             </a>
             <button onClick={onClose} className="btn-modal-close-bottom" type="button">
-              <FiX style={{ marginRight: 4 }} />
-              {lang === "es" ? "Cerrar" : "Tancar"}
+              <FiX style={{ marginRight: 6 }} />
+              {lang === "es" ? "Cerrar ventana" : "Tancar finestra"}
             </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
