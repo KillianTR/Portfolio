@@ -138,21 +138,6 @@ function Hero({ onOpenCvModal }) {
               />
             </a>
 
-            <a
-              href="https://stradifans.vercel.app"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="StradiFans"
-              title="StradiFans (stradifans.vercel.app)"
-              className="victor-social-btn"
-            >
-              <img
-                src="/stradifans-favicon.png"
-                alt="StradiFans"
-                className="victor-social-img"
-              />
-            </a>
-
             <button
               onClick={onOpenCvModal}
               className="victor-social-btn cv-btn"
