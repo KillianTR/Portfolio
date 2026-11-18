@@ -5349,34 +5349,46 @@ body.light-mode .victor-pill-btn:hover {
    ========================================================================== */
 .victor-scroller-wrap {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   margin-top: 14px;
   margin-bottom: 28px;
-  padding-bottom: 12px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-card) transparent;
-  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  padding: 8px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  user-select: none;
+}
+
+.victor-scroller-wrap::-webkit-scrollbar {
+  display: none;
 }
 
 .victor-scroller-track {
   display: flex;
-  gap: 14px;
   width: max-content;
-  animation: marquee 35s linear infinite;
 }
 
-.victor-scroller-wrap:hover .victor-scroller-track {
+.victor-scroller-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 14px;
+  flex-shrink: 0;
+  animation: victorMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.victor-scroller-wrap:hover .victor-scroller-group {
   animation-play-state: paused;
 }
 
-@keyframes marquee {
+@keyframes victorMarquee {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 

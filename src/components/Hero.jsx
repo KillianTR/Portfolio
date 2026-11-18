@@ -1,30 +1,16 @@
-import { useState } from "react";
 import {
   FiDownload,
-  FiMail,
   FiLinkedin,
   FiGithub,
-  FiCheck,
   FiArrowUpRight,
-  FiExternalLink,
-  FiArrowDown,
-  FiCopy,
 } from "react-icons/fi";
 import { SiPatreon, SiDiscord } from "react-icons/si";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
 function Hero({ onOpenCvModal }) {
-  const [copied, setCopied] = useState(false);
   const { lang } = useApp();
   const t = translations[lang] || translations.es;
-
-  const handleCopyEmail = (e) => {
-    e.preventDefault();
-    navigator.clipboard.writeText("killiantorrell@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
-  };
 
   const snapshots = [
     {
@@ -46,16 +32,16 @@ function Hero({ onOpenCvModal }) {
       link: "https://www.patreon.com",
     },
     {
-      title: "Taskbar Music Widget (Windows)",
-      category: "C# .NET 8",
-      image: "/taskbar-widget-demo.gif",
-      link: "https://github.com/KillianTR/TaskbarMusicWidget",
-    },
-    {
       title: "Pomodoro Timer (Vercel Style)",
       category: "Productivity",
       image: "/pomodoro-timer-screenshot.png",
       link: "https://pomodoro-timer-killiantr.vercel.app",
+    },
+    {
+      title: "Taskbar Music Widget (Windows)",
+      category: "C# .NET 8",
+      image: "/taskbar-widget-demo.gif",
+      link: "https://github.com/KillianTR/TaskbarMusicWidget",
     },
     {
       title: "Grand Line Vault (One Piece TCG)",
@@ -152,24 +138,6 @@ function Hero({ onOpenCvModal }) {
             </a>
 
             <button
-              onClick={handleCopyEmail}
-              className="victor-pill-btn email-pill"
-              title="Copiar email killiantorrell@gmail.com"
-            >
-              {copied ? (
-                <>
-                  <FiCheck style={{ color: "#10b981", marginRight: 6 }} />
-                  <span>{t.contact.copiedEmailBtn}</span>
-                </>
-              ) : (
-                <>
-                  <FiCopy style={{ marginRight: 6 }} />
-                  <span>Email</span>
-                </>
-              )}
-            </button>
-
-            <button
               onClick={onOpenCvModal}
               className="victor-pill-btn cv-pill"
               title="Descargar CV en PDF"
@@ -196,21 +164,41 @@ function Hero({ onOpenCvModal }) {
       {/* Snapshot Scroller / Marquee Showcase */}
       <div className="victor-scroller-wrap" aria-label="Galería de proyectos">
         <div className="victor-scroller-track">
-          {snapshots.concat(snapshots).map((item, idx) => (
-            <a
-              key={idx}
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-              className="victor-scroller-card"
-            >
-              <img src={item.image} alt={item.title} loading="lazy" />
-              <div className="victor-scroller-overlay">
-                <span className="victor-scroller-badge">{item.category}</span>
-                <span className="victor-scroller-name">{item.title}</span>
-              </div>
-            </a>
-          ))}
+          <div className="victor-scroller-group">
+            {snapshots.map((item, idx) => (
+              <a
+                key={`snap-1-${idx}`}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="victor-scroller-card"
+              >
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <div className="victor-scroller-overlay">
+                  <span className="victor-scroller-badge">{item.category}</span>
+                  <span className="victor-scroller-name">{item.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="victor-scroller-group" aria-hidden="true">
+            {snapshots.map((item, idx) => (
+              <a
+                key={`snap-2-${idx}`}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                tabIndex="-1"
+                className="victor-scroller-card"
+              >
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <div className="victor-scroller-overlay">
+                  <span className="victor-scroller-badge">{item.category}</span>
+                  <span className="victor-scroller-name">{item.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
