@@ -73,7 +73,7 @@ const softwareProducts = [
     title: "DTM HUD PRO & GT Challenge",
     category: "simracing",
     isFeatured: true,
-    accentColor: "#ff424d",
+    accentColor: "#facc15",
     statusBadge: {
       es: "FREEMIUM",
       ca: "FREEMIUM",
@@ -130,7 +130,8 @@ const softwareProducts = [
     id: "taskbarwidget",
     title: "Taskbar Music Widget",
     category: "simracing",
-    isFeatured: false,
+    categories: ["simracing", "web"],
+    isFeatured: true,
     accentColor: "#0284c7",
     statusBadge: {
       es: "OPEN SOURCE",
@@ -150,16 +151,16 @@ const softwareProducts = [
     id: "grandlinevault",
     title: "Grand Line Vault",
     category: "web",
-    isFeatured: true,
+    isFeatured: false,
     accentColor: "#f59e0b",
     statusBadge: {
-      es: "FULL-STACK",
-      ca: "FULL-STACK",
+      es: "EN PAUSA",
+      ca: "EN PAUSA",
     },
     platformBadge: "Supabase · PostgreSQL",
     description: {
-      es: "Archivador digital interactivo estilo Vault X para One Piece TCG con Drag & Drop, Web Audio y precios de CardTrader.",
-      ca: "Arxivador digital interactiu estil Vault X per a One Piece TCG amb Drag & Drop, Web Audio i preus de CardTrader.",
+      es: "Archivador digital interactivo estilo Vault X para One Piece TCG con Drag & Drop y precios de CardTrader (en pausa / standby).",
+      ca: "Arxivador digital interactiu estil Vault X per a One Piece TCG amb Drag & Drop i preus de CardTrader (en pausa / standby).",
     },
     logo: "/grand-line-vault-logo.svg",
     demoUrl: "https://grand-line-vault-tcg.vercel.app",
@@ -235,8 +236,10 @@ function Projects() {
   const filteredProducts = softwareProducts.filter((p) => {
     if (activeCategory === "all") return true;
     if (activeCategory === "featured") return p.isFeatured;
-    if (activeCategory === "simracing") return p.category === "simracing";
-    if (activeCategory === "web") return p.category === "web";
+    if (activeCategory === "simracing")
+      return p.category === "simracing" || p.categories?.includes("simracing");
+    if (activeCategory === "web")
+      return p.category === "web" || p.categories?.includes("web");
     return false;
   });
 
