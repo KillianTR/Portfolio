@@ -12,14 +12,14 @@ import { translations } from "../translations/translations";
 const categories = {
   es: [
     { id: "all", label: "Todos los proyectos" },
-    { id: "featured", label: "⭐ Destacados" },
+    { id: "featured", label: "Destacados" },
     { id: "simracing", label: "Simracing & Desktop" },
     { id: "web", label: "Web & Apps" },
     { id: "systems", label: "Sistemas & NDA" },
   ],
   ca: [
     { id: "all", label: "Tots els projectes" },
-    { id: "featured", label: "⭐ Destacats" },
+    { id: "featured", label: "Destacats" },
     { id: "simracing", label: "Simracing & Desktop" },
     { id: "web", label: "Web & Apps" },
     { id: "systems", label: "Sistemes & NDA" },
@@ -264,7 +264,14 @@ function Projects() {
             className={`filter-chip ${activeCategory === cat.id ? "active" : ""}`}
             onClick={() => setActiveCategory(cat.id)}
           >
-            {cat.label}
+            {cat.id === "featured" && (
+              <img
+                src="/apple-star-emoji.png"
+                alt="★"
+                className="apple-emoji-star"
+              />
+            )}
+            <span>{cat.label}</span>
           </button>
         ))}
       </div>
