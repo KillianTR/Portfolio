@@ -61,8 +61,8 @@ const softwareProducts = [
     },
     platformBadge: "Web · Twitch API",
     description: {
-      es: "Plataforma fan para la comunidad de simracing: detector Twitch en directo, ranking de salidas con 5 luces y soundboard.",
-      ca: "Plataforma fan per a la comunitat de simracing: detector Twitch en directe, rànquing de sortides amb 5 llums i soundboard.",
+      es: "Plataforma fan para la comunidad de simracing: datos en tiempo real con Twitch API, juegos interactivos, funciones del paddock y soundboard.",
+      ca: "Plataforma fan per a la comunitat de simracing: dades en temps real amb Twitch API, jocs interactius, funcions del paddock i soundboard.",
     },
     logo: "/stradifans-favicon.png",
     demoUrl: "https://stradifans.vercel.app",

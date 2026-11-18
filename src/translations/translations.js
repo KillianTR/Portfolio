@@ -66,7 +66,7 @@ export const translations = {
           year: "2025 – 2026",
           title: "Productos & Web Apps en Público",
           role: "Grand Line Vault, Pomodoro & StradiFans",
-          desc: "Construcción y lanzamiento de aplicaciones web interactivas: Grand Line Vault (archivador con Supabase y CardTrader), Pomodoro Timer minimalista y StradiFans (paddock fan con Twitch y semáforo de reflejos).",
+          desc: "Construcción y lanzamiento de aplicaciones web interactivas: Grand Line Vault (archivador con Supabase y CardTrader), Pomodoro Timer minimalista y StradiFans (paddock fan con datos en tiempo real de Twitch, juegos interactivos y funciones para la comunidad).",
         },
         {
           lvl: "Lvl 06",
@@ -260,7 +260,7 @@ export const translations = {
           year: "2025 – 2026",
           title: "Productes & Web Apps en Públic",
           role: "Grand Line Vault, Pomodoro & StradiFans",
-          desc: "Construcció i llançament d'aplicacions web interactives: Grand Line Vault (arxivador amb Supabase i CardTrader), Pomodoro Timer minimalista i StradiFans (paddock fan amb Twitch i semàfor de reflexos).",
+          desc: "Construcció i llançament d'aplicacions web interactives: Grand Line Vault (arxivador amb Supabase i CardTrader), Pomodoro Timer minimalista i StradiFans (paddock fan amb dades en temps real de Twitch, jocs interactius i funcions per a la comunitat).",
         },
         {
           lvl: "Lvl 06",
