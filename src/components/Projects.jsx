@@ -70,7 +70,7 @@ const softwareProducts = [
   },
   {
     id: "dtmhud",
-    title: "DTM HUD PRO",
+    title: "DTM HUD PRO & GT Challenge",
     category: "simracing",
     isFeatured: true,
     accentColor: "#ff424d",
@@ -80,12 +80,31 @@ const softwareProducts = [
     },
     platformBadge: "Lua · Assetto Corsa",
     description: {
-      es: "HUD y telemetría en tiempo real estilo DTM desarrollado en Lua para Assetto Corsa con edición Lite y Pro en Patreon.",
-      ca: "HUD i telemetria en temps real estil DTM desenvolupat en Lua per a Assetto Corsa amb edició Lite i Pro a Patreon.",
+      es: "HUDs de telemetría en tiempo real: DTM HUD PRO y GT Challenge (HUD minimalista). Desarrollados en Lua para Assetto Corsa y monetizados en Patreon.",
+      ca: "HUDs de telemetria en temps real: DTM HUD PRO i GT Challenge (HUD minimalista). Desenvolupats en Lua per a Assetto Corsa i monetitzats a Patreon.",
     },
     logo: "/dtm-hud-logo.svg",
-    demoUrl: "https://www.patreon.com",
+    demoUrl: "https://www.patreon.com/Vznum/posts/minimalist-hud-3-173945006",
     demoText: { es: "Ver en Patreon", ca: "Veure a Patreon" },
+  },
+  {
+    id: "kartingcalafat",
+    title: "Karting Calafat",
+    category: "simracing",
+    isFeatured: true,
+    accentColor: "#f97316",
+    statusBadge: {
+      es: "CIRCUITO 3D",
+      ca: "CIRCUIT 3D",
+    },
+    platformBadge: "Blender · Assetto Corsa · Overtake",
+    description: {
+      es: "Mi primer circuito de carreras modelado en 3D en 3 semanas con Blender y físicas en Assetto Corsa. Publicado en Overtake.gg, la mayor comunidad de simracing del mundo.",
+      ca: "El meu primer circuit de carreres modelat en 3D en 3 setmanes amb Blender i físiques a Assetto Corsa. Publicat a Overtake.gg, la major comunitat de simracing del món.",
+    },
+    logo: "/karting-calafat-logo.svg",
+    demoUrl: "https://www.overtake.gg/downloads/karting-calafat.88434/",
+    demoText: { es: "Ver en Overtake.gg", ca: "Veure a Overtake.gg" },
   },
   {
     id: "pomodoro",

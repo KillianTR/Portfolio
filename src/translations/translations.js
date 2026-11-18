@@ -57,9 +57,13 @@ export const translations = {
         {
           lvl: "Lvl 04",
           year: "2025",
-          title: "Simracing Software & Monetización",
-          role: "Creador de DTM HUD PRO (Lua & CSP)",
-          desc: "Desarrollo de interfaz de telemetría en tiempo real para Assetto Corsa. Modelo freemium validado con versión Lite gratuita y versión Pro de pago en Patreon para pilotos de simracing.",
+          title: "Simracing Software, Overlays & Modelado 3D",
+          role: "DTM HUD PRO, GT Challenge & Karting Calafat",
+          desc: "Desarrollo de telemetría en tiempo real para Assetto Corsa con DTM HUD PRO y GT Challenge (HUD minimalista monetizado en Patreon). Además, modelado y programación de mi primer circuito de carreras (Karting Calafat) en 3 semanas usando Blender y código de físicas, publicado en Overtake.gg (la mayor comunidad de simracing del mundo).",
+          links: [
+            { label: "GT Challenge HUD (Patreon)", url: "https://www.patreon.com/Vznum/posts/minimalist-hud-3-173945006" },
+            { label: "Karting Calafat (Overtake)", url: "https://www.overtake.gg/downloads/karting-calafat.88434/" },
+          ],
         },
         {
           lvl: "Lvl 05",
@@ -251,9 +255,13 @@ export const translations = {
         {
           lvl: "Lvl 04",
           year: "2025",
-          title: "Simracing Software & Monetització",
-          role: "Creador de DTM HUD PRO (Lua & CSP)",
-          desc: "Desenvolupament d'interfície de telemetria en temps real per a Assetto Corsa. Model freemium validat amb versió Lite gratuïta i versió Pro de pagament a Patreon per a pilots de simracing.",
+          title: "Simracing Software, Overlays & Modelatge 3D",
+          role: "DTM HUD PRO, GT Challenge & Karting Calafat",
+          desc: "Desenvolupament de telemetria en temps real per a Assetto Corsa amb DTM HUD PRO i GT Challenge (HUD minimalista monetitzat a Patreon). A més, modelatge i programació del meu primer circuit de carreres (Karting Calafat) en 3 setmanes utilitzant Blender i codi de físiques, publicat a Overtake.gg (la major comunitat de simracing del món).",
+          links: [
+            { label: "GT Challenge HUD (Patreon)", url: "https://www.patreon.com/Vznum/posts/minimalist-hud-3-173945006" },
+            { label: "Karting Calafat (Overtake)", url: "https://www.overtake.gg/downloads/karting-calafat.88434/" },
+          ],
         },
         {
           lvl: "Lvl 05",

@@ -25,10 +25,16 @@ function Hero({ onOpenCvModal }) {
       link: "https://stradifans.vercel.app",
     },
     {
-      title: "DTM HUD PRO (Assetto Corsa)",
+      title: "DTM HUD & GT Challenge (Assetto Corsa)",
       category: "Telemetry",
       image: "/dtm-hud-preview.png",
-      link: "https://www.patreon.com",
+      link: "https://www.patreon.com/Vznum/posts/minimalist-hud-3-173945006",
+    },
+    {
+      title: "Karting Calafat (Circuito 3D)",
+      category: "Blender 3D",
+      image: "/karting-calafat-preview.svg",
+      link: "https://www.overtake.gg/downloads/karting-calafat.88434/",
     },
     {
       title: "Pomodoro Timer (Vercel Style)",

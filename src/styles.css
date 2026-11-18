@@ -5769,6 +5769,46 @@ body.light-mode .victor-level-content:hover {
   margin: 0;
 }
 
+.victor-level-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.victor-level-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.victor-level-link-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.victor-level-link-chip .victor-link-arrow {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.victor-level-link-chip:hover .victor-link-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
 /* ==========================================================================
    VICTOR SAAS & APPS GRID (1:1 con victorinpublic.com)
    ========================================================================== */

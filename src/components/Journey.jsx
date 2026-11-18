@@ -1,4 +1,4 @@
-import { FiCompass, FiAward, FiCheckCircle } from "react-icons/fi";
+import { FiCompass, FiAward, FiCheckCircle, FiArrowUpRight } from "react-icons/fi";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
@@ -50,6 +50,23 @@ function Journey() {
                   <h3 className="victor-level-title">{item.title}</h3>
                   <p className="victor-level-role">{item.role}</p>
                   <p className="victor-level-desc">{item.desc}</p>
+
+                  {item.links && item.links.length > 0 && (
+                    <div className="victor-level-links">
+                      {item.links.map((link, lIdx) => (
+                        <a
+                          key={lIdx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="victor-level-link-chip"
+                        >
+                          <span>{link.label}</span>
+                          <FiArrowUpRight className="victor-link-arrow" />
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </li>
             );
