@@ -2,14 +2,10 @@ import { useState } from "react";
 import {
   FiExternalLink,
   FiGithub,
-  FiDollarSign,
   FiLayers,
   FiLock,
   FiArrowUpRight,
-  FiMonitor,
-  FiCheckCircle,
 } from "react-icons/fi";
-import { SiPatreon } from "react-icons/si";
 import { useApp } from "../context/AppContext";
 import { translations } from "../translations/translations";
 
@@ -33,94 +29,82 @@ const categories = {
 const softwareProducts = [
   {
     id: "pitwindow",
-    title: "PitWindow · Modern Sim Racing Overlays",
+    title: "PitWindow",
     category: "simracing",
     isFlagship: true,
     isFeatured: true,
     accentColor: "#e10600",
-    badge: {
-      es: "⭐ PROYECTO ESTRELLA · MICROSOFT STORE",
-      ca: "⭐ PROJECTE ESTRELLA · MICROSOFT STORE",
+    statusBadge: {
+      es: "FLAGSHIP",
+      ca: "FLAGSHIP",
     },
-    badgeType: "flagship",
-    platformBadge: "Windows 10/11 · Cloudflare · VR · OBS",
+    platformBadge: "Windows 10/11",
     description: {
-      es: "Mi proyecto más ambicioso e importante hasta la fecha. Suite profesional de más de 31 overlays estilo TV broadcast para simuladores (iRacing, Le Mans Ultimate, ACC, Assetto Corsa y RaceRoom). Incluye leaderboard por clases, cálculo de doblados en tiempo real, rival check, calculadora de combustible en pit stop, telemetría y soporte para OBS Studio y cascos VR. Publicado oficialmente en la Microsoft Store y alojado en la red global de Cloudflare.",
-      ca: "El meu projecte més ambiciós i important fins a la data. Suite professional de més de 31 overlays estil retransmissió de TV per a simuladors (iRacing, Le Mans Ultimate, ACC, Assetto Corsa i RaceRoom). Inclou leaderboard per classes, càlcul de doblats en temps real, rival check, calculadora de combustible a pit stop, telemetria i suport per a OBS Studio i ulleres VR. Publicat oficialment a la Microsoft Store i allotjat a la xarxa global de Cloudflare.",
+      es: "Suite profesional de más de 31 overlays estilo TV broadcast para iRacing, LMU y simracing con VR y OBS.",
+      ca: "Suite professional de més de 31 overlays estil retransmissió de TV per a iRacing, LMU i simracing amb VR i OBS.",
     },
-    image: "/pitwindow-preview.webp",
     logo: "/pitwindow-logo.webp",
-    tech: ["C#", "Windows 10/11", "Cloudflare", "DirectX", "OBS Studio", "VR Support", "iRacing API", "Simracing"],
     demoUrl: "https://pitwindow.app",
-    demoText: { es: "Web Oficial (pitwindow.app)", ca: "Web Oficial (pitwindow.app)" },
+    demoText: { es: "Visitar pitwindow.app", ca: "Visitar pitwindow.app" },
     storeUrl: "https://apps.microsoft.com/detail/9p0k8w20658q",
     storeText: { es: "Microsoft Store", ca: "Microsoft Store" },
   },
   {
     id: "stradifans",
-    title: "StradiFans · The Simracing Paddock Fan App",
+    title: "StradiFans",
     category: "web",
     isFeatured: true,
     accentColor: "#ea6f18",
-    badge: {
-      es: "COMUNIDAD & SIMRACING · VERCEL",
-      ca: "COMUNITAT & SIMRACING · VERCEL",
+    statusBadge: {
+      es: "COMMUNITY",
+      ca: "COMUNITAT",
     },
-    badgeType: "highlight",
-    platformBadge: "Twitch API · Web Audio · Vercel",
+    platformBadge: "Web · Twitch API",
     description: {
-      es: "Plataforma web fan interactiva para la comunidad de simracing y los directos de Twitch de Stradi. Incluye detector de directos sincronizado con la API de Twitch, minijuego de reacción con semáforo oficial de 5 luces ('Ranking de salidas'), visor de carreras de YouTube, cámara onboard, 'Stradipedia' con el lore y personajes del chat por licencia, 'Garaje' interactivo y 'Radio' / soundboard con frases míticas listas para reproducir y descargar.",
-      ca: "Plataforma web fan interactiva per a la comunitat de simracing i els directes de Twitch de Stradi. Inclou detector de directes sincronitzat amb l'API de Twitch, minijoc de reacció amb semàfor oficial de 5 llums ('Rànquing de sortides'), visor de curses de YouTube, càmera onboard, 'Stradipedia' amb el lore i personatges del xat per llicència, 'Garatge' interactiu i 'Ràdio' / soundboard amb frases mítiques llestes per reproduir i descarregar.",
+      es: "Plataforma fan para la comunidad de simracing: detector Twitch en directo, ranking de salidas con 5 luces y soundboard.",
+      ca: "Plataforma fan per a la comunitat de simracing: detector Twitch en directe, rànquing de sortides amb 5 llums i soundboard.",
     },
-    image: "/stradifans-preview.svg",
     logo: "/stradifans-favicon.png",
-    tech: ["React", "Vite", "Tailwind CSS", "Twitch API", "Web Audio API", "YouTube Data", "Vercel"],
     demoUrl: "https://stradifans.vercel.app",
-    demoText: { es: "Ver Web (stradifans.vercel.app)", ca: "Veure Web (stradifans.vercel.app)" },
+    demoText: { es: "Ver StradiFans", ca: "Veure StradiFans" },
   },
   {
     id: "dtmhud",
-    title: "DTM HUD PRO / Simracing Telemetry",
+    title: "DTM HUD PRO",
     category: "simracing",
-    isFeatured: false,
+    isFeatured: true,
     accentColor: "#ff424d",
-    badge: {
-      es: "PATREON · FREEMIUM SOFTWARE",
-      ca: "PATREON · FREEMIUM SOFTWARE",
+    statusBadge: {
+      es: "FREEMIUM",
+      ca: "FREEMIUM",
     },
-    badgeType: "highlight",
-    platformBadge: "Lua · Assetto Corsa CSP · Patreon",
+    platformBadge: "Lua · Assetto Corsa",
     description: {
-      es: "Interfaz y HUD de telemetría en tiempo real estilo DTM desarrollado en Lua y CSP (Custom Shaders Patch) para Assetto Corsa. Lanzado con modelo freemium: versión Lite gratuita para la comunidad simracing y versión Pro disponible en Patreon.",
-      ca: "Interfície i HUD de telemetria en temps real estil DTM desenvolupat en Lua i CSP (Custom Shaders Patch) per a Assetto Corsa. Llançat amb model freemium: versió Lite gratuïta per a la comunitat simracing i versió Pro disponible a Patreon.",
+      es: "HUD y telemetría en tiempo real estilo DTM desarrollado en Lua para Assetto Corsa con edición Lite y Pro en Patreon.",
+      ca: "HUD i telemetria en temps real estil DTM desenvolupat en Lua per a Assetto Corsa amb edició Lite i Pro a Patreon.",
     },
-    image: "/dtm-hud-preview.png",
-    tech: ["Lua", "CSP", "UI Design", "Telemetry", "Assetto Corsa", "Patreon"],
+    logo: "/dtm-hud-logo.svg",
     demoUrl: "https://www.patreon.com",
     demoText: { es: "Ver en Patreon", ca: "Veure a Patreon" },
-    demoIcon: <SiPatreon style={{ color: "#ff424d" }} />,
-    isPatreon: true,
   },
   {
     id: "pomodoro",
-    title: "Pomodoro Timer App",
+    title: "Pomodoro Timer",
     category: "web",
     isFeatured: true,
     accentColor: "#10b981",
-    badge: {
-      es: "PRODUCTIVIDAD · MINIMALISTA",
-      ca: "PRODUCTIVITAT · MINIMALISTA",
+    statusBadge: {
+      es: "PRODUCTIVITY",
+      ca: "PRODUCTIVITAT",
     },
-    badgeType: "default",
-    platformBadge: "Next.js · TypeScript · Vercel",
+    platformBadge: "Next.js · React 19",
     description: {
-      es: "Temporizador de productividad de alto rendimiento con estética minimalista estilo Vercel. Diseñado con React Hooks, persistencia en localStorage, efectos visuales con transparencias CSS y animaciones fluidas para sesiones de foco profundo.",
-      ca: "Temporitzador de productivitat d'alt rendiment amb estètica minimalista estil Vercel. Dissenyat amb React Hooks, persistència a localStorage, efectes visuals amb transparències CSS i animacions fluides per a sessions de focus profund.",
+      es: "Temporizador de productividad de alto rendimiento con estética minimalista Vercel, persistencia en localStorage y atajos.",
+      ca: "Temporitzador de productivitat d'alt rendiment amb estètica minimalista Vercel, persistència a localStorage i dreceres.",
     },
-    image: "/pomodoro-timer-screenshot.png",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
+    logo: "/pomodoro-logo.svg",
     demoUrl: "https://pomodoro-timer-killiantr.vercel.app",
-    demoText: { es: "Ver Web", ca: "Veure Web" },
+    demoText: { es: "Probar Pomodoro", ca: "Provar Pomodoro" },
     githubUrl: "https://github.com/KillianTR/Pomodoro-Timer",
   },
   {
@@ -129,42 +113,38 @@ const softwareProducts = [
     category: "simracing",
     isFeatured: false,
     accentColor: "#0284c7",
-    badge: {
-      es: "WINDOWS NATIVE · .NET 8",
-      ca: "WINDOWS NATIU · .NET 8",
+    statusBadge: {
+      es: "OPEN SOURCE",
+      ca: "OPEN SOURCE",
     },
-    badgeType: "default",
-    platformBadge: "C# · WPF · Win32 API",
+    platformBadge: "C# · .NET 8 · Win32",
     description: {
-      es: "Widget nativo para la barra de tareas de Windows 10/11 que muestra en tiempo real la música en reproducción (Spotify, YouTube, navegadores) con controles multimedia, ajuste de volumen mediante rueda del ratón, flyout flotante con carátula y consumo mínimo (<0.1% CPU).",
-      ca: "Widget natiu per a la barra de tasques de Windows 10/11 que mostra en temps real la música en reproducció (Spotify, YouTube, navegadors) amb controls multimèdia, ajust de volum mitjançant roda del ratolí, flyout flotant amb caràtula i consum mínim (<0.1% CPU).",
+      es: "Widget nativo para la barra de tareas de Windows 10/11 con flyout de música en reproducción y control con rueda del ratón.",
+      ca: "Widget natiu per a la barra de tasques de Windows 10/11 amb flyout de música en reproducció i control amb roda del ratolí.",
     },
-    image: "/taskbar-widget-demo.gif",
-    tech: ["C#", ".NET 8", "WPF", "Win32 API", "WinRT", "Spotify API"],
+    logo: "/taskbar-widget-logo.svg",
     demoUrl: "https://github.com/KillianTR/TaskbarMusicWidget",
-    demoText: { es: "Ver Proyecto", ca: "Veure Projecte" },
+    demoText: { es: "Ver en GitHub", ca: "Veure a GitHub" },
     githubUrl: "https://github.com/KillianTR/TaskbarMusicWidget",
   },
   {
     id: "grandlinevault",
-    title: "Grand Line Vault — One Piece TCG Tracker",
+    title: "Grand Line Vault",
     category: "web",
     isFeatured: true,
     accentColor: "#f59e0b",
-    badge: {
-      es: "FULL-STACK · SUPABASE",
-      ca: "FULL-STACK · SUPABASE",
+    statusBadge: {
+      es: "FULL-STACK",
+      ca: "FULL-STACK",
     },
-    badgeType: "default",
-    platformBadge: "Supabase · PostgreSQL · React 19",
+    platformBadge: "Supabase · PostgreSQL",
     description: {
-      es: "Organizador y archivador digital interactivo estilo Vault X para coleccionistas de One Piece TCG. Diseñado con carpetas personalizadas Drag & Drop, páginas de 9 y 12 bolsillos con efectos Web Audio, catálogo completo con filtros avanzados, valoración económica en tiempo real con CardTrader, y sincronización en la nube mediante Supabase (PostgreSQL, autenticación y RLS).",
-      ca: "Organitzador i arxivador digital interactiu estil Vault X per a col·leccionistes d'One Piece TCG. Dissenyat amb carpetes personalitzades Drag & Drop, pàgines de 9 i 12 butxaques amb efectes Web Audio, catàleg oficial amb filtres avançats, valoració econòmica en temps real amb CardTrader, i sincronització al núvol mitjançant Supabase (PostgreSQL, autenticació i RLS).",
+      es: "Archivador digital interactivo estilo Vault X para One Piece TCG con Drag & Drop, Web Audio y precios de CardTrader.",
+      ca: "Arxivador digital interactiu estil Vault X per a One Piece TCG amb Drag & Drop, Web Audio i preus de CardTrader.",
     },
-    image: "/grand-line-vault-preview.jpg",
-    tech: ["React 19", "Tailwind CSS v4", "Supabase", "PostgreSQL", "Vite", "Web Audio API", "CardTrader"],
+    logo: "/grand-line-vault-logo.svg",
     demoUrl: "https://grand-line-vault-tcg.vercel.app",
-    demoText: { es: "Ver Web", ca: "Veure Web" },
+    demoText: { es: "Explorar Vault", ca: "Explorar Vault" },
     githubUrl: "https://github.com/KillianTR/one-piece-tcg",
   },
 ];
@@ -173,18 +153,17 @@ const corporateSystems = [
   {
     title: "Plataforma XML AEQT",
     category: "systems",
-    badge: { es: "Sector Químico Tarragona", ca: "Sector Químic Tarragona" },
-    badgeType: "default",
+    badge: { es: "Sector Químico", ca: "Sector Químic" },
+    platformBadge: "PHP · XML · MySQL",
     description: {
-      es: "Plugin corporativo a medida desarrollado en WordPress y PHP para la Asociación de Empresas Químicas de Tarragona (AEQT). Automatiza la gestión, publicación y filtrado de ofertas y demandas de empleo sincronizadas mediante estructuras XML.",
-      ca: "Plugin corporatiu a mida desenvolupat en WordPress i PHP per a l'Associació d'Empreses Químiques de Tarragona (AEQT). Automatitza la gestió, publicació i filtratge d'ofertes i demandes de feina sincronitzades mitjançant estructures XML.",
+      es: "Plugin corporativo para la Asociación de Empresas Químicas de Tarragona (AEQT). Sincronización y filtrado de ofertas mediante XML.",
+      ca: "Plugin corporatiu per a l'Associació d'Empreses Químiques de Tarragona (AEQT). Sincronització i filtratge d'ofertes mitjançant XML.",
     },
     image: "/aeqt-xml-preview.svg",
-    tech: ["WordPress", "PHP", "XML", "MySQL", "JavaScript", "Gestión Empleo"],
     isConfidential: true,
     confidentialNotice: {
-      es: "Código corporativo confidencial (propiedad de AEQT). No publicado en GitHub por contener convenios y estructuras reservadas.",
-      ca: "Codi corporatiu confidencial (propietat d'AEQT). No publicat a GitHub per contenir convenis i estructures reservades.",
+      es: "Código corporativo protegido bajo confidencialidad (propiedad AEQT).",
+      ca: "Codi corporatiu protegit sota confidencialitat (propietat AEQT).",
     },
   },
   {
@@ -193,38 +172,36 @@ const corporateSystems = [
       ca: "Dashboard de Convenis amb Python",
     },
     category: "systems",
-    badge: { es: "Automatización & Scripting", ca: "Automatització & Scripting" },
-    badgeType: "default",
+    badge: { es: "Automatización", ca: "Automatització" },
+    platformBadge: "Python · Pandas · Excel",
     description: {
-      es: "Script avanzado en Python para la verificación y automatización del control de fechas de vencimiento en convenios institucionales. Procesa hojas de cálculo Excel complejas y genera avisos automatizados que ahorran horas de supervisión manual.",
-      ca: "Script avançat en Python per a la verificació i automatització del control de dates de venciment en convenis institucionals. Processa fulls de càlcul Excel complexos i genera avisos automatitzats que estalvien hores de supervisió manual.",
+      es: "Script avanzado para auditoría y control automatizado de fechas de vencimiento en convenios institucionales a gran escala.",
+      ca: "Script avançat per a auditoria i control automatitzat de dates de venciment en convenis institucionals a gran escala.",
     },
     image: "/python-convenios-preview.svg",
-    tech: ["Python", "Pandas / Openpyxl", "Excel Automation", "PowerShell", "Reporting"],
     isConfidential: true,
     confidentialNotice: {
-      es: "Script interno para auditoría. Código reservado bajo confidencialidad por procesar convenios institucionales y datos protegidos.",
-      ca: "Script intern per a auditoria. Codi reservat sota confidencialitat per processar convenis institucionals i dades protegides.",
+      es: "Herramienta interna con datos protegidos bajo confidencialidad.",
+      ca: "Eina interna amb dades protegides sota confidencialitat.",
     },
   },
   {
     title: {
-      es: "Software de Control de Stock e Incidencias",
-      ca: "Software de Control de Stock i Incidències",
+      es: "Software Control de Stock e Incidencias",
+      ca: "Software Control d'Stock i Incidències",
     },
     category: "systems",
     badge: { es: "Herramienta Interna", ca: "Eina Interna" },
-    badgeType: "default",
+    platformBadge: "Oracle SQL · Helpdesk",
     description: {
-      es: "Programas desarrollados ad-hoc durante etapas en MediaMarkt y Princess Hotels para optimizar procesos internos: control de inventario de repuestos en taller técnico y sistema de gestión/seguimiento de tickets de soporte con Oracle SQL.",
-      ca: "Programes desenvolupats ad-hoc durant etapes a MediaMarkt i Princess Hotels per optimitzar processos interns: control d'inventari de recanvis al taller tècnic i sistema de gestió/seguiment d'incidències de suport amb Oracle SQL.",
+      es: "Sistemas desarrollados ad-hoc en MediaMarkt y Princess Hotels: control de repuestos en taller y soporte técnico con Oracle SQL.",
+      ca: "Sistemes desenvolupats ad-hoc a MediaMarkt i Princess Hotels: control de recanvis al taller i suport tècnic amb Oracle SQL.",
     },
     image: "/stock-incidencias-preview.svg",
-    tech: ["Oracle SQL", "Gestión de Stock", "Helpdesk N1/N2", "VLANs"],
     isConfidential: true,
     confidentialNotice: {
-      es: "Herramientas internas desarrolladas para taller y soporte IT (MediaMarkt / Princess). Código no público por ser propiedad de las empresas.",
-      ca: "Eines internes desenvolupades per a taller i suport TI (MediaMarkt / Princess). Codi no públic per ser propietat de les empreses.",
+      es: "Desarrollo interno de taller y soporte IT bajo confidencialidad.",
+      ca: "Desenvolupament intern de taller i suport TI sota confidencialitat.",
     },
   },
 ];
@@ -270,129 +247,97 @@ function Projects() {
         ))}
       </div>
 
-      {/* Grid de productos principales */}
-      <div className="victor-products-grid">
+      {/* Grid de productos estilo Victor SaaS & Apps (2 columnas compactas) */}
+      <div className="victor-saas-grid">
         {filteredProducts.map((project) => {
           const projectTitle =
             typeof project.title === "object"
               ? project.title[lang] || project.title.es
               : project.title;
+          const targetUrl = project.demoUrl || project.githubUrl;
 
           return (
-            <article
+            <div
               key={project.id}
-              className={`victor-product-card ${project.isFlagship ? "flagship-card" : ""}`}
-              style={{ "--project-accent": project.accentColor || "#38bdf8" }}
+              className="victor-saas-card-wrapper"
+              style={{ "--accent": project.accentColor || "var(--accent)" }}
             >
-              {/* Encabezado de la tarjeta con icono/logo y badges */}
-              <div className="victor-card-header">
-                <div className="victor-card-brand">
-                  {project.logo ? (
-                    <img
-                      src={project.logo}
-                      alt={projectTitle}
-                      className="victor-card-logo"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="victor-card-icon-placeholder">
-                      <FiMonitor />
-                    </div>
-                  )}
-                  <div>
-                    <span className="victor-platform-badge">{project.platformBadge}</span>
-                    <h3 className="victor-card-title">
-                      <a href={project.demoUrl || project.githubUrl} target="_blank" rel="noreferrer">
-                        {projectTitle}
-                        <FiArrowUpRight className="victor-title-arrow" />
-                      </a>
-                    </h3>
+              <a
+                href={targetUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="victor-saas-card group"
+              >
+                {/* Header: App Icon (left) + Badges (right) */}
+                <div className="victor-saas-header">
+                  <img
+                    src={project.logo}
+                    alt={projectTitle}
+                    className="victor-saas-app-icon"
+                    loading="lazy"
+                  />
+                  <div className="victor-saas-badges">
+                    {project.statusBadge && (
+                      <span className="victor-badge-status">
+                        <span className="blink-dot" aria-hidden="true"></span>
+                        {project.statusBadge[lang] || project.statusBadge.es}
+                      </span>
+                    )}
+                    <span className="victor-badge-platform">{project.platformBadge}</span>
                   </div>
                 </div>
 
-                {project.badge && (
-                  <span className={`victor-status-pill ${project.badgeType}`}>
-                    {project.badge[lang] || project.badge.es}
-                  </span>
-                )}
-              </div>
+                {/* Title */}
+                <h3 className="victor-saas-title">{projectTitle}</h3>
 
-              {/* Imagen de preview / screenshot */}
-              <div className="victor-card-preview-wrap">
-                <img
-                  src={project.image}
-                  alt={`Captura de ${projectTitle}`}
-                  className="victor-card-preview"
-                  loading="lazy"
-                />
-              </div>
+                {/* Description */}
+                <p className="victor-saas-desc">
+                  {project.description[lang] || project.description.es}
+                </p>
 
-              {/* Descripción */}
-              <p className="victor-card-desc">
-                {project.description[lang] || project.description.es}
-              </p>
-
-              {/* Tags técnicos */}
-              <div className="victor-card-tech">
-                {project.tech.map((tech) => (
-                  <span key={tech} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* Acciones directas */}
-              <div className="victor-card-actions">
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-action-primary"
-                  >
-                    {project.demoIcon ? (
-                      <span style={{ marginRight: "6px", display: "inline-flex" }}>
-                        {project.demoIcon}
-                      </span>
-                    ) : (
-                      <FiExternalLink style={{ marginRight: "6px" }} />
-                    )}
+                {/* Action Link Footer */}
+                <div className="victor-saas-footer">
+                  <span className="victor-saas-cta">
                     {project.demoText[lang] || project.demoText.es}
-                  </a>
-                )}
+                    <span className="victor-saas-arrow">→</span>
+                  </span>
 
-                {project.storeUrl && (
-                  <a
-                    href={project.storeUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-action-store"
-                  >
-                    <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" style={{ marginRight: "6px" }}>
-                      <path d="M0 0h7v7H0zm9 0h7v7H9zm-9 9h7v7H0zm9 0h7v7H9z" />
-                    </svg>
-                    {project.storeText[lang] || project.storeText.es}
-                  </a>
-                )}
-
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-action-secondary"
-                  >
-                    <FiGithub style={{ marginRight: "6px" }} />
-                    {t.projects.codeBtn}
-                  </a>
-                )}
-              </div>
-            </article>
+                  <div className="victor-saas-sublinks">
+                    {project.storeUrl && (
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(project.storeUrl, "_blank");
+                        }}
+                        className="victor-saas-sublink"
+                        title="Microsoft Store"
+                      >
+                        Store ↗
+                      </span>
+                    )}
+                    {project.githubUrl && project.githubUrl !== targetUrl && (
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(project.githubUrl, "_blank");
+                        }}
+                        className="victor-saas-sublink"
+                        title="GitHub"
+                      >
+                        GitHub ↗
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </a>
+            </div>
           );
         })}
       </div>
 
-      {/* Sección Corporativa & NDA */}
+      {/* Sección Corporativa & NDA estilo Victor */}
       {showCorporate && (
         <div className="corporate-systems-section">
           <div className="corporate-header">
@@ -403,7 +348,7 @@ function Projects() {
             <p className="corporate-subtitle">{t.projects.enterpriseSubtitle}</p>
           </div>
 
-          <div className="corporate-grid">
+          <div className="victor-saas-grid corporate-saas-grid">
             {corporateSystems.map((item, idx) => {
               const itemTitle =
                 typeof item.title === "object"
@@ -411,25 +356,31 @@ function Projects() {
                   : item.title;
 
               return (
-                <div key={idx} className="corporate-card">
-                  <div className="corporate-card-top">
-                    <img src={item.image} alt={itemTitle} className="corporate-card-icon" />
-                    <div>
-                      <span className="corporate-badge">{item.badge[lang] || item.badge.es}</span>
-                      <h4>{itemTitle}</h4>
+                <div key={idx} className="victor-saas-card-wrapper" style={{ "--accent": "#94a3b8" }}>
+                  <div className="victor-saas-card corporate-card-clean">
+                    <div className="victor-saas-header">
+                      <img src={item.image} alt={itemTitle} className="victor-saas-app-icon corporate-icon" />
+                      <div className="victor-saas-badges">
+                        <span className="victor-badge-status nda-badge">
+                          <FiLock style={{ fontSize: "0.6rem" }} />
+                          NDA
+                        </span>
+                        <span className="victor-badge-platform">{item.badge[lang] || item.badge.es}</span>
+                      </div>
                     </div>
-                  </div>
-                  <p className="corporate-desc">{item.description[lang] || item.description.es}</p>
-                  <div className="corporate-tags">
-                    {item.tech.map((t) => (
-                      <span key={t} className="tech-tag mini">
-                        {t}
+
+                    <h3 className="victor-saas-title">{itemTitle}</h3>
+
+                    <p className="victor-saas-desc">
+                      {item.description[lang] || item.description.es}
+                    </p>
+
+                    <div className="victor-saas-footer">
+                      <span className="victor-nda-notice">
+                        <FiLock style={{ marginRight: "4px" }} />
+                        {item.confidentialNotice[lang] || item.confidentialNotice.es}
                       </span>
-                    ))}
-                  </div>
-                  <div className="corporate-lock-note">
-                    <FiLock style={{ marginRight: "6px", flexShrink: 0 }} />
-                    <span>{item.confidentialNotice[lang] || item.confidentialNotice.es}</span>
+                    </div>
                   </div>
                 </div>
               );

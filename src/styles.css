@@ -5770,8 +5770,228 @@ body.light-mode .victor-level-content:hover {
 }
 
 /* ==========================================================================
-   VICTOR PRODUCTS GRID (SAAS & APPS)
+   VICTOR SAAS & APPS GRID (1:1 con victorinpublic.com)
    ========================================================================== */
+.victor-saas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 640px) {
+  .victor-saas-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.victor-saas-card-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.victor-saas-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 12px 32px -14px rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.victor-saas-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="light"] .victor-saas-card,
+body.light-mode .victor-saas-card {
+  background: #ffffff;
+  border: 1px solid #e6dfd3;
+  box-shadow: 0 1px 0 rgba(22, 19, 26, 0.04), 0 12px 32px -14px rgba(22, 19, 26, 0.22);
+}
+
+[data-theme="light"] .victor-saas-card:hover,
+body.light-mode .victor-saas-card:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 36px -10px rgba(22, 19, 26, 0.28);
+}
+
+/* Header: App icon + badges */
+.victor-saas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.victor-saas-app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  background: #141217;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.victor-saas-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.victor-badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: ui-monospace, SFMono-Regular, "Geist Mono", Menlo, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+}
+
+.blink-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.victor-badge-platform {
+  font-family: ui-monospace, SFMono-Regular, "Geist Mono", Menlo, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--border-card);
+  color: var(--text-muted);
+}
+
+/* Title & Description */
+.victor-saas-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-top: 16px;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.victor-saas-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  flex: 1;
+  margin: 0 0 18px 0;
+}
+
+/* Footer Action */
+.victor-saas-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.victor-saas-cta {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.victor-saas-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.victor-saas-card:hover .victor-saas-arrow {
+  transform: translateX(4px);
+}
+
+.victor-saas-sublinks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.victor-saas-sublink {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border-card);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.victor-saas-sublink:hover {
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.corporate-saas-grid {
+  margin-top: 16px;
+}
+
+.corporate-card-clean {
+  cursor: default;
+}
+
+.corporate-card-clean:hover {
+  transform: translateY(-2px);
+}
+
+.corporate-icon {
+  padding: 6px;
+  background: var(--bg-card-inner);
+}
+
+.nda-badge {
+  background: rgba(148, 163, 184, 0.15) !important;
+  color: #94a3b8 !important;
+}
+
+.victor-nda-notice {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  font-style: italic;
+}
+
 .victor-products-grid {
   display: flex;
   flex-direction: column;
