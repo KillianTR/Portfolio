@@ -107,13 +107,21 @@ const languagesData = {
     { name: "Catalán", level: "Nativo", badge: "Idioma principal" },
     { name: "Castellano", level: "Nativo", badge: "Bilingüe" },
     { name: "Inglés", level: "B2 Professional", badge: "Técnico y fluido" },
-    { name: "Francés", level: "B1 Intermedio", badge: "Experiencia en Francia" },
+    {
+      name: "Francés",
+      level: "B1 Intermedio",
+      badge: "Experiencia en Francia y 4 años de estudio en francés durante toda la ESO",
+    },
   ],
   ca: [
     { name: "Català", level: "Natiu", badge: "Idioma principal" },
     { name: "Castellà", level: "Natiu", badge: "Bilingüe" },
     { name: "Anglès", level: "B2 Professional", badge: "Tècnic i fluid" },
-    { name: "Francès", level: "B1 Intermedi", badge: "Experiència a França" },
+    {
+      name: "Francès",
+      level: "B1 Intermedi",
+      badge: "Experiència a França i 4 anys d'estudi en francès durant tota l'ESO",
+    },
   ],
 };
 

@@ -13,14 +13,14 @@ const categories = {
   es: [
     { id: "all", label: "Todos los proyectos" },
     { id: "featured", label: "Destacados" },
-    { id: "simracing", label: "Simracing & Desktop" },
+    { id: "simracing", label: "Simracing" },
     { id: "web", label: "Web & Apps" },
     { id: "systems", label: "Sistemas & NDA" },
   ],
   ca: [
     { id: "all", label: "Tots els projectes" },
     { id: "featured", label: "Destacats" },
-    { id: "simracing", label: "Simracing & Desktop" },
+    { id: "simracing", label: "Simracing" },
     { id: "web", label: "Web & Apps" },
     { id: "systems", label: "Sistemes & NDA" },
   ],
@@ -52,7 +52,8 @@ const softwareProducts = [
   {
     id: "stradifans",
     title: "StradiFans",
-    category: "web",
+    category: "simracing",
+    categories: ["simracing", "web"],
     isFeatured: true,
     accentColor: "#ea6f18",
     statusBadge: {
@@ -129,15 +130,15 @@ const softwareProducts = [
   {
     id: "taskbarwidget",
     title: "Taskbar Music Widget",
-    category: "simracing",
-    categories: ["simracing", "web"],
+    category: "web",
+    categories: ["web"],
     isFeatured: true,
     accentColor: "#0284c7",
     statusBadge: {
       es: "OPEN SOURCE",
       ca: "OPEN SOURCE",
     },
-    platformBadge: "C# · .NET 8 · Win32",
+    platformBadge: "Widget App · .NET 8 · Win32",
     description: {
       es: "Widget nativo para la barra de tareas de Windows 10/11 con flyout de música en reproducción y control con rueda del ratón.",
       ca: "Widget natiu per a la barra de tasques de Windows 10/11 amb flyout de música en reproducció i control amb roda del ratolí.",

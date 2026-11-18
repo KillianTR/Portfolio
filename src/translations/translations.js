@@ -101,7 +101,7 @@ export const translations = {
       categories: {
         all: "Todos",
         featured: "Destacados",
-        simracing: "Simracing & Software",
+        simracing: "Simracing",
         web: "Web & Apps",
         systems: "Sistemas & Automatización",
       },
@@ -299,7 +299,7 @@ export const translations = {
       categories: {
         all: "Tots",
         featured: "Destacats",
-        simracing: "Simracing & Software",
+        simracing: "Simracing",
         web: "Web & Apps",
         systems: "Sistemes & Automatització",
       },
