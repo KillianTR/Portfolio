@@ -5,8 +5,10 @@ import {
   FiLinkedin,
   FiGithub,
   FiCheck,
-  FiMapPin,
+  FiArrowUpRight,
+  FiExternalLink,
   FiArrowDown,
+  FiCopy,
 } from "react-icons/fi";
 import { SiPatreon } from "react-icons/si";
 import { useApp } from "../context/AppContext";
@@ -24,84 +26,180 @@ function Hero({ onOpenCvModal }) {
     setTimeout(() => setCopied(false), 2200);
   };
 
+  const snapshots = [
+    {
+      title: "PitWindow (Microsoft Store)",
+      category: "Flagship",
+      image: "/pitwindow-preview.webp",
+      link: "https://pitwindow.app",
+    },
+    {
+      title: "StradiFans (Simracing Paddock)",
+      category: "Web App",
+      image: "/stradifans-preview.svg",
+      link: "https://stradifans.vercel.app",
+    },
+    {
+      title: "Grand Line Vault (One Piece TCG)",
+      category: "Full-Stack",
+      image: "/grand-line-vault-preview.jpg",
+      link: "https://grand-line-vault-tcg.vercel.app",
+    },
+    {
+      title: "Pomodoro Timer (Vercel Style)",
+      category: "Productivity",
+      image: "/pomodoro-timer-screenshot.png",
+      link: "https://pomodoro-timer-killiantr.vercel.app",
+    },
+    {
+      title: "DTM HUD PRO (Assetto Corsa)",
+      category: "Telemetry",
+      image: "/dtm-hud-preview.png",
+      link: "https://www.patreon.com",
+    },
+    {
+      title: "Taskbar Music Widget (Windows)",
+      category: "C# .NET 8",
+      image: "/taskbar-widget-demo.gif",
+      link: "https://github.com/KillianTR/TaskbarMusicWidget",
+    },
+  ];
+
   return (
-    <section className="hero" id="inicio">
-      {/* Badge de Disponibilidad */}
-      <div className="hero-top-badges">
+    <section className="victor-hero" id="inicio">
+      {/* Status Badge */}
+      <div className="victor-hero-top">
         <span className="status-badge-pulse">
           <span className="pulse-dot"></span>
           {t.hero.status}
         </span>
       </div>
 
-      <div className="hero-main-layout">
-        <div className="hero-info-content">
-          <p className="hero-kicker">{t.hero.kicker}</p>
-
-          <h1 className="hero-title">
-            <span className="hero-name-bold">Killian</span>{" "}
-            <span className="hero-name-light">Torrell Fernández</span>
+      {/* Main Intro Layout: Text + Avatar */}
+      <div className="victor-hero-grid">
+        <div className="victor-hero-content">
+          <p className="victor-hero-kicker">{t.hero.kicker}</p>
+          <h1 className="victor-hero-title">
+            {t.hero.titlePrefix}{" "}
+            <span className="victor-title-highlight">{t.hero.titleSuffix}</span>
           </h1>
+          <p className="victor-hero-tagline">{t.hero.tagline}</p>
+          <p className="victor-hero-bio">{t.hero.subtitle}</p>
 
-          <p className="hero-subtitle">{t.hero.subtitle}</p>
-
-          {/* Botones Principales */}
-          <div className="hero-cta">
-            <button
-              onClick={onOpenCvModal}
-              className="btn-primary btn-hero-primary"
-              aria-label="Descargar currículum vitae en PDF"
-            >
-              <FiDownload style={{ marginRight: 8, fontSize: "1.1rem" }} />
-              {t.hero.ctaCv}
-            </button>
-
-            <a href="#contacto" className="btn-secondary">
-              <FiMail style={{ marginRight: 6 }} />
-              {t.hero.ctaContact}
-            </a>
-
-            <a href="#experiencia" className="btn-secondary">
-              <FiArrowDown style={{ marginRight: 6 }} />
-              {t.hero.ctaExp}
-            </a>
-          </div>
-
-          {/* Iconos de acceso directo rápido */}
-          <div className="hero-social-strip">
-            <a
-              href="https://www.linkedin.com/in/killiantorrell/"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-social-pill"
-              title="Perfil de LinkedIn"
-            >
-              <FiLinkedin style={{ color: "#0a66c2", marginRight: 6 }} />
-              LinkedIn
-            </a>
-
+          {/* Socials & Quick Actions Bar */}
+          <nav aria-label="Enlaces rápidos" className="victor-social-strip">
             <a
               href="https://github.com/KillianTR"
               target="_blank"
               rel="noreferrer"
-              className="hero-social-pill"
-              title="Repositorios en GitHub"
+              className="victor-pill-btn"
             >
-              <FiGithub style={{ color: "#e5e7eb", marginRight: 6 }} />
-              GitHub
+              <FiGithub className="pill-icon" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/killiantorrell/"
+              target="_blank"
+              rel="noreferrer"
+              className="victor-pill-btn"
+            >
+              <FiLinkedin className="pill-icon" style={{ color: "#0a66c2" }} />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="https://pitwindow.app"
+              target="_blank"
+              rel="noreferrer"
+              className="victor-pill-btn highlight-pitwindow"
+            >
+              <span className="pill-star">★</span>
+              <span>PitWindow</span>
+              <FiArrowUpRight className="pill-arrow" />
+            </a>
+
+            <a
+              href="https://stradifans.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="victor-pill-btn"
+            >
+              <span className="pill-dot orange"></span>
+              <span>StradiFans</span>
+              <FiArrowUpRight className="pill-arrow" />
             </a>
 
             <a
               href="https://www.patreon.com"
               target="_blank"
               rel="noreferrer"
-              className="hero-social-pill"
-              title="Software en Patreon"
+              className="victor-pill-btn"
             >
-              <SiPatreon style={{ color: "#ff424d", marginRight: 6 }} />
-              Patreon
+              <SiPatreon className="pill-icon" style={{ color: "#ff424d" }} />
+              <span>Patreon</span>
             </a>
+
+            <button
+              onClick={handleCopyEmail}
+              className="victor-pill-btn email-pill"
+              title="Copiar email killiantorrell@gmail.com"
+            >
+              {copied ? (
+                <>
+                  <FiCheck style={{ color: "#10b981", marginRight: 6 }} />
+                  <span>{t.contact.copiedEmailBtn}</span>
+                </>
+              ) : (
+                <>
+                  <FiCopy style={{ marginRight: 6 }} />
+                  <span>Email</span>
+                </>
+              )}
+            </button>
+
+            <button
+              onClick={onOpenCvModal}
+              className="victor-pill-btn cv-pill"
+              title="Descargar CV en PDF"
+            >
+              <FiDownload style={{ marginRight: 6 }} />
+              <span>CV (PDF)</span>
+            </button>
+          </nav>
+        </div>
+
+        {/* Avatar Profile */}
+        <div className="victor-hero-avatar-wrap">
+          <div className="victor-avatar-card">
+            <img
+              src="/KTR-logo.png"
+              alt="Killian Torrell"
+              className="victor-avatar-img"
+            />
+            <div className="victor-avatar-halo" aria-hidden="true"></div>
           </div>
+        </div>
+      </div>
+
+      {/* Snapshot Scroller / Marquee Showcase */}
+      <div className="victor-scroller-wrap" aria-label="Galería de proyectos">
+        <div className="victor-scroller-track">
+          {snapshots.concat(snapshots).map((item, idx) => (
+            <a
+              key={idx}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="victor-scroller-card"
+            >
+              <img src={item.image} alt={item.title} loading="lazy" />
+              <div className="victor-scroller-overlay">
+                <span className="victor-scroller-badge">{item.category}</span>
+                <span className="victor-scroller-name">{item.title}</span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@ export const translations = {
   es: {
     nav: {
       home: "Inicio",
+      journey: "Trayectoria",
+      software: "Software & Apps",
       experience: "Experiencia",
       projects: "Proyectos",
       education: "Formación",
@@ -13,31 +15,96 @@ export const translations = {
       backToTop: "Volver arriba",
     },
     hero: {
-      status: "Disponible para trabajar • Presencial, Híbrido o Remoto",
+      status: "Disponible para proyectos • Presencial, Híbrido o Remoto",
       location: "Reus, Tarragona (España)",
-      kicker: "Desarrollador Web Full Stack • Técnico Informático",
+      kicker: "Full-Stack Developer • Systems Builder • Simracing Software",
+      titlePrefix: "Killian",
+      titleSuffix: "Torrell",
+      tagline: "Creo software, herramientas de escritorio y aplicaciones web.",
       subtitle:
-        "Desarrollador web y de software enfocado en crear aplicaciones modernas (React, TypeScript, Java Spring Boot), utilidades y automatización con Python. Cuenta con una sólida base técnica en administración de sistemas y soporte TI corporativo en entornos de alta exigencia (AENA, AEQT, MediaMarkt).",
+        "Desarrollador enfocado en rendimiento, interfaces limpias y utilidades de alto impacto. Creador de PitWindow (publicado en Microsoft Store y alojado en Cloudflare), herramientas para simracing y aplicaciones web modernas con React, TypeScript y Python. Mentalidad de mejorar un 1% cada día.",
       ctaCv: "Descargar CV (PDF)",
-      ctaContact: "Contactar",
+      ctaContact: "¿Hablamos?",
+      ctaProjects: "Ver proyectos",
       ctaExp: "Ver experiencia",
+    },
+    journey: {
+      kicker: "Mi Camino",
+      title: "Cómo he llegado hasta aquí",
+      subtitle: "Una trayectoria forjada desde el taller y los sistemas hasta el desarrollo de software y aplicaciones en producción.",
+      levels: [
+        {
+          lvl: "Lvl 01",
+          year: "2018 – 2021",
+          title: "Hardware, Taller & Sistemas",
+          role: "Técnico Informático (SMX & ASIX)",
+          desc: "Diagnóstico y reparación de hardware, montaje de estaciones de trabajo, cableado de red y soporte en taller técnico en MediaMarkt y Princess Hotels.",
+        },
+        {
+          lvl: "Lvl 02",
+          year: "2022 – 2023",
+          title: "Enterprise IT & Infraestructuras Críticas",
+          role: "Soporte AENA & Portal AEQT",
+          desc: "Soporte aeroportuario de microinformática N1/N2 en AENA (Aeropuerto de Reus), directivas de Active Directory, y desarrollo web para la patronal química AEQT con automatización de convenios en Python.",
+        },
+        {
+          lvl: "Lvl 03",
+          year: "2024",
+          title: "Java Full-Stack & Developer Mindset",
+          role: "Bootcamp Intensivo & Especialización",
+          desc: "Inmersión total en desarrollo de software moderno: Java Spring Boot, React, SQL, TypeScript y arquitectura de APIs REST. Adopción de la filosofía de superación constante.",
+        },
+        {
+          lvl: "Lvl 04",
+          year: "2025",
+          title: "Simracing Software & Monetización",
+          role: "Creador de DTM HUD PRO (Lua & CSP)",
+          desc: "Desarrollo de interfaz de telemetría en tiempo real para Assetto Corsa. Modelo freemium validado con versión Lite gratuita y versión Pro de pago en Patreon para pilotos de simracing.",
+        },
+        {
+          lvl: "Lvl 05",
+          year: "2025 – 2026",
+          title: "Productos & Web Apps en Público",
+          role: "Grand Line Vault, Pomodoro & StradiFans",
+          desc: "Construcción y lanzamiento de aplicaciones web interactivas: Grand Line Vault (archivador con Supabase y CardTrader), Pomodoro Timer minimalista y StradiFans (paddock fan con Twitch y semáforo de reflejos).",
+        },
+        {
+          lvl: "Lvl 06",
+          year: "2026",
+          title: "El Lanzamiento Estrella: PitWindow",
+          role: "Windows Store App & Cloudflare Edge",
+          desc: "Mi proyecto más ambicioso: suite de más de 31 overlays estilo TV broadcast para iRacing, Le Mans Ultimate y ACC. Publicado oficialmente en la Microsoft Store y alojado en Cloudflare (pitwindow.app).",
+        },
+        {
+          lvl: "Lvl 07",
+          year: "Next",
+          title: "Ingeniería de Software & Nuevos Retos",
+          role: "Construyendo productos de alto impacto",
+          desc: "Escalando herramientas de software reales, explorando nuevas tecnologías y disponible para aportar alto valor a un equipo técnico.",
+        },
+      ],
     },
     techTicker: {
       label: "Stack Tecnológico & Certificaciones",
     },
     projects: {
-      kicker: "Portafolio Técnico",
-      title: "Proyectos Destacados",
+      kicker: "Software & Proyectos",
+      title: "SaaS, Software & Apps",
       subtitle:
-        "Una selección de aplicaciones web, utilidades de automatización, software monetizado y herramientas de soporte.",
+        "Productos propios, aplicaciones web y herramientas de software que he creado y publicado en público.",
+      enterpriseTitle: "Herramientas Corporativas & Confidenciales",
+      enterpriseSubtitle: "Software y automatizaciones desarrolladas a medida para empresas bajo acuerdo de confidencialidad (NDA).",
       categories: {
-        all: "Todos los proyectos",
-        web: "Desarrollo Web & Apps",
-        automation: "Automatización & Python",
-        patreon: "Software & Patreon",
-        systems: "Sistemas & Herramientas Internas",
+        all: "Todos",
+        featured: "Destacados",
+        simracing: "Simracing & Software",
+        web: "Web & Apps",
+        systems: "Sistemas & Automatización",
       },
       codeBtn: "Código / Repo",
+      storeBtn: "Microsoft Store",
+      webBtn: "Ver Web",
+      patreonBtn: "Ver en Patreon",
     },
     education: {
       kicker: "Estudios & Acreditaciones",
@@ -54,7 +121,7 @@ export const translations = {
       subtitle:
         "Quién soy, qué me motiva en el sector tecnológico y qué busco aportar a un equipo.",
       p1: "Soy desarrollador web full stack y técnico en sistemas (ASIX & SMX). Mi foco principal y vocación actual es la programación y la creación de aplicaciones y herramientas de software (React, JavaScript, Java, Python), respaldado por una base técnica muy práctica adquirida en puestos de soporte IT corporativo de alta responsabilidad (como en AENA, AEQT y MediaMarkt), gestionando desde infraestructuras de red y Active Directory hasta resolución ágil de incidencias.",
-      p2: "En paralelo, mi gran pasión y foco de proyección es el desarrollo web y la automatización. Me formé a través de un bootcamp intensivo en Java Full Stack y dedico mi tiempo libre a crear proyectos reales (desde software para simracing en Patreon hasta aplicaciones en React/Next.js y scripts en Python).",
+      p2: "En paralelo, mi gran pasión y foco de proyección es el desarrollo de software y la automatización. Me formé a través de un bootcamp intensivo en Java Full Stack y dedico mi tiempo libre a crear productos reales como PitWindow (en Microsoft Store y Cloudflare), StradiFans o DTM HUD en Patreon.",
       p3: "Me defino como una persona curiosa, resolutiva y con una mentalidad orientada al '1% mejor cada día': si hay algo que no sé, investigo, aprendo rápido y lo pongo en práctica.",
       interests: {
         hardware: "Hardware, Setup y Productividad",
@@ -82,7 +149,7 @@ export const translations = {
       kicker: "Contacto Directo",
       title: "¿Hablamos?",
       subtitle:
-        "Actualmente disponible para oportunidades laborales en modalidad presencial (Reus/Tarragona), híbrida o remota.",
+        "¿Tienes una idea, un proyecto o buscas un desarrollador para tu equipo? Escríbeme y me pondré en contacto contigo.",
       formTitle: "Envíame un mensaje",
       formSubtitle:
         "Rellena este breve formulario y me pondré en contacto contigo lo antes posible:",
@@ -93,7 +160,7 @@ export const translations = {
       messagePlaceholder: "Hola Killian, nos gustaría hablar contigo sobre...",
       sendBtn: "Enviar Mensaje",
       sentBtn: "Abrir cliente de correo...",
-      copyEmailBtn: "Copiar dirección de correo",
+      copyEmailBtn: "Copiar correo",
       copiedEmailBtn: "¡Copiado al portapapeles!",
       cvBoxTitle: "¿Prefieres revisar mi currículum en PDF?",
       cvBoxDesc:
@@ -123,6 +190,8 @@ export const translations = {
   ca: {
     nav: {
       home: "Inici",
+      journey: "Trajectòria",
+      software: "Software & Apps",
       experience: "Experiència",
       projects: "Projectes",
       education: "Formació",
@@ -134,31 +203,96 @@ export const translations = {
       backToTop: "Tornar a dalt",
     },
     hero: {
-      status: "Disponible per treballar • Presencial, Híbrid o Remot",
+      status: "Disponible per a projectes • Presencial, Híbrid o Remot",
       location: "Reus, Tarragona (Espanya)",
-      kicker: "Desenvolupador Web Full Stack • Tècnic Informàtic",
+      kicker: "Full-Stack Developer • Systems Builder • Simracing Software",
+      titlePrefix: "Killian",
+      titleSuffix: "Torrell",
+      tagline: "Creo software, eines d'escriptori i aplicacions web.",
       subtitle:
-        "Desenvolupador web i de programari enfocat en crear aplicacions modernes (React, TypeScript, Java Spring Boot), utilitats i automatització amb Python. Compta amb una sòlida base tècnica en administració de sistemes i suport TI corporatiu en entorns d'alta exigència (AENA, AEQT, MediaMarkt).",
+        "Desenvolupador enfocat en rendiment, interfícies netes i utilitats d'alt impacte. Creador de PitWindow (publicat a Microsoft Store i allotjat a Cloudflare), eines per a simracing i aplicacions web modernes amb React, TypeScript i Python. Mentalitat de millorar un 1% cada dia.",
       ctaCv: "Descarregar CV (PDF)",
-      ctaContact: "Contactar",
+      ctaContact: "Parlem?",
+      ctaProjects: "Veure projectes",
       ctaExp: "Veure experiència",
+    },
+    journey: {
+      kicker: "El meu Camí",
+      title: "Com he arribat fins aquí",
+      subtitle: "Una trajectòria forjada des del taller i els sistemes fins al desenvolupament de software i aplicacions en producció.",
+      levels: [
+        {
+          lvl: "Lvl 01",
+          year: "2018 – 2021",
+          title: "Maquinari, Taller & Sistemes",
+          role: "Tècnic Informàtic (SMX & ASIX)",
+          desc: "Diagnòstic i reparació de maquinari, muntatge d'estacions de treball, cablejat de xarxa i suport en taller tècnic a MediaMarkt i Princess Hotels.",
+        },
+        {
+          lvl: "Lvl 02",
+          year: "2022 – 2023",
+          title: "Enterprise IT & Infraestructures Crítiques",
+          role: "Suport AENA & Portal AEQT",
+          desc: "Suport aeroportuari de microinformàtica N1/N2 a AENA (Aeroport de Reus), directives d'Active Directory, i desenvolupament web per a la patronal química AEQT amb automatització de convenis en Python.",
+        },
+        {
+          lvl: "Lvl 03",
+          year: "2024",
+          title: "Java Full-Stack & Developer Mindset",
+          role: "Bootcamp Intensiu & Especialització",
+          desc: "Immersió total en desenvolupament de programari modern: Java Spring Boot, React, SQL, TypeScript i arquitectura d'APIs REST. Adopció de la filosofia de superació constant.",
+        },
+        {
+          lvl: "Lvl 04",
+          year: "2025",
+          title: "Simracing Software & Monetització",
+          role: "Creador de DTM HUD PRO (Lua & CSP)",
+          desc: "Desenvolupament d'interfície de telemetria en temps real per a Assetto Corsa. Model freemium validat amb versió Lite gratuïta i versió Pro de pagament a Patreon per a pilots de simracing.",
+        },
+        {
+          lvl: "Lvl 05",
+          year: "2025 – 2026",
+          title: "Productes & Web Apps en Públic",
+          role: "Grand Line Vault, Pomodoro & StradiFans",
+          desc: "Construcció i llançament d'aplicacions web interactives: Grand Line Vault (arxivador amb Supabase i CardTrader), Pomodoro Timer minimalista i StradiFans (paddock fan amb Twitch i semàfor de reflexos).",
+        },
+        {
+          lvl: "Lvl 06",
+          year: "2026",
+          title: "El Llançament Estrella: PitWindow",
+          role: "Windows Store App & Cloudflare Edge",
+          desc: "El meu projecte més ambiciós: suite de més de 31 overlays estil TV broadcast per a iRacing, Le Mans Ultimate i ACC. Publicat oficialment a la Microsoft Store i allotjat a Cloudflare (pitwindow.app).",
+        },
+        {
+          lvl: "Lvl 07",
+          year: "Next",
+          title: "Enginyeria de Software & Nous Reptes",
+          role: "Construint productes d'alt impacte",
+          desc: "Escalant eines de software reals, explorant noves tecnologies i disponible per aportar alt valor a un equip tècnic.",
+        },
+      ],
     },
     techTicker: {
       label: "Stack Tecnològic & Certificacions",
     },
     projects: {
-      kicker: "Portafoli Tècnic",
-      title: "Projectes Destacats",
+      kicker: "Software & Projectes",
+      title: "SaaS, Software & Apps",
       subtitle:
-        "Una selecció d'aplicacions web, utilitats d'automatització, programari monetitzat i eines de suport.",
+        "Productes propis, aplicacions web i eines de programari que he creat i publicat en públic.",
+      enterpriseTitle: "Eines Corporatives & Confidencials",
+      enterpriseSubtitle: "Software i automatitzacions desenvolupades a mida per a empreses sota acord de confidencialitat (NDA).",
       categories: {
-        all: "Tots els projectes",
-        web: "Desenvolupament Web & Apps",
-        automation: "Automatització & Python",
-        patreon: "Programari & Patreon",
-        systems: "Sistemes & Eines Internes",
+        all: "Tots",
+        featured: "Destacats",
+        simracing: "Simracing & Software",
+        web: "Web & Apps",
+        systems: "Sistemes & Automatització",
       },
       codeBtn: "Codi / Repo",
+      storeBtn: "Microsoft Store",
+      webBtn: "Veure Web",
+      patreonBtn: "Veure a Patreon",
     },
     education: {
       kicker: "Estudis & Acreditacions",
@@ -175,7 +309,7 @@ export const translations = {
       subtitle:
         "Qui soc, què em motiva en el sector tecnològic i què busco aportar a un equip.",
       p1: "Soc desenvolupador web full stack i tècnic en sistemes (ASIX & SMX). El meu focus principal i vocació actual és la programació i la creació d'aplicacions i eines de programari (React, JavaScript, Java, Python), recolzat per una base tècnica molt pràctica adquirida en llocs de suport TI corporatiu d'alta responsabilitat (com a AENA, AEQT i MediaMarkt), gestionant des d'infraestructures de xarxa i Active Directory fins a resolució àgil d'incidències.",
-      p2: "En paral·lel, la meva gran passió i focus de projecció és el desenvolupament web i l'automatització. Em vaig formar mitjançant un bootcamp intensiu en Java Full Stack i dedico el meu temps lliure a crear projectes reals (des de programari per a simracing a Patreon fins a aplicacions en React/Next.js i scripts en Python).",
+      p2: "En paral·lel, la meva gran passió i focus de projecció és el desenvolupament de software i l'automatització. Em vaig formar mitjançant un bootcamp intensiu en Java Full Stack i dedico el meu temps lliure a crear productes reals com PitWindow (a Microsoft Store i Cloudflare), StradiFans o DTM HUD a Patreon.",
       p3: "Em defineixo com una persona curiosa, resolutiva i amb una mentalitat orientada a 'millorar un 1% cada dia': si hi ha alguna cosa que no sé, investigo, aprenc ràpid i ho poso en pràctica.",
       interests: {
         hardware: "Maquinari, Setup i Productivitat",
@@ -203,7 +337,7 @@ export const translations = {
       kicker: "Contacte Directe",
       title: "Parlem?",
       subtitle:
-        "Actualment disponible per a oportunitats laborals en modalitat presencial (Reus/Tarragona), híbrida o remota.",
+        "Tens una idea, un projecte o busques un desenvolupador per al teu equip? Escriu-me i em posaré en contacte amb tu.",
       formTitle: "Envia'm un missatge",
       formSubtitle:
         "Omple aquest breu formulari i em posaré en contacte amb tu al més aviat possible:",
@@ -214,7 +348,7 @@ export const translations = {
       messagePlaceholder: "Hola Killian, ens agradaria parlar amb tu sobre...",
       sendBtn: "Enviar Missatge",
       sentBtn: "Obrir client de correu...",
-      copyEmailBtn: "Copiar adreça de correu",
+      copyEmailBtn: "Copiar correu",
       copiedEmailBtn: "Copiat al porta-retalls!",
       cvBoxTitle: "Prefereixes revisar el meu currículum en PDF?",
       cvBoxDesc:
@@ -242,4 +376,5 @@ export const translations = {
     },
   },
 };
+
 

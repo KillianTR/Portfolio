@@ -1,7 +1,8 @@
 import Hero from "../components/Hero";
 import TechTicker from "../components/TechTicker";
-import Experience from "../components/Experience";
+import Journey from "../components/Journey";
 import Projects from "../components/Projects";
+import Experience from "../components/Experience";
 import Education from "../components/Education";
 import AboutMe from "../components/AboutMe";
 import Newsletter from "../components/Newsletter";
@@ -12,8 +13,9 @@ function Home({ onOpenCvModal }) {
     <>
       <Hero onOpenCvModal={onOpenCvModal} />
       <TechTicker />
-      <Experience onOpenCvModal={onOpenCvModal} />
+      <Journey />
       <Projects />
+      <Experience onOpenCvModal={onOpenCvModal} />
       <Education />
       <AboutMe />
       <Newsletter />

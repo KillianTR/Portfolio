@@ -25,7 +25,7 @@ function Navbar({ onOpenCvModal }) {
       return;
     }
 
-    const sectionIds = ["inicio", "experiencia", "proyectos", "formacion", "sobre-mi", "contacto"];
+    const sectionIds = ["inicio", "trayectoria", "proyectos", "experiencia", "formacion", "sobre-mi", "contacto"];
 
     function handleScroll() {
       setIsScrolled(window.scrollY > 15);
@@ -82,16 +82,22 @@ function Navbar({ onOpenCvModal }) {
             <span className="nav-btn-text">{t.nav.home}</span>
           </button>
           <button
-            onClick={() => handleNavClick("#experiencia")}
-            className={`nav-text-btn ${activeSection === "experiencia" ? "active" : ""}`}
+            onClick={() => handleNavClick("#trayectoria")}
+            className={`nav-text-btn ${activeSection === "trayectoria" ? "active" : ""}`}
           >
-            <span className="nav-btn-text">{t.nav.experience}</span>
+            <span className="nav-btn-text">{t.nav.journey}</span>
           </button>
           <button
             onClick={() => handleNavClick("#proyectos")}
             className={`nav-text-btn ${activeSection === "proyectos" ? "active" : ""}`}
           >
-            <span className="nav-btn-text">{t.nav.projects}</span>
+            <span className="nav-btn-text">{t.nav.software || t.nav.projects}</span>
+          </button>
+          <button
+            onClick={() => handleNavClick("#experiencia")}
+            className={`nav-text-btn ${activeSection === "experiencia" ? "active" : ""}`}
+          >
+            <span className="nav-btn-text">{t.nav.experience}</span>
           </button>
           <button
             onClick={() => handleNavClick("#formacion")}
@@ -204,11 +210,14 @@ function Navbar({ onOpenCvModal }) {
           <button onClick={() => handleNavClick("#inicio")} className="mobile-nav-link">
             {t.nav.home}
           </button>
-          <button onClick={() => handleNavClick("#experiencia")} className="mobile-nav-link">
-            {t.nav.experience}
+          <button onClick={() => handleNavClick("#trayectoria")} className="mobile-nav-link">
+            {t.nav.journey}
           </button>
           <button onClick={() => handleNavClick("#proyectos")} className="mobile-nav-link">
-            {t.nav.projects}
+            {t.nav.software || t.nav.projects}
+          </button>
+          <button onClick={() => handleNavClick("#experiencia")} className="mobile-nav-link">
+            {t.nav.experience}
           </button>
           <button onClick={() => handleNavClick("#formacion")} className="mobile-nav-link">
             {t.nav.education}
